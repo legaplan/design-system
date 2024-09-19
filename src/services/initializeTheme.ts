@@ -20,6 +20,7 @@ function mergeThemes(userTheme?: ThemeConfigProps): ThemeConfigProps {
     },
   };
 }
+
 export function applyThemeVariables(theme: ThemeConfigProps) {
   const root = document.documentElement;
 
