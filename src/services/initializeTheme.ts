@@ -1,22 +1,22 @@
 import { DEFAULT_THEME } from "../constants/theme";
 import { ThemeConfigProps } from "../types/theme";
-function mergeThemes(userTheme: ThemeConfigProps): ThemeConfigProps {
+function mergeThemes(userTheme?: ThemeConfigProps): ThemeConfigProps {
   return {
     spaces: {
       ...DEFAULT_THEME.spaces,
-      ...userTheme.spaces,
+      ...userTheme?.spaces,
     },
     borderRadius: {
       ...DEFAULT_THEME.borderRadius,
-      ...userTheme.borderRadius,
+      ...userTheme?.borderRadius,
     },
     fontSize: {
       ...DEFAULT_THEME.fontSize,
-      ...userTheme.fontSize,
+      ...userTheme?.fontSize,
     },
     colors: {
       ...DEFAULT_THEME.colors,
-      ...userTheme.colors,
+      ...userTheme?.colors,
     },
   };
 }
@@ -39,7 +39,7 @@ export function applyThemeVariables(theme: ThemeConfigProps) {
   setProperties(theme.colors || {}, "colors");
 }
 
-export function initializeTheme(userTheme: ThemeConfigProps) {
+export function initializeTheme(userTheme?: ThemeConfigProps) {
   const mergedTheme = mergeThemes(userTheme);
   applyThemeVariables(mergedTheme);
 }
