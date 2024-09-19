@@ -22,14 +22,16 @@ function mergeThemes(userTheme?: ThemeConfigProps): ThemeConfigProps {
 }
 
 export function applyThemeVariables(theme: ThemeConfigProps) {
-  const root = document.documentElement;
-
+  let styles = {};
   function setProperties(obj: Record<string, any>, prefix: string) {
     Object.entries(obj).forEach(([key, value]) => {
       if (typeof value === "object" && value !== null) {
         setProperties(value, `${prefix}-${key}`);
       } else {
-        root.style.setProperty(`--${prefix}-${key}`, value);
+        styles = {
+          ...styles,
+          [`--${prefix}-${key}`]: value,
+        };
       }
     });
   }
@@ -38,9 +40,10 @@ export function applyThemeVariables(theme: ThemeConfigProps) {
   setProperties(theme.borderRadius || {}, "border-radius");
   setProperties(theme.fontSize || {}, "font-size");
   setProperties(theme.colors || {}, "colors");
+  return styles;
 }
 
 export function initializeTheme(userTheme?: ThemeConfigProps) {
   const mergedTheme = mergeThemes(userTheme);
-  applyThemeVariables(mergedTheme);
+  return applyThemeVariables(mergedTheme);
 }
