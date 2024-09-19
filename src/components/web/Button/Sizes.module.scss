@@ -1,0 +1,11 @@
+.size-1 {
+  height: var(--spaces-4);
+  padding: 0 var(--spaces-2);
+}
+.size-2 {
+  height: var(--spaces-5);
+}
+
+.size-3 {
+  height: calc(var(--spaces-5) + var(--spaces-micro));
+}
