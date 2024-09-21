@@ -3,7 +3,7 @@ import { TouchableOpacity, Text } from "react-native";
 
 export const MobileButton = styled(TouchableOpacity)`
   padding: 10px;
-  background-color: blue;
+  background-color: ${({ theme }) => theme.colors?.background};
   border-radius: 5px;
 `;
 
