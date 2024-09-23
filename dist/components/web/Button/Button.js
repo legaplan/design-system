@@ -8,7 +8,6 @@ const Button_module_scss_1 = __importDefault(require("./Button.module.scss"));
 const Variants_module_scss_1 = __importDefault(require("./Variants.module.scss"));
 const Sizes_module_scss_1 = __importDefault(require("./Sizes.module.scss"));
 const concatStyles_1 = require("../../../utils/concatStyles");
-require("../../../styles/global.scss");
 const WebButton = ({ size = 3, variant = "default", className = "", ...props }) => {
     const buttonStyles = (0, concatStyles_1.concatStyles)([
         Button_module_scss_1.default.button,
