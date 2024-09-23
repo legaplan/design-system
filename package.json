@@ -7,7 +7,9 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc --declaration",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.scss dist/",
+    "build": "npm run clean && tsc --declaration && npm run copy-files",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -31,8 +33,10 @@
     "@types/react-native": "^0.72.8",
     "@types/styled-components": "^5.1.34",
     "@types/styled-components-react-native": "^5.2.5",
+    "copyfiles": "^2.4.1",
     "storybook": "^8.3.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
     "sass": "^1.79.1",
