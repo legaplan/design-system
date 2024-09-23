@@ -5,6 +5,7 @@
   "files": [
     "dist/"
   ],
+  "style": "dist/styles/global.scss",
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist/",
