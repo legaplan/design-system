@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "design-system/theme": ["src/styles/global.scss"]
+    },
     "target": "ESNext",
     "module": "CommonJS",
     "lib": ["dom", "esnext"],
