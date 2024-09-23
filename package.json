@@ -8,7 +8,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.scss dist/",
+    "copy-files": "copyfiles -u 1 'src/**/*.scss' dist",
     "build": "npm run clean && tsc --declaration && npm run copy-files",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
