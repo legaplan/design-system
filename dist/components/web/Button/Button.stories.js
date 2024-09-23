@@ -14,13 +14,13 @@ exports.default = {
     argTypes: {
         size: {
             control: { type: "select" },
-            options: [1, 2, 3], // Opções de tamanho para o botão
+            options: [1, 2, 3],
             description: "Tamanho do botão",
         },
         variant: {
             control: { type: "select" },
-            options: ["default", "outline", "transparent", "danger"], // Variantes do botão
-            description: "Estilo do botão",
+            options: ["default", "outline", "transparent", "danger"],
+            description: "Variante do botão",
         },
         disabled: {
             control: { type: "boolean" },

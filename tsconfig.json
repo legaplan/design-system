@@ -6,12 +6,12 @@
     "jsx": "react",
     "moduleResolution": "node",
     "strict": true,
-
+    "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": false
   },
   "include": ["src/**/*"]
 }

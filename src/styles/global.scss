@@ -1,4 +1,5 @@
 :root {
+  font-size: 10px;
   /* -------- Spaces -------- */
   --spaces-nano: 0.2rem;
   --spaces-micro: 0.4rem;
@@ -29,17 +30,18 @@
   --font-size-8: 2.4rem;
 
   /* -------- Colors -------- */
-  --colors-brand-25: #fdf9f0;
-  --colors-brand-50: #fff7dc;
-  --colors-brand-100: #000;
-  --colors-brand-200: #000;
-  --colors-brand-400: #f7cc48;
-  --colors-brand-500: #e7b313; // primary-color
-  --colors-brand-600: #d3a107;
-  --colors-brand-700: #bf9206;
-  --colors-brand-800: #000;
-  --colors-brand-850: #000;
-  --colors-brand-900: #000;
+  --colors-brand-25: #fcf9f1;
+  --colors-brand-50: #fef7df;
+  --colors-brand-100: #fdf2cd;
+  --colors-brand-200: #ffe58e;
+  --colors-brand-300: #f9de83;
+  --colors-brand-400: #f0ce61;
+  --colors-brand-500: #dfb541; // primary-color
+  --colors-brand-600: #cba337;
+  --colors-brand-700: #b89432;
+  --colors-brand-800: #9a7b28;
+  --colors-brand-900: #635018;
+  --colors-brand-950: #3b2f0a;
 
   --colors-secondary: #000;
 
