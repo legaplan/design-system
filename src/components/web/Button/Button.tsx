@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 import variants from "./Variants.module.scss";
 import sizes from "./Sizes.module.scss";
 import { concatStyles } from "../../../utils/concatStyles";
-import '../../../styles/global.scss'
+
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 1 | 2 | 3;
   variant?: "default" | "outline" | "transparent" | "danger";
