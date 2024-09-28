@@ -1,12 +1,14 @@
 {
   "name": "design-system",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "exports": {
+    "./native": "./dist/native/src/index.js",
+    "./web": "./dist/web/src/index.js"
+  },
   "files": [
     "dist/"
   ],
-  "style": "dist/styles/global.scss",
-  "types": "dist/index.d.ts",
+  "style": "dist/web/src/styles/global.scss",
   "scripts": {
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 'src/**/*.scss' dist",
