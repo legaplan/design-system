@@ -1,4 +1,4 @@
-import Button, { ButtonProps } from "./Button";
+import { Button, ButtonProps } from ".";
 import "./Button.module.scss";
 import { Meta } from "@storybook/react/*";
 declare const _default: Meta<typeof Button>;
