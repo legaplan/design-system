@@ -2,12 +2,13 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@/*": ["./src/*"],
       "design-system/theme": ["src/styles/global.scss"]
     },
     "target": "ESNext",
     "module": "CommonJS",
     "lib": ["dom", "esnext"],
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "strict": true,
     "outDir": "dist",
