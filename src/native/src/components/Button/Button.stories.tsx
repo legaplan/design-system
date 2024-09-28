@@ -1,9 +1,7 @@
-import React from "react";
-
 import { Meta, StoryFn } from "@storybook/react/*";
-import Button from "./Button";
-import ThemeProvider from "../../providers/ThemeProvider";
+import { Button } from ".";
 import { DEFAULT_THEME } from "../../constants/theme";
+import { ThemeProvider } from "../../providers/ThemeProvider";
 
 export default {
   title: "components/Button",

@@ -1,8 +1,9 @@
 import React from "react";
 import { ThemeProvider as StyledComponentesProvider } from "styled-components/native";
+import { mergeThemes } from "@/native/services/initializeTheme";
 import { ThemeConfigProps } from "../types/theme";
-import { mergeThemes } from "../services/initializeTheme";
-const ThemeProvider = ({
+
+export const ThemeProvider = ({
   userTheme,
   children,
 }: {
@@ -16,5 +17,3 @@ const ThemeProvider = ({
     </StyledComponentesProvider>
   );
 };
-
-export default ThemeProvider;

@@ -1,16 +1,13 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Outline = exports.Default = void 0;
 const jsx_runtime_1 = require("react/jsx-runtime");
-const Button_1 = __importDefault(require("./Button"));
+const _1 = require(".");
 require("./Button.module.scss");
 exports.default = {
     title: "Components/Button",
     tags: ["autodocs"],
-    component: Button_1.default,
+    component: _1.Button,
     argTypes: {
         size: {
             control: { type: "select" },
@@ -32,7 +29,7 @@ exports.default = {
         },
     },
 };
-const Template = (args) => ((0, jsx_runtime_1.jsx)(Button_1.default, { ...args }));
+const Template = (args) => ((0, jsx_runtime_1.jsx)(_1.Button, { ...args }));
 exports.Default = Template.bind({});
 exports.Default.args = {
     children: "Button",

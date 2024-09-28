@@ -9,7 +9,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "outline";
 }
 
-const WebButton = ({
+export const Button = ({
   size = 3,
   variant = "default",
   className = "",
@@ -24,5 +24,3 @@ const WebButton = ({
 
   return <button className={buttonStyles} {...props} />;
 };
-
-export default WebButton;

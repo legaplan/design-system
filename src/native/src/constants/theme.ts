@@ -1,4 +1,4 @@
-import { ThemeConfigProps } from "../types/theme";
+import { ThemeConfigProps } from "@/native/types/theme";
 
 export const DEFAULT_THEME: ThemeConfigProps = {
   spaces: {

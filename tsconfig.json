@@ -3,6 +3,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
+      "@/native/*": ["./src/native/src/*"],
+      "@/web/*": ["./src/web/src/*"],
       "design-system/theme": ["src/styles/global.scss"]
     },
     "target": "ESNext",
