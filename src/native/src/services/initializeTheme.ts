@@ -1,7 +1,7 @@
 import { DEFAULT_THEME } from "../constants/theme";
-import { ThemeConfigProps } from "../types/theme";
+import { TDefaultTheme, ThemeConfigProps } from "../types/theme";
 
-export function mergeThemes(userTheme?: ThemeConfigProps): ThemeConfigProps {
+export function mergeThemes(userTheme?: ThemeConfigProps): TDefaultTheme {
   return {
     spaces: {
       ...DEFAULT_THEME.spaces,

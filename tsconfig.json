@@ -20,5 +20,6 @@
     "resolveJsonModule": true,
     "noEmit": false
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.stories.tsx", "**/*.stories.ts"]
 }

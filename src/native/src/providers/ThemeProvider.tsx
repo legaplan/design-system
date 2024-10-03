@@ -1,14 +1,14 @@
 import React from "react";
 import { ThemeProvider as StyledComponentesProvider } from "styled-components/native";
-import { mergeThemes } from "@/native/services/initializeTheme";
 import { ThemeConfigProps } from "../types/theme";
+import { mergeThemes } from "../services/initializeTheme";
 
 export const ThemeProvider = ({
   userTheme,
   children,
 }: {
   children: React.ReactNode;
-  userTheme: ThemeConfigProps;
+  userTheme?: ThemeConfigProps;
 }) => {
   const theme = mergeThemes(userTheme);
   return (

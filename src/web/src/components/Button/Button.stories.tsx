@@ -1,6 +1,8 @@
+import React from "react";
+
 import { Button, ButtonProps } from ".";
 import "./Button.module.scss";
-import { Meta, StoryFn } from "@storybook/react/*";
+import { Meta, StoryFn } from "@storybook/react";
 
 export default {
   title: "Components/Button",
