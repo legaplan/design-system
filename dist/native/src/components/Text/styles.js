@@ -18,8 +18,8 @@ const getTextLineHeight = (textSize) => {
     return lineHeights[textSize];
 };
 exports.BaseText = native_1.default.Text `
-  color: ${(props) => variants_styles_1.customTextStyles.color[props.color ?? "default"]};
-  font-size: ${(props) => variants_styles_1.customTextStyles.size[props.size ?? "default"]};
-  font-weight: ${(props) => variants_styles_1.customTextStyles.weight[props.weight ?? "default"]};
-  line-height: ${(props) => getTextLineHeight(props.size || "default")};
+  color: ${({ theme, color }) => (0, variants_styles_1.getCustomTextSyles)(theme).color[color ?? "default"]};
+  font-size: ${({ theme, size }) => (0, variants_styles_1.getCustomTextSyles)(theme).size[size ?? "default"]};
+  font-weight: ${({ theme, weight }) => (0, variants_styles_1.getCustomTextSyles)(theme).weight[weight ?? "default"]};
+  line-height: ${({ size }) => getTextLineHeight(size || "default")};
 `;

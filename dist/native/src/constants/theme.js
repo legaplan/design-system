@@ -6,6 +6,7 @@ exports.DEFAULT_THEME = {
         nano: "2px",
         micro: "4px",
         "1": "8px",
+        "1_5": "12px",
         "2": "16px",
         "3": "24px",
         "4": "32px",

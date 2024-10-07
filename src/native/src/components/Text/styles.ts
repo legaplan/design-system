@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { customTextStyles } from "./variants.styles";
+import { getCustomTextSyles } from "./variants.styles";
 import { CustomTextProps, CustomTextSizes } from "./types";
 
 const getTextLineHeight = (textSize: keyof CustomTextSizes) => {
@@ -16,8 +16,11 @@ const getTextLineHeight = (textSize: keyof CustomTextSizes) => {
 };
 
 export const BaseText = styled.Text<CustomTextProps>`
-  color: ${(props) => customTextStyles.color[props.color ?? "default"]};
-  font-size: ${(props) => customTextStyles.size[props.size ?? "default"]};
-  font-weight: ${(props) => customTextStyles.weight[props.weight ?? "default"]};
-  line-height: ${(props) => getTextLineHeight(props.size || "default")};
+  color: ${({ theme, color }) =>
+    getCustomTextSyles(theme).color[color ?? "default"]};
+  font-size: ${({ theme, size }) =>
+    getCustomTextSyles(theme).size[size ?? "default"]};
+  font-weight: ${({ theme, weight }) =>
+    getCustomTextSyles(theme).weight[weight ?? "default"]};
+  line-height: ${({ size }) => getTextLineHeight(size || "default")};
 `;

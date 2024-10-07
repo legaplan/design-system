@@ -4,11 +4,11 @@ import { ThemeConfigProps } from "../types/theme";
 import { mergeThemes } from "../services/initializeTheme";
 
 export const ThemeProvider = ({
-  userTheme,
+  theme: userTheme,
   children,
 }: {
   children: React.ReactNode;
-  userTheme?: ThemeConfigProps;
+  theme?: ThemeConfigProps;
 }) => {
   const theme = mergeThemes(userTheme);
   return (

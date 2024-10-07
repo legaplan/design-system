@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FieldContainer = void 0;
 const native_1 = __importDefault(require("styled-components/native"));
 exports.FieldContainer = native_1.default.View `
-  /* gap: ${({ theme }) => theme.spaces[1]}; */
   width: 100%;
   gap: 6px;
   flex-direction: column;

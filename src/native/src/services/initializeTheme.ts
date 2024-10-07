@@ -1,50 +1,22 @@
 import { DEFAULT_THEME } from "../constants/theme";
-import { TDefaultTheme, ThemeConfigProps } from "../types/theme";
+import { DeepPartial, TDefaultTheme, ThemeConfigProps } from "../types/theme";
 
-export function mergeThemes(userTheme?: ThemeConfigProps): TDefaultTheme {
-  return {
-    spaces: {
-      ...DEFAULT_THEME.spaces,
-      ...userTheme?.spaces,
-    },
-    borderRadius: {
-      ...DEFAULT_THEME.borderRadius,
-      ...userTheme?.borderRadius,
-    },
-    fontSize: {
-      ...DEFAULT_THEME.fontSize,
-      ...userTheme?.fontSize,
-    },
-    colors: {
-      ...DEFAULT_THEME.colors,
-      ...userTheme?.colors,
-    },
-  };
-}
+export const mergeThemes = (
+  userTheme: ThemeConfigProps = {}
+): TDefaultTheme => {
+  const merge = <T>(defaultTheme: T, customTheme: DeepPartial<T>): T => {
+    const result = { ...defaultTheme };
 
-export function applyThemeVariables(theme: ThemeConfigProps) {
-  let styles = {};
-  function setProperties(obj: Record<string, any>, prefix: string) {
-    Object.entries(obj).forEach(([key, value]) => {
-      if (typeof value === "object" && value !== null) {
-        setProperties(value, `${prefix}-${key}`);
+    for (const key in customTheme) {
+      if (customTheme[key] && typeof customTheme[key] === "object") {
+        result[key] = merge(result[key], customTheme[key] as any);
       } else {
-        styles = {
-          ...styles,
-          [`--${prefix}-${key}`]: value,
-        };
+        result[key] = customTheme[key] as any;
       }
-    });
-  }
+    }
 
-  setProperties(theme.spaces || {}, "spaces");
-  setProperties(theme.borderRadius || {}, "border-radius");
-  setProperties(theme.fontSize || {}, "font-size");
-  setProperties(theme.colors || {}, "colors");
-  return styles;
-}
+    return result;
+  };
 
-export function initializeTheme(userTheme?: ThemeConfigProps) {
-  const mergedTheme = mergeThemes(userTheme);
-  return applyThemeVariables(mergedTheme);
-}
+  return merge(DEFAULT_THEME, userTheme);
+};
