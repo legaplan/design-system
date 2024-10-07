@@ -1,6 +1,6 @@
-import { ThemeConfigProps } from "@/native/types/theme";
+import { TDefaultTheme } from "@/native/types/theme";
 
-export const DEFAULT_THEME: ThemeConfigProps = {
+export const DEFAULT_THEME: TDefaultTheme = {
   spaces: {
     nano: "2px",
     micro: "4px",
@@ -28,7 +28,11 @@ export const DEFAULT_THEME: ThemeConfigProps = {
     "5": "18px",
     "6": "20px",
     "7": "24px",
-    "8": "24px",
+    "8": "30px",
+    "9": "36px",
+    "10": "48px",
+    "11": "60px",
+    "12": "72px",
   },
   colors: {
     brand: {
@@ -44,6 +48,22 @@ export const DEFAULT_THEME: ThemeConfigProps = {
       "800": "#9a7b28",
       "900": "#635018",
       "950": "#3b2f0a",
+    },
+    border: {
+      primary: "#D0D5DD",
+      secondary: "#E4E7EC",
+      tertiary: "#F2F4F7",
+      disabled: "#D0D5DD",
+      brand: "#DFB541",
+      error: "#F04438",
+    },
+    text: {
+      primary: "#0C111D",
+      secondary: "#344054",
+      tertiary: "#475467",
+      quaternary: "#667085",
+      placeholder: "#667085",
+      disabled: "#667085",
     },
     secondary: "#000000",
     neutral: "#000000",

@@ -1,2 +1,2 @@
-import { ThemeConfigProps } from "../types/theme";
-export declare const DEFAULT_THEME: ThemeConfigProps;
+import { TDefaultTheme } from "../types/theme";
+export declare const DEFAULT_THEME: TDefaultTheme;
