@@ -17,6 +17,7 @@ const RHFInput = ({ name, mask, ...props }) => {
         register(name);
     }, [register, name]);
     const handleChange = (value) => {
+        value = mask ? mask(value) : value;
         setValue(name, value, {
             shouldTouch: true,
             shouldDirty: true,
@@ -30,6 +31,6 @@ const RHFInput = ({ name, mask, ...props }) => {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [defaultValues]);
-    return (0, jsx_runtime_1.jsx)(Input_1.default, { onChange: handleChange, hasError: hasError, ...props });
+    return ((0, jsx_runtime_1.jsx)(Input_1.default, { value: currentValue, onChange: handleChange, hasError: hasError, ...props }));
 };
 exports.default = RHFInput;

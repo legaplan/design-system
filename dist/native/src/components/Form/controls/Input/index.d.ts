@@ -7,6 +7,7 @@ export interface InputProps extends TextInputProps {
     onFocus?: (event?: any) => void;
     onBlur?: (event?: any) => void;
     onChange?: (event?: any) => void;
+    value: string;
 }
-declare const Input: ({ hasError, suffix, onFocus, onBlur, onChange, mask, ...props }: InputProps) => import("react/jsx-runtime").JSX.Element;
+declare const Input: ({ hasError, suffix, onFocus, onBlur, onChange, mask, value, ...props }: InputProps) => import("react/jsx-runtime").JSX.Element;
 export default Input;

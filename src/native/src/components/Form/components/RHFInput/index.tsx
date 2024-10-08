@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 import Input, { InputProps } from "../../controls/Input";
 import React, { useEffect } from "react";
 
-export interface RHFInputProps extends InputProps {
+export interface RHFInputProps extends Omit<InputProps, "value"> {
   name: string;
 }
 
@@ -22,6 +22,7 @@ const RHFInput = ({ name, mask, ...props }: RHFInputProps) => {
   }, [register, name]);
 
   const handleChange = (value: string) => {
+    value = mask ? mask(value) : value;
     setValue(name, value, {
       shouldTouch: true,
       shouldDirty: true,
@@ -37,7 +38,14 @@ const RHFInput = ({ name, mask, ...props }: RHFInputProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultValues]);
 
-  return <Input onChange={handleChange} hasError={hasError} {...props} />;
+  return (
+    <Input
+      value={currentValue}
+      onChange={handleChange}
+      hasError={hasError}
+      {...props}
+    />
+  );
 };
 
 export default RHFInput;
