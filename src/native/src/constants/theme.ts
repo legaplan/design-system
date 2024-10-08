@@ -18,6 +18,7 @@ export const DEFAULT_THEME = {
     "1": "2px",
     "2": "4px",
     "3": "8px",
+    "4": "12px",
   },
   fontSize: {
     "1": "10px",

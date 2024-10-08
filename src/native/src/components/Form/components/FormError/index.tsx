@@ -1,5 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import Error from "../../../Error/Error";
+import Error from "../../../Error";
 export interface ErrorProps {
   name: string;
 }

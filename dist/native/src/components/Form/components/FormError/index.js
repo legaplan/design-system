@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsx_runtime_1 = require("react/jsx-runtime");
 const react_hook_form_1 = require("react-hook-form");
-const Error_1 = __importDefault(require("../../../Error/Error"));
+const Error_1 = __importDefault(require("../../../Error"));
 const FormError = ({ name }) => {
     const { formState, getFieldState } = (0, react_hook_form_1.useFormContext)();
     const { error, isDirty } = getFieldState(name, formState);
