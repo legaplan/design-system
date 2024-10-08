@@ -1,24 +1,28 @@
-import styled from "styled-components/native";
-import { DEFAULT_THEME } from "../../constants/theme";
+import styled, { DefaultTheme } from "styled-components/native";
+import { IconSizes } from ".";
 
-const sizes = {
-  1: {
-    width: DEFAULT_THEME.spaces[2],
-    height: DEFAULT_THEME.spaces[2],
-  },
-  2: {
-    width: "20px",
-    height: "20px",
-  },
-  3: {
-    width: DEFAULT_THEME.spaces[3],
-    height: DEFAULT_THEME.spaces[3],
-  },
+const getIconSizes = (iconSize: IconSizes, theme: DefaultTheme) => {
+  const sizes = {
+    1: {
+      width: theme.spaces[2],
+      height: theme.spaces[2],
+    },
+    2: {
+      width: "20px",
+      height: "20px",
+    },
+    3: {
+      width: theme.spaces[3],
+      height: theme.spaces[3],
+    },
+  };
+
+  return sizes[iconSize] || sizes[1];
 };
 
-export const IconContainer = styled.View<{ size: keyof typeof sizes }>`
-  width: ${({ size }) => sizes[size].width};
-  height: ${({ size }) => sizes[size].height};
+export const IconContainer = styled.View<{ size: IconSizes }>`
+  width: ${({ size, theme }) => getIconSizes(size, theme).width};
+  height: ${({ size, theme }) => getIconSizes(size, theme).height};
   aspect-ratio: 1;
   display: grid;
   place-items: center;

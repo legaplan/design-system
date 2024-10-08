@@ -18,6 +18,7 @@ export declare const DEFAULT_THEME: {
         "1": string;
         "2": string;
         "3": string;
+        "4": string;
     };
     fontSize: {
         "1": string;

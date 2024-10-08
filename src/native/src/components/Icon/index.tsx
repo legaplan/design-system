@@ -13,10 +13,11 @@ const icons = {
 };
 
 export type IconKeys = keyof typeof icons;
+export type IconSizes = 1 | 2 | 3;
 
 interface IconProps {
   name: IconKeys;
-  size?: 1 | 2 | 3;
+  size?: IconSizes;
   className?: string;
   color?: string;
 }

@@ -18,3 +18,5 @@ __exportStar(require("./Button"), exports);
 __exportStar(require("./Form"), exports);
 __exportStar(require("./Text"), exports);
 __exportStar(require("./Icon"), exports);
+__exportStar(require("./Form/controls/Input"), exports);
+__exportStar(require("./Error"), exports);

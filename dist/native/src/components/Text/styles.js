@@ -8,12 +8,12 @@ const native_1 = __importDefault(require("styled-components/native"));
 const variants_styles_1 = require("./variants.styles");
 const getTextLineHeight = (textSize) => {
     const lineHeights = {
-        xs: "1.5em",
-        sm: "1.42em",
-        md: "1.5em",
-        lg: "1.55em",
-        xl: "1.5em",
-        default: "1.42em",
+        xs: "18px",
+        sm: "20px",
+        md: "24px",
+        lg: "28px",
+        xl: "30px",
+        default: "20px",
     };
     return lineHeights[textSize];
 };

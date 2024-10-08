@@ -4,7 +4,12 @@ import {
   TextInputFocusEventData,
   TextInputProps,
 } from "react-native";
-import { InputContainer, StyledInput, SuffixContainer } from "./styles";
+import {
+  BorderContainer,
+  InputContainer,
+  StyledInput,
+  SuffixContainer,
+} from "./styles";
 import { useTheme } from "styled-components/native";
 import Icon, { IconKeys } from "../../../Icon";
 
@@ -45,14 +50,15 @@ const Input = ({
   };
 
   const suffixIcon = hasError ? "alert-circle" : suffix || null;
-
   return (
     <InputContainer
       isFocused={isFocused}
       hasSuffixIcon={!!suffixIcon}
       hasError={hasError}
     >
+      <BorderContainer hasError={hasError} isFocused={isFocused} />
       <StyledInput
+        underlineColorAndroid={"transparent"}
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholderTextColor={theme.colors.text.placeholder}
