@@ -37,7 +37,7 @@ const RHFInput = ({ name, mask, ...props }: RHFInputProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultValues]);
 
-  return <Input onChange={handleChange} {...props} />;
+  return <Input onChange={handleChange} hasError={hasError} {...props} />;
 };
 
 export default RHFInput;
