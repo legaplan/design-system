@@ -66,4 +66,5 @@ export const StyledInput = styled(TextInput)`
   color: ${({ theme }) => theme.colors.text.primary};
   outline-style: none;
   width: 100%;
+  font-size: ${({ theme }) => theme.fontSize[3]};
 `;

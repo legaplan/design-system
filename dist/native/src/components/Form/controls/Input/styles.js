@@ -56,4 +56,5 @@ exports.StyledInput = (0, native_1.default)(react_native_1.TextInput) `
   color: ${({ theme }) => theme.colors.text.primary};
   outline-style: none;
   width: 100%;
+  font-size: ${({ theme }) => theme.fontSize[3]};
 `;

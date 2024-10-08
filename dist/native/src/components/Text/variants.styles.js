@@ -14,7 +14,7 @@ const getCustomTextSyles = (theme) => {
             quaternary: theme.colors.text.quaternary,
             tertiary: theme.colors.text.tertiary,
             default: theme.colors.text.secondary,
-            error: theme.colors.error[500],
+            error: theme.colors.error[600],
             success: theme.colors.success[500],
             disabled: theme.colors.text.disabled,
         },
