@@ -54,7 +54,6 @@ exports.StyledInput = (0, native_1.default)(react_native_1.TextInput) `
   align-items: center;
   gap: ${({ theme }) => theme.spaces[1]};
   color: ${({ theme }) => theme.colors.text.primary};
-  border-style: none;
   outline-style: none;
   width: 100%;
 `;
