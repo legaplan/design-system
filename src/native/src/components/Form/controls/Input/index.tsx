@@ -20,6 +20,7 @@ export interface InputProps extends TextInputProps {
   onFocus?: (event?: any) => void;
   onBlur?: (event?: any) => void;
   onChange?: (event?: any) => void;
+  value?: string;
 }
 
 const Input = ({
@@ -29,6 +30,7 @@ const Input = ({
   onBlur,
   onChange,
   mask,
+  value,
   ...props
 }: InputProps) => {
   const theme = useTheme();
@@ -64,6 +66,7 @@ const Input = ({
         placeholderTextColor={theme.colors.text.placeholder}
         selectionColor={theme.colors.brand[400]}
         onChangeText={handleOnChange}
+        value={value}
         {...props}
       />
       {suffixIcon && (
