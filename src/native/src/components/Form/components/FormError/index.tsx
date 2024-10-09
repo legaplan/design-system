@@ -7,7 +7,6 @@ export interface ErrorProps {
 const FormError = ({ name }: ErrorProps) => {
   const { formState, getFieldState } = useFormContext();
   const { error, isDirty } = getFieldState(name, formState);
-  console.log(error);
   if (!error || (!isDirty && !formState.isSubmitted)) return null;
 
   return <Error message={error.message} />;

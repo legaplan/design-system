@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
 import Input, { InputProps } from ".";
-import { FormProvider, useForm } from "react-hook-form";
 import { View } from "react-native";
 
 const meta = {
@@ -10,7 +9,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     suffix: {
-      options: ["alert-circle", "help-circle"],
+      options: ["alert-circle", "help-circle", "check-fill"],
     },
   },
 

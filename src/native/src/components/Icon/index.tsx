@@ -4,18 +4,20 @@ import ArrowLeft from "./components/ArrowLeft";
 import ChevronLeft from "./components/ChevronLeft";
 import AlertCircle from "./components/AlertCircle";
 import HelpCircle from "./components/HelpCircle";
+import CheckFill from "./components/CheckFill";
 
 const icons = {
   ["arrow-left"]: ArrowLeft,
   ["chevron-left"]: ChevronLeft,
   ["alert-circle"]: AlertCircle,
   ["help-circle"]: HelpCircle,
+  ["check-fill"]: CheckFill,
 };
 
 export type IconKeys = keyof typeof icons;
 export type IconSizes = 1 | 2 | 3;
 
-interface IconProps {
+export interface IconProps {
   name: IconKeys;
   size?: IconSizes;
   className?: string;

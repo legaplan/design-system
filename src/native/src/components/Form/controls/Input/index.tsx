@@ -20,7 +20,7 @@ export interface InputProps extends TextInputProps {
   onFocus?: (event?: any) => void;
   onBlur?: (event?: any) => void;
   onChange?: (event?: any) => void;
-  value: string;
+  value?: string;
 }
 
 const Input = ({

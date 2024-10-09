@@ -9,7 +9,6 @@ const Error_1 = __importDefault(require("../../../Error"));
 const FormError = ({ name }) => {
     const { formState, getFieldState } = (0, react_hook_form_1.useFormContext)();
     const { error, isDirty } = getFieldState(name, formState);
-    console.log(error);
     if (!error || (!isDirty && !formState.isSubmitted))
         return null;
     return (0, jsx_runtime_1.jsx)(Error_1.default, { message: error.message });
