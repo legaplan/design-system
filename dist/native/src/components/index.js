@@ -20,3 +20,4 @@ __exportStar(require("./Text"), exports);
 __exportStar(require("./Icon"), exports);
 __exportStar(require("./Form/controls/Input"), exports);
 __exportStar(require("./Error"), exports);
+__exportStar(require("./Badge"), exports);
