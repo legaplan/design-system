@@ -1,9 +1,6 @@
-import { BadgeColors } from "../../types";
 import { IconKeys } from "../../../Icon";
-interface BadgeIconProps {
-    color: BadgeColors;
+export interface BadgeIconProps {
     name: IconKeys;
-    isOutline: boolean;
 }
-declare const BadgeIcon: ({ color, isOutline, name }: BadgeIconProps) => import("react/jsx-runtime").JSX.Element;
+declare const BadgeIcon: ({ name }: BadgeIconProps) => import("react/jsx-runtime").JSX.Element;
 export default BadgeIcon;

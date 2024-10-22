@@ -1,3 +1,5 @@
+import { CustomTextProps } from "../../Text/types";
+
 export type BadgeVariants = "outline" | "fill";
 export type BadgeSizes = 1 | 2 | 3;
 export type BadgeColors =
@@ -13,3 +15,9 @@ export type BadgeColors =
   | "purple"
   | "pink"
   | "orange";
+
+export type BadgeChildrenProps = {
+  textSize: CustomTextProps["size"];
+  color: BadgeColors;
+  isOutline: boolean;
+};

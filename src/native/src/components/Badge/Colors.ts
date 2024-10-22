@@ -1,5 +1,5 @@
 import { DefaultTheme } from "styled-components/native";
-import { BadgeColors } from "../types";
+import { BadgeColors } from "./types";
 
 type TBadgeColors = {
   border: string;
@@ -14,50 +14,56 @@ const getBorderColor = (
   isOutline?: boolean
 ) => (isOutline ? theme.colors[color][600] : theme.colors[color][200]);
 
+const getIconColor = (
+  theme: DefaultTheme,
+  color: BadgeColors,
+  isOutline?: boolean
+) => (isOutline ? theme.colors[color][600] : theme.colors[color][500]);
+
 // TODO: Replace by utility colors
-export const badgeColors: Record<
+const COLORS: Record<
   BadgeColors,
   (theme: DefaultTheme, isOutline?: boolean) => TBadgeColors
 > = {
   gray: (theme, isOutline) => ({
     text: theme.colors.gray[700],
-    icon: isOutline ? theme.colors.gray[600] : theme.colors.gray[500],
+    icon: getIconColor(theme, "gray", isOutline),
     border: getBorderColor(theme, "gray", isOutline),
     background: theme.colors.gray[50],
   }),
   brand: (theme, isOutline) => ({
     text: theme.colors.brand[700],
-    icon: isOutline ? theme.colors.brand[600] : theme.colors.brand[500],
+    icon: getIconColor(theme, "brand", isOutline),
     border: getBorderColor(theme, "brand", isOutline),
     background: theme.colors.brand[50],
   }),
   error: (theme, isOutline) => ({
     text: theme.colors.error[700],
-    icon: isOutline ? theme.colors.error[600] : theme.colors.error[500],
+    icon: getIconColor(theme, "error", isOutline),
     border: getBorderColor(theme, "error", isOutline),
     background: theme.colors.error[50],
   }),
   warning: (theme, isOutline) => ({
     text: theme.colors.warning[700],
-    icon: isOutline ? theme.colors.warning[600] : theme.colors.warning[500],
+    icon: getIconColor(theme, "warning", isOutline),
     border: getBorderColor(theme, "warning", isOutline),
     background: theme.colors.warning[50],
   }),
   success: (theme, isOutline) => ({
     text: theme.colors.success[700],
-    icon: isOutline ? theme.colors.success[600] : theme.colors.success[500],
+    icon: getIconColor(theme, "success", isOutline),
     border: getBorderColor(theme, "success", isOutline),
     background: theme.colors.success[50],
   }),
   grayBlue: (theme, isOutline) => ({
     text: theme.colors.grayBlue[700],
-    icon: theme.colors.grayBlue[500],
+    icon: getIconColor(theme, "grayBlue", isOutline),
     border: getBorderColor(theme, "grayBlue", isOutline),
     background: theme.colors.grayBlue[50],
   }),
   blueLight: (theme, isOutline) => ({
     text: theme.colors.blueLight[700],
-    icon: theme.colors.blueLight[500],
+    icon: getIconColor(theme, "blueLight", isOutline),
     border: getBorderColor(theme, "blueLight", isOutline),
     background: theme.colors.blueLight[50],
   }),
@@ -98,5 +104,5 @@ export const getBadgeColors = (
   theme: DefaultTheme,
   isOutline?: boolean
 ) => {
-  return badgeColors[color](theme, isOutline);
+  return COLORS[color](theme, isOutline);
 };

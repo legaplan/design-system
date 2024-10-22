@@ -1,8 +1,7 @@
 import styled from "styled-components/native";
-import { BadgeSizes, BadgeColors, BadgeVariants } from "./types";
-import { getBadgePadding } from "./utils/getBadgePadding";
-import { getBadgeColors } from "./utils/getBadgeColors";
-import Text from "../Text";
+import { BadgeSizes, BadgeColors, BadgeVariants } from "../../types";
+import { getBadgePadding } from "../../Spacing";
+import { getBadgeColors } from "../../Colors";
 
 interface BadgeContainerProps {
   size: BadgeSizes;
@@ -10,7 +9,7 @@ interface BadgeContainerProps {
   variant: BadgeVariants;
 }
 
-export const BadgeContainer = styled.View<BadgeContainerProps>`
+export const Container = styled.View<BadgeContainerProps>`
   border-radius: 9999px;
 
   border-width: ${({ variant }) => (variant === "outline" ? "1.5px" : "1px")};
@@ -28,8 +27,4 @@ export const BadgeContainer = styled.View<BadgeContainerProps>`
   align-items: center;
   gap: ${({ size, theme }) => (size === 1 ? theme.spaces.micro : "6px")};
   align-self: flex-start;
-`;
-
-export const BadgeText = styled(Text)<{ badgeColor: BadgeColors }>`
-  color: ${({ badgeColor, theme }) => getBadgeColors(badgeColor, theme).text};
 `;

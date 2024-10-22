@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Badge, { BadgeProps } from ".";
 import Text from "../Text";
 import React from "react";
-
+import { BadgeProps } from "./components/BadgeContainer";
+import { Badge } from ".";
 const meta = {
-  component: Badge,
+  component: Badge.Container,
   tags: ["autodocs"],
 } satisfies Meta<BadgeProps>;
 
@@ -14,7 +14,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    color: "brand",
-    label: "Default text",
+    color: "gray",
+    children: (
+      <>
+        <Badge.Icon name="chevron-down" />
+        <Badge.Text>texto padrão</Badge.Text>
+      </>
+    ),
   },
 };

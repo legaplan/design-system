@@ -1,15 +1,15 @@
 import { useTheme } from "styled-components/native";
-import { BadgeColors } from "../../types";
+import { BadgeChildrenProps } from "../../types";
 import Icon, { IconKeys } from "../../../Icon";
-import { getBadgeColors } from "../../utils/getBadgeColors";
+import { getBadgeColors } from "../../Colors";
+import { useComponentProps } from "../../../../providers/ComponentPropsProvider";
 
-interface BadgeIconProps {
-  color: BadgeColors;
+export interface BadgeIconProps {
   name: IconKeys;
-  isOutline: boolean;
 }
-const BadgeIcon = ({ color, isOutline, name }: BadgeIconProps) => {
+const BadgeIcon = ({ name }: BadgeIconProps) => {
   const theme = useTheme();
+  const { color, isOutline } = useComponentProps<BadgeChildrenProps>();
 
   const iconColor = getBadgeColors(color, theme, isOutline).icon;
 
