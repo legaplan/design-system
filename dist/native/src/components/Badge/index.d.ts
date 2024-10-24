@@ -1,7 +1,15 @@
-export declare const Badge: {
-    Icon: ({ name }: import("./components/BadgeIcon").BadgeIconProps) => import("react/jsx-runtime").JSX.Element;
+import { BadgeSizes, BadgeColors, BadgeVariants } from "./types";
+export interface BadgeProps {
+    size?: BadgeSizes;
+    color: BadgeColors;
+    variant?: BadgeVariants;
+    children: React.ReactNode;
+}
+declare const Badge: {
+    ({ color, children, size, variant }: BadgeProps): import("react/jsx-runtime").JSX.Element;
+    Icon: ({ name }: import("./components/Icon").IconProps) => import("react/jsx-runtime").JSX.Element;
     Text: ({ children }: {
         children: React.ReactNode;
     }) => import("react/jsx-runtime").JSX.Element;
-    Container: ({ color, children, size, variant, }: import("./components/BadgeContainer").BadgeProps) => import("react/jsx-runtime").JSX.Element;
 };
+export default Badge;

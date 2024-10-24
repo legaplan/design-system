@@ -1,10 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Text from "../Text";
 import React from "react";
-import { BadgeProps } from "./components/BadgeContainer";
-import { Badge } from ".";
+import Badge, { BadgeProps } from ".";
 const meta = {
-  component: Badge.Container,
+  component: Badge,
   tags: ["autodocs"],
 } satisfies Meta<BadgeProps>;
 

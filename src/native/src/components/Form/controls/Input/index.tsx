@@ -11,7 +11,7 @@ import {
   SuffixContainer,
 } from "./styles";
 import { useTheme } from "styled-components/native";
-import Icon, { IconKeys } from "../../../Icon";
+import Icon, { IconKeys } from "../../../BaseIcon";
 
 export interface InputProps extends TextInputProps {
   hasError?: boolean;

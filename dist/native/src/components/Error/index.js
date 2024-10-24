@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsx_runtime_1 = require("react/jsx-runtime");
-const Text_1 = __importDefault(require("../Text"));
+const BaseText_1 = __importDefault(require("../BaseText"));
 const Error = ({ message }) => {
     if (!message)
         return null;
-    return (0, jsx_runtime_1.jsx)(Text_1.default, { color: "error", children: message });
+    return (0, jsx_runtime_1.jsx)(BaseText_1.default, { color: "error", children: message });
 };
 exports.default = Error;
