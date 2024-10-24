@@ -4,6 +4,7 @@ declare const icons: {
     "alert-circle": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     "help-circle": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     "check-fill": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
+    "chevron-down": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
 };
 export type IconKeys = keyof typeof icons;
 export type IconSizes = 1 | 2 | 3;
@@ -13,5 +14,5 @@ export interface IconProps {
     className?: string;
     color?: string;
 }
-export declare const Icon: ({ name, color, size }: IconProps) => import("react/jsx-runtime").JSX.Element;
-export default Icon;
+export declare const BaseIcon: ({ name, color, size }: IconProps) => import("react/jsx-runtime").JSX.Element;
+export default BaseIcon;

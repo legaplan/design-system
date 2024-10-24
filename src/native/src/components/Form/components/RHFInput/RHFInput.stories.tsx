@@ -5,7 +5,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { View } from "react-native";
 import { RHFInputProps } from ".";
 import { Form } from "../..";
-import Text from "../../../Text";
+import Text from "../../../BaseText";
 
 const meta = {
   component: Form.Input,

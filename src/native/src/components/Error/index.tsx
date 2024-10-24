@@ -1,4 +1,4 @@
-import Text from "../Text";
+import Text from "../BaseText";
 
 interface ErrorProps {
   message?: string;

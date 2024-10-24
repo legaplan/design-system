@@ -77,26 +77,82 @@ export declare const DEFAULT_THEME: {
             "300": string;
             "400": string;
             "500": string;
+            "600": string;
             "700": string;
             "900": string;
+        };
+        grayBlue: {
+            "50": string;
+            "200": string;
+            "500": string;
+            "600": string;
+            "700": string;
         };
         blueLight: {
             "50": string;
             "100": string;
+            "200": string;
+            "500": string;
+            "600": string;
             "700": string;
         };
         blue: {
+            "50": string;
+            "200": string;
+            "500": string;
+            "600": string;
+            "700": string;
+        };
+        indigo: {
+            "50": string;
+            "200": string;
+            "500": string;
+            "600": string;
+            "700": string;
+        };
+        purple: {
+            "50": string;
+            "200": string;
+            "500": string;
+            "600": string;
+            "700": string;
+        };
+        pink: {
+            "50": string;
+            "200": string;
+            "500": string;
+            "600": string;
+            "700": string;
+        };
+        orange: {
+            "50": string;
+            "200": string;
+            "500": string;
+            "600": string;
             "700": string;
         };
         error: {
+            "50": string;
             "100": string;
             "200": string;
             "300": string;
             "500": string;
             "600": string;
+            "700": string;
+        };
+        warning: {
+            "50": string;
+            "200": string;
+            "500": string;
+            "600": string;
+            "700": string;
         };
         success: {
+            "50": string;
+            "200": string;
             "500": string;
+            "600": string;
+            "700": string;
         };
         lightenColor: string;
         darkenColor: string;

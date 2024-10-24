@@ -1,5 +1,5 @@
 import { TextInputProps } from "react-native";
-import { IconKeys } from "../../../Icon";
+import { IconKeys } from "../../../BaseIcon";
 export interface InputProps extends TextInputProps {
     hasError?: boolean;
     suffix?: IconKeys;

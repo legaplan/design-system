@@ -15,7 +15,7 @@ const getTextLineHeight = (textSize: keyof CustomTextSizes) => {
   return lineHeights[textSize];
 };
 
-export const BaseText = styled.Text<CustomTextProps>`
+export const StyledBaseText = styled.Text<CustomTextProps>`
   color: ${({ theme, color }) =>
     getCustomTextSyles(theme).color[color ?? "default"]};
   font-size: ${({ theme, size }) =>

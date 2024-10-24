@@ -1,5 +1,5 @@
 import React from "react";
-import Text from "../../../Text";
+import Text from "../../../BaseText";
 
 export interface LabelProps {
   isRequired?: boolean;

@@ -5,6 +5,7 @@ import ChevronLeft from "./components/ChevronLeft";
 import AlertCircle from "./components/AlertCircle";
 import HelpCircle from "./components/HelpCircle";
 import CheckFill from "./components/CheckFill";
+import ChevronDown from "./components/ChevronDown";
 
 const icons = {
   ["arrow-left"]: ArrowLeft,
@@ -12,6 +13,7 @@ const icons = {
   ["alert-circle"]: AlertCircle,
   ["help-circle"]: HelpCircle,
   ["check-fill"]: CheckFill,
+  ["chevron-down"]: ChevronDown,
 };
 
 export type IconKeys = keyof typeof icons;
@@ -24,7 +26,7 @@ export interface IconProps {
   color?: string;
 }
 
-export const Icon = ({ name, color, size = 2 }: IconProps) => {
+export const BaseIcon = ({ name, color, size = 2 }: IconProps) => {
   const theme = useTheme();
   const defaultColor = theme.colors.black;
   const IconByName = icons[name];
@@ -36,4 +38,4 @@ export const Icon = ({ name, color, size = 2 }: IconProps) => {
   );
 };
 
-export default Icon;
+export default BaseIcon;

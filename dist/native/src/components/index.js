@@ -16,7 +16,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./Button"), exports);
 __exportStar(require("./Form"), exports);
-__exportStar(require("./Text"), exports);
-__exportStar(require("./Icon"), exports);
+__exportStar(require("./BaseText"), exports);
+__exportStar(require("./BaseIcon"), exports);
 __exportStar(require("./Form/controls/Input"), exports);
 __exportStar(require("./Error"), exports);
+__exportStar(require("./Badge"), exports);
