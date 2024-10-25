@@ -5,7 +5,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { View } from "react-native";
 import { RHFInputProps } from ".";
 import { Form } from "../..";
-import Text from "../../../BaseText";
+import BaseText from "../../../BaseText";
 
 const meta = {
   component: Form.Input,
@@ -67,7 +67,9 @@ export const CompleteRequiredField: Story = {
         <Form.Field>
           <Form.Label isRequired>Celular</Form.Label>
           <Story />
-          <Text color="tertiary">Usaremos para contatos via WhatsApp.</Text>
+          <BaseText color="tertiary">
+            Usaremos para contatos via WhatsApp.
+          </BaseText>
         </Form.Field>
       );
     },
