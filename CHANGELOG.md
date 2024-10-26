@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/legaplan/design-system/compare/v1.0.0...v1.1.0) (2024-10-26)
+
+
+### Features
+
+* **#21:** Rename icon and text components ([46dcf99](https://github.com/legaplan/design-system/commit/46dcf99ced3fbbebd92df70f4a70c85a71adc594))
+
 ## 1.0.0 (2024-10-20)
 
 
