@@ -1,4 +1,4 @@
-import Text from "../Text";
+import BaseText from "../BaseText";
 
 interface ErrorProps {
   message?: string;
@@ -6,7 +6,7 @@ interface ErrorProps {
 
 const Error = ({ message }: ErrorProps) => {
   if (!message) return null;
-  return <Text color="error">{message}</Text>;
+  return <BaseText color="error">{message}</BaseText>;
 };
 
 export default Error;
