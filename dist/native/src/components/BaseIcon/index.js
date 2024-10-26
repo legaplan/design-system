@@ -19,6 +19,7 @@ const PaintBrush_1 = __importDefault(require("./components/PaintBrush"));
 const UserGroup_1 = __importDefault(require("./components/UserGroup"));
 const Home_1 = __importDefault(require("./components/Home"));
 const Folder_1 = __importDefault(require("./components/Folder"));
+const Plus_1 = __importDefault(require("./components/Plus"));
 const icons = {
     ["arrow-left"]: ArrowLeft_1.default,
     ["chevron-left"]: ChevronLeft_1.default,
@@ -32,6 +33,7 @@ const icons = {
     home: Home_1.default,
     folder: Folder_1.default,
     doc: Doc_1.default,
+    plus: Plus_1.default,
 };
 const BaseIcon = ({ name, color, size = 2 }) => {
     const theme = (0, native_1.useTheme)();

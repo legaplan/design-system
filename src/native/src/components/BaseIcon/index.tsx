@@ -12,6 +12,7 @@ import PaintBrush from "./components/PaintBrush";
 import UserGroup from "./components/UserGroup";
 import Home from "./components/Home";
 import Folder from "./components/Folder";
+import Plus from "./components/Plus";
 
 const icons = {
   ["arrow-left"]: ArrowLeft,
@@ -26,6 +27,7 @@ const icons = {
   home: Home,
   folder: Folder,
   doc: Doc,
+  plus: Plus,
 };
 
 export type IconKeys = keyof typeof icons;
