@@ -6,6 +6,13 @@ import AlertCircle from "./components/AlertCircle";
 import HelpCircle from "./components/HelpCircle";
 import CheckFill from "./components/CheckFill";
 import ChevronDown from "./components/ChevronDown";
+import Doc from "./components/Doc";
+import NotificationOff from "./components/NotificationOff";
+import PaintBrush from "./components/PaintBrush";
+import UserGroup from "./components/UserGroup";
+import Home from "./components/Home";
+import Folder from "./components/Folder";
+import Plus from "./components/Plus";
 
 const icons = {
   ["arrow-left"]: ArrowLeft,
@@ -14,6 +21,13 @@ const icons = {
   ["help-circle"]: HelpCircle,
   ["check-fill"]: CheckFill,
   ["chevron-down"]: ChevronDown,
+  ["notification-off"]: NotificationOff,
+  ["paint-brush"]: PaintBrush,
+  ["user-group"]: UserGroup,
+  home: Home,
+  folder: Folder,
+  doc: Doc,
+  plus: Plus,
 };
 
 export type IconKeys = keyof typeof icons;
