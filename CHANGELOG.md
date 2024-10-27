@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/legaplan/design-system/compare/v1.1.0...v1.2.0) (2024-10-27)
+
+
+### Features
+
+* **icons:** Add new icons ([e42b494](https://github.com/legaplan/design-system/commit/e42b494c81bb040660571139ef5d2803ca7eef13))
+* **icons:** Add plus icon ([9b86b53](https://github.com/legaplan/design-system/commit/9b86b53558c8e59c96928659fdb140f3a31690ae))
+
 ## [1.1.0](https://github.com/legaplan/design-system/compare/v1.0.0...v1.1.0) (2024-10-26)
 
 
