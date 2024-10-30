@@ -11,7 +11,7 @@ import {
   SuffixContainer,
 } from "./styles";
 import { useTheme } from "styled-components/native";
-import Icon, { IconKeys } from "../../../Icon";
+import BaseIcon, { IconKeys } from "../../../BaseIcon";
 
 export interface InputProps extends TextInputProps {
   hasError?: boolean;
@@ -71,7 +71,7 @@ const Input = ({
       />
       {suffixIcon && (
         <SuffixContainer>
-          <Icon
+          <BaseIcon
             size={1}
             color={hasError ? theme.colors.error[500] : theme.colors.gray[400]}
             name={suffixIcon}

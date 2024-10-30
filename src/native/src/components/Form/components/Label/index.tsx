@@ -1,5 +1,5 @@
 import React from "react";
-import Text from "../../../Text";
+import BaseText from "../../../BaseText";
 
 export interface LabelProps {
   isRequired?: boolean;
@@ -7,15 +7,15 @@ export interface LabelProps {
 }
 const Label = ({ children, isRequired }: LabelProps) => {
   return (
-    <Text color="secondary" weight="medium">
+    <BaseText color="secondary" weight="medium">
       {children}
       {isRequired && (
-        <Text color={"brand_tertiary"} weight="medium">
+        <BaseText color={"brand_tertiary"} weight="medium">
           {" "}
           *
-        </Text>
+        </BaseText>
       )}
-    </Text>
+    </BaseText>
   );
 };
 
