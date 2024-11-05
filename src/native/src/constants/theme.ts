@@ -1,161 +1,134 @@
-export const DEFAULT_THEME = {
-  spaces: {
-    nano: "2px",
-    micro: "4px",
-    "1": "8px",
-    "1_5": "12px",
-    "2": "16px",
-    "3": "24px",
-    "4": "32px",
-    "5": "40px",
-    "6": "48px",
-    "7": "56px",
-    "8": "64px",
-    "9": "72px",
-    "10": "80px",
-  },
-  borderRadius: {
-    "1": "2px",
-    "2": "4px",
-    "3": "8px",
-    "4": "12px",
-  },
-  fontSize: {
-    "1": "10px",
-    "2": "12px",
-    "3": "14px",
-    "4": "16px",
-    "5": "18px",
-    "6": "20px",
-    "7": "24px",
-    "8": "30px",
-    "9": "36px",
-    "10": "48px",
-    "11": "60px",
-    "12": "72px",
-  },
+import { BackgroundScheme } from "../theme/schemes/createBackgroundScheme";
+import { BorderScheme } from "../theme/schemes/createBorderScheme";
+import { ComponentScheme } from "../theme/schemes/createComponentsScheme";
+import { ForegroundScheme } from "../theme/schemes/createForegroundScheme";
+import { TextScheme } from "../theme/schemes/createTextScheme";
+import { UtilityScheme } from "../theme/schemes/createUtilityScheme";
+import { BORDER_RADIUS_RAW } from "./borderRadius";
+import { FONT_SIZE_RAW } from "./fontSizes";
+import { LINE_HEIGHT_RAW } from "./lineHeight";
+import { PRIMARY_COLORS, PrimaryColors } from "./primaryColors";
+import { SECONDARY_COLORS, SecondaryColors } from "./secondaryColors";
+import { SPACE_RAW } from "./spaces";
+
+type SpaceKeys =
+  | "0.5"
+  | "1"
+  | "1.5"
+  | "2"
+  | "2.5"
+  | "3"
+  | "3.5"
+  | "4"
+  | "4.5"
+  | "5"
+  | "5.5"
+  | "6"
+  | "8"
+  | "10"
+  | "12"
+  | "16"
+  | "20";
+
+export type FontSizeKeys =
+  | "1"
+  | "2"
+  | "3"
+  | "4"
+  | "5"
+  | "6"
+  | "7"
+  | "8"
+  | "9"
+  | "10"
+  | "11"
+  | "12";
+
+export type LineHeightKeys =
+  | "1"
+  | "2"
+  | "3"
+  | "4"
+  | "5"
+  | "6"
+  | "7"
+  | "8"
+  | "9"
+  | "10"
+  | "11";
+
+export type BorderRadiusKeys = "1" | "2" | "3" | "4";
+
+type ColorKeys =
+  | "25"
+  | "50"
+  | "100"
+  | "200"
+  | "300"
+  | "400"
+  | "500"
+  | "600"
+  | "700"
+  | "800"
+  | "900"
+  | "950";
+
+export type FontSizeRaw = Record<FontSizeKeys, number>;
+export type FontSizeInPixels = Record<FontSizeKeys, string>;
+
+export type LineHeightRaw = Record<LineHeightKeys, number>;
+export type LineHeightInPixels = Record<LineHeightKeys, string>;
+
+export type BorderRadiusRaw = Record<BorderRadiusKeys, number>;
+export type BorderRadiusInPixels = Record<BorderRadiusKeys, string>;
+
+export type SpaceRaw = Record<SpaceKeys, number>;
+export type SpaceInPixels = Record<SpaceKeys, string>;
+
+export type Color = Record<ColorKeys, string>;
+
+export type ColorScheme = {
+  utility: UtilityScheme;
+  border: BorderScheme;
+  text: TextScheme;
+  foreground: ForegroundScheme;
+  background: BackgroundScheme;
+  components: ComponentScheme;
+};
+type BaseColors = {
+  primary: PrimaryColors;
+  secondary: SecondaryColors;
+};
+
+export type BaseTheme = {
+  space: SpaceRaw;
+  lineHeight: LineHeightRaw;
+  borderRadius: BorderRadiusRaw;
+  fontSize: FontSizeRaw;
+  colors: BaseColors;
+};
+
+export type Theme = {
+  colors: BaseColors & ColorScheme;
+  raw: {
+    space: SpaceRaw;
+    borderRadius: BorderRadiusRaw;
+    fontSize: FontSizeRaw;
+  };
+  lineHeight: LineHeightInPixels;
+  space: SpaceInPixels;
+  borderRadius: BorderRadiusInPixels;
+  fontSize: FontSizeInPixels;
+};
+
+export const BASE_THEME: BaseTheme = {
+  space: SPACE_RAW,
+
+  borderRadius: BORDER_RADIUS_RAW,
+  fontSize: FONT_SIZE_RAW,
+  lineHeight: LINE_HEIGHT_RAW,
   colors: {
-    brand: {
-      "25": "#fcf9f1",
-      "50": "#fef7df",
-      "100": "#fdf2cd",
-      "200": "#ffe58e",
-      "300": "#f9de83",
-      "400": "#f0ce61",
-      "500": "#dfb541",
-      "600": "#cba337",
-      "700": "#b89432",
-      "800": "#9a7b28",
-      "900": "#635018",
-      "950": "#3b2f0a",
-    },
-    border: {
-      primary: "#D0D5DD",
-      secondary: "#E4E7EC",
-      tertiary: "#F2F4F7",
-      disabled: "#D0D5DD",
-      brand: "#DFB541",
-      error: "#F04438",
-    },
-    text: {
-      primary: "#0C111D",
-      secondary: "#344054",
-      tertiary: "#475467",
-      quaternary: "#667085",
-      placeholder: "#667085",
-      disabled: "#667085",
-    },
-    secondary: "#000000",
-    neutral: "#000000",
-    black: "#000000",
-    white: "#ffffff",
-    gray: {
-      "25": "#fcfcfd",
-      "50": "#f9fafb",
-      "100": "#f2f4f7",
-      "200": "#eaecf0",
-      "300": "#d0d5dd",
-      "400": "#98a2b3",
-      "500": "#667085",
-      "600": "#475467",
-      "700": "#344054",
-      "900": "#101828",
-    },
-    grayBlue: {
-      "50": "#F8F9FC",
-      "200": "#D5D9EB",
-      "500": "#4E5BA6",
-      "600": "#3E4784",
-      "700": "#363F72",
-    },
-    blueLight: {
-      "50": "#e5f5ff",
-      "100": "#e0f2fe",
-      "200": "#B9E6FE",
-      "500": "#0BA5EC",
-      "600": "#0086C9",
-      "700": "#1474ae",
-    },
-    blue: {
-      "50": "#EFF8FF",
-      "200": "#B2DDFF",
-      "500": "#2E90FA",
-      "600": "#1570EF",
-      "700": "#175cd3",
-    },
-    indigo: {
-      "50": "#EEF4FF",
-      "200": "#C7D7FE",
-      "500": "#6172F3",
-      "600": "#444CE7",
-      "700": "#3538CD",
-    },
-    purple: {
-      "50": "#F4F3FF",
-      "200": "#D9D6FE",
-      "500": "#7A5AF8",
-      "600": "#6938EF",
-      "700": "#5925DC",
-    },
-    pink: {
-      "50": "#FDF2FA",
-      "200": "#FCCEEE",
-      "500": "#EE46BC",
-      "600": "#DD2590",
-      "700": "#C11574",
-    },
-    orange: {
-      "50": "#FEF6EE",
-      "200": "#F9DBAF",
-      "500": "#EF6820",
-      "600": "#E04F16",
-      "700": "#B93815",
-    },
-    error: {
-      "50": "#FEF3F2",
-      "100": "#fee4e2",
-      "200": "#fecdca",
-      "300": "#fda29b",
-      "500": "#f04438",
-      "600": "#d92d20",
-      "700": "#B42318",
-    },
-    warning: {
-      "50": "#FFFAEB",
-      "200": "#FEDF89",
-      "500": "#F79009",
-      "600": "#DC6803",
-      "700": "#B54708",
-    },
-    success: {
-      "50": "#ECFDF3",
-      "200": "#ABEFC6",
-      "500": "#12b76a",
-      "600": "#079455",
-      "700": "#067647",
-    },
-    lightenColor: "rgba(255, 255, 255, 0.35)",
-    darkenColor: "rgba(0, 0, 0, 0.25)",
-    background: "#ffffff",
+    primary: PRIMARY_COLORS,
+    secondary: SECONDARY_COLORS,
   },
 };
