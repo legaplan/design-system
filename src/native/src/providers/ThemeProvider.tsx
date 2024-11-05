@@ -15,13 +15,6 @@ import {
 } from "../theme/schemes/createTheme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const fakeTheme: ThemeConfigProps = {
-  space: {
-    "0.5": 12,
-  },
-  colors: {},
-};
-
 export type TTheme = "light" | "dark";
 interface ThemeProviderProps {
   children: React.ReactNode;

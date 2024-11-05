@@ -16,12 +16,6 @@ const createSpaceInPixel_1 = require("../theme/schemes/createSpaceInPixel");
 const createLineHeightInPixel_1 = require("../theme/schemes/createLineHeightInPixel");
 const createTheme_1 = require("../theme/schemes/createTheme");
 const async_storage_1 = __importDefault(require("@react-native-async-storage/async-storage"));
-const fakeTheme = {
-    space: {
-        "0.5": 12,
-    },
-    colors: {},
-};
 const ThemeContext = (0, react_1.createContext)({});
 const THEME_KEY = "@theme";
 const ThemeProvider = ({ userTheme, children }) => {
