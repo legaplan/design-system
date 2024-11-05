@@ -1,0 +1,11 @@
+import { Color } from "./theme";
+export type SecondaryColors = {
+    grayBlue: Color;
+    blueLight: Color;
+    blue: Color;
+    indigo: Color;
+    purple: Color;
+    pink: Color;
+    orange: Color;
+};
+export declare const SECONDARY_COLORS: SecondaryColors;

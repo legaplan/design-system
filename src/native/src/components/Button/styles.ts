@@ -1,7 +1,8 @@
 import styled from "styled-components/native";
 
 export const ButtonContainer = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.colors?.gray?.[500]};
+  background-color: ${({ theme }) =>
+    theme.colors.components.button.primary.background.default};
   padding: 15px 20px;
   border-radius: 10px;
   align-items: center;

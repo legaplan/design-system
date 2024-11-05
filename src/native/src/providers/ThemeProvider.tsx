@@ -1,19 +1,106 @@
-import React from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { ThemeProvider as StyledComponentesProvider } from "styled-components/native";
 import { ThemeConfigProps } from "../types/theme";
 import { mergeThemes } from "../services/initializeTheme";
 
-export const ThemeProvider = ({
-  theme: userTheme,
-  children,
-}: {
+import { useColorScheme as useNativeColorScheme } from "react-native";
+
+import { createBorderRadiusInPixel } from "../theme/schemes/createBorderRadiusInPixel";
+import { createFontSizeInPixel } from "../theme/schemes/createFontSizeInPixel";
+import { createSpaceInPixel } from "../theme/schemes/createSpaceInPixel";
+import { createLineHeightInPixel } from "../theme/schemes/createLineHeightInPixel";
+import {
+  createDarkTheme,
+  createLightTheme,
+} from "../theme/schemes/createTheme";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const fakeTheme: ThemeConfigProps = {
+  space: {
+    "0.5": 12,
+  },
+  colors: {},
+};
+
+export type TTheme = "light" | "dark";
+interface ThemeProviderProps {
   children: React.ReactNode;
-  theme?: ThemeConfigProps;
-}) => {
-  const theme = mergeThemes(userTheme);
+  userTheme?: ThemeConfigProps;
+}
+
+interface ThemeContextProps {
+  theme: TTheme;
+  getTheme: () => Promise<void>;
+  toggleTheme: () => Promise<void>;
+}
+
+const ThemeContext = createContext({} as ThemeContextProps);
+
+const THEME_KEY = "@theme";
+
+const ThemeProvider = ({ userTheme, children }: ThemeProviderProps) => {
+  const userPreferredScheme = useNativeColorScheme();
+  const [theme, setTheme] = useState<TTheme>(userPreferredScheme || "light");
+
+  const getTheme = async () => {
+    try {
+      const storageScheme = (await AsyncStorage.getItem(
+        THEME_KEY
+      )) as TTheme | null;
+      if (storageScheme) setTheme(storageScheme);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const toggleTheme = async () => {
+    const updatedScheme = theme === "light" ? "dark" : "light";
+    try {
+      await AsyncStorage.setItem(THEME_KEY, updatedScheme);
+      setTheme(updatedScheme);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getTheme();
+  }, []);
+
+  const mergedTheme = mergeThemes(userTheme);
+
+  const darkColors = createDarkTheme(mergedTheme);
+  const lightColors = createLightTheme(mergedTheme);
+  const themeColors = theme === "light" ? lightColors : darkColors;
+
   return (
-    <StyledComponentesProvider theme={theme}>
-      {children}
-    </StyledComponentesProvider>
+    <ThemeContext.Provider value={{ toggleTheme, getTheme, theme }}>
+      <StyledComponentesProvider
+        theme={{
+          ...mergedTheme,
+          raw: {
+            space: mergedTheme.space,
+            borderRadius: mergedTheme.borderRadius,
+            fontSize: mergedTheme.fontSize,
+          },
+          lineHeight: createLineHeightInPixel(mergedTheme.lineHeight),
+          borderRadius: createBorderRadiusInPixel(mergedTheme.borderRadius),
+          fontSize: createFontSizeInPixel(mergedTheme.fontSize),
+          space: createSpaceInPixel(mergedTheme.space),
+          colors: {
+            ...mergedTheme.colors,
+            ...themeColors,
+          },
+        }}
+      >
+        {children}
+      </StyledComponentesProvider>
+    </ThemeContext.Provider>
   );
 };
+
+function useTheme(): ThemeContextProps {
+  return useContext(ThemeContext);
+}
+
+export { ThemeProvider, useTheme };

@@ -42,7 +42,7 @@ export interface IconProps {
 
 export const BaseIcon = ({ name, color, size = 2 }: IconProps) => {
   const theme = useTheme();
-  const defaultColor = theme.colors.black;
+  const defaultColor = theme.colors.primary.base.black;
   const IconByName = icons[name];
 
   return (

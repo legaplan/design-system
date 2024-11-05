@@ -1,22 +1,20 @@
-import { DEFAULT_THEME } from "../constants/theme";
-import { DeepPartial, TDefaultTheme, ThemeConfigProps } from "../types/theme";
+import { BASE_THEME, BaseTheme } from "../constants/theme";
+import { DeepPartial, ThemeConfigProps } from "../types/theme";
 
-export const mergeThemes = (
-  userTheme: ThemeConfigProps = {}
-): TDefaultTheme => {
-  const merge = <T>(defaultTheme: T, customTheme: DeepPartial<T>): T => {
-    const result = { ...defaultTheme };
+const merge = <T>(object: T, source: DeepPartial<T>): T => {
+  const result = { ...object };
 
-    for (const key in customTheme) {
-      if (customTheme[key] && typeof customTheme[key] === "object") {
-        result[key] = merge(result[key], customTheme[key] as any);
-      } else {
-        result[key] = customTheme[key] as any;
-      }
+  for (const key in source) {
+    if (source[key] && typeof source[key] === "object") {
+      result[key] = merge(result[key], source[key] as any);
+    } else {
+      result[key] = source[key] as any;
     }
+  }
 
-    return result;
-  };
+  return result;
+};
 
-  return merge(DEFAULT_THEME, userTheme);
+export const mergeThemes = (userTheme: ThemeConfigProps = {}): BaseTheme => {
+  return merge(BASE_THEME, userTheme);
 };

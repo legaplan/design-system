@@ -64,7 +64,7 @@ const Input = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholderTextColor={theme.colors.text.placeholder}
-        selectionColor={theme.colors.brand[400]}
+        selectionColor={theme.colors.primary.brand[400]}
         onChangeText={handleOnChange}
         value={value}
         {...props}
@@ -73,7 +73,11 @@ const Input = ({
         <SuffixContainer>
           <BaseIcon
             size={1}
-            color={hasError ? theme.colors.error[500] : theme.colors.gray[400]}
+            color={
+              hasError
+                ? theme.colors.primary.error[500]
+                : theme.colors.foreground.quinary
+            }
             name={suffixIcon}
           />
         </SuffixContainer>

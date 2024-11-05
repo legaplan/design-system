@@ -25,6 +25,7 @@ export const Container = styled.View<BadgeContainerProps>`
 
   flex-direction: row;
   align-items: center;
-  gap: ${({ size, theme }) => (size === 1 ? theme.spaces.micro : "6px")};
+  gap: ${({ size, theme }) =>
+    size === 1 ? theme.space[0.5] : theme.space[1.5]};
   align-self: flex-start;
 `;

@@ -20,17 +20,15 @@ exports.SuffixContainer = native_1.default.View `
   top: 50%;
 
   /* TODO: Review transform value */
-  /* transform: [{ translateY: -12 }]; */
   transform: translateY(-8px);
-  /* transform: translateY(-50%); */
   right: 12px;
 `;
 exports.InputContainer = native_1.default.View `
   width: 100%;
   position: relative;
   align-items: center;
-  gap: ${({ theme }) => theme.spaces[1]};
-  height: ${({ theme }) => theme.spaces[5]};
+  gap: ${({ theme }) => theme.space[2]};
+  height: ${({ theme }) => theme.space[10]};
   padding: 0px 12px;
   padding-right: ${({ hasSuffixIcon }) => (hasSuffixIcon ? "36px" : "12px")};
   border-radius: ${({ theme }) => theme.borderRadius[3]};
@@ -52,7 +50,7 @@ exports.StyledInput = (0, native_1.default)(react_native_1.TextInput) `
   display: flex;
   height: 100%;
   align-items: center;
-  gap: ${({ theme }) => theme.spaces[1]};
+  gap: ${({ theme }) => theme.space[2]};
   color: ${({ theme }) => theme.colors.text.primary};
   outline-style: none;
   width: 100%;
