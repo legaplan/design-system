@@ -1,161 +1,55 @@
-export declare const DEFAULT_THEME: {
-    spaces: {
-        nano: string;
-        micro: string;
-        "1": string;
-        "1_5": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-    };
-    borderRadius: {
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-    };
-    fontSize: {
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-        "12": string;
-    };
-    colors: {
-        brand: {
-            "25": string;
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-            "950": string;
-        };
-        border: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            disabled: string;
-            brand: string;
-            error: string;
-        };
-        text: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            quaternary: string;
-            placeholder: string;
-            disabled: string;
-        };
-        secondary: string;
-        neutral: string;
-        black: string;
-        white: string;
-        gray: {
-            "25": string;
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "900": string;
-        };
-        grayBlue: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        blueLight: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        blue: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        indigo: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        purple: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        pink: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        orange: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        error: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        warning: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        success: {
-            "50": string;
-            "200": string;
-            "500": string;
-            "600": string;
-            "700": string;
-        };
-        lightenColor: string;
-        darkenColor: string;
-        background: string;
-    };
+import { BackgroundScheme } from "../theme/schemes/createBackgroundScheme";
+import { BorderScheme } from "../theme/schemes/createBorderScheme";
+import { ComponentScheme } from "../theme/schemes/createComponentsScheme";
+import { ForegroundScheme } from "../theme/schemes/createForegroundScheme";
+import { TextScheme } from "../theme/schemes/createTextScheme";
+import { UtilityScheme } from "../theme/schemes/createUtilityScheme";
+import { PrimaryColors } from "./primaryColors";
+import { SecondaryColors } from "./secondaryColors";
+type SpaceKeys = "0.5" | "1" | "1.5" | "2" | "2.5" | "3" | "3.5" | "4" | "4.5" | "5" | "5.5" | "6" | "8" | "10" | "12" | "16" | "20";
+export type FontSizeKeys = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12";
+export type LineHeightKeys = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11";
+export type BorderRadiusKeys = "1" | "2" | "3" | "4";
+type ColorKeys = "25" | "50" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | "950";
+export type FontSizeRaw = Record<FontSizeKeys, number>;
+export type FontSizeInPixels = Record<FontSizeKeys, string>;
+export type LineHeightRaw = Record<LineHeightKeys, number>;
+export type LineHeightInPixels = Record<LineHeightKeys, string>;
+export type BorderRadiusRaw = Record<BorderRadiusKeys, number>;
+export type BorderRadiusInPixels = Record<BorderRadiusKeys, string>;
+export type SpaceRaw = Record<SpaceKeys, number>;
+export type SpaceInPixels = Record<SpaceKeys, string>;
+export type Color = Record<ColorKeys, string>;
+export type ColorScheme = {
+    utility: UtilityScheme;
+    border: BorderScheme;
+    text: TextScheme;
+    foreground: ForegroundScheme;
+    background: BackgroundScheme;
+    components: ComponentScheme;
 };
+type BaseColors = {
+    primary: PrimaryColors;
+    secondary: SecondaryColors;
+};
+export type BaseTheme = {
+    space: SpaceRaw;
+    lineHeight: LineHeightRaw;
+    borderRadius: BorderRadiusRaw;
+    fontSize: FontSizeRaw;
+    colors: BaseColors;
+};
+export type Theme = {
+    colors: BaseColors & ColorScheme;
+    raw: {
+        space: SpaceRaw;
+        borderRadius: BorderRadiusRaw;
+        fontSize: FontSizeRaw;
+    };
+    lineHeight: LineHeightInPixels;
+    space: SpaceInPixels;
+    borderRadius: BorderRadiusInPixels;
+    fontSize: FontSizeInPixels;
+};
+export declare const BASE_THEME: BaseTheme;
+export {};

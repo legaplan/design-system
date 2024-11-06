@@ -13,7 +13,6 @@ export interface CustomTextStyles {
         brand_secondary: string;
         brand_tertiary: string;
         white: string;
-        gray: string;
         primary: string;
         secondary: string;
         tertiary: string;

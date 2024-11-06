@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ButtonText = exports.ButtonContainer = void 0;
 const native_1 = __importDefault(require("styled-components/native"));
 exports.ButtonContainer = native_1.default.TouchableOpacity `
-  background-color: ${({ theme }) => theme.colors?.gray?.[500]};
+  background-color: ${({ theme }) => theme.colors.components.button.primary.background.default};
   padding: 15px 20px;
   border-radius: 10px;
   align-items: center;

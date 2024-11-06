@@ -37,7 +37,7 @@ const icons = {
 };
 const BaseIcon = ({ name, color, size = 2 }) => {
     const theme = (0, native_1.useTheme)();
-    const defaultColor = theme.colors.black;
+    const defaultColor = theme.colors.primary.base.black;
     const IconByName = icons[name];
     return ((0, jsx_runtime_1.jsx)(styles_1.IconContainer, { size: size, children: (0, jsx_runtime_1.jsx)(IconByName, { color: color ?? defaultColor }) }));
 };

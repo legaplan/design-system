@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/legaplan/design-system/compare/v1.2.0...v1.3.0) (2024-11-05)
+
+
+### Features
+
+* **#6:** Add support to dark and light themes ([7046cd8](https://github.com/legaplan/design-system/commit/7046cd8d804584899716a823ed1836a5aac3e767))
+
+
+### Bug Fixes
+
+* **#6:** Remove log ([ca61d67](https://github.com/legaplan/design-system/commit/ca61d67f058c0e2a1fb61d8aa7dd691df4cd56b7))
+
 ## [1.2.0](https://github.com/legaplan/design-system/compare/v1.1.0...v1.2.0) (2024-10-27)
 
 

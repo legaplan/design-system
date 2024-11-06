@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import Badge, { BadgeProps } from ".";
+import { Button } from "react-native";
+import { useTheme } from "../../providers/ThemeProvider";
 const meta = {
   component: Badge,
   tags: ["autodocs"],
@@ -20,4 +22,15 @@ export const Default: Story = {
       </>
     ),
   },
+  decorators: [
+    (Story) => {
+      const { toggleTheme } = useTheme();
+      return (
+        <>
+          <Button title="Toggle Theme" onPress={toggleTheme} />
+          <Story />
+        </>
+      );
+    },
+  ],
 };

@@ -4,16 +4,16 @@ import { IconSizes } from ".";
 const getIconSizes = (iconSize: IconSizes, theme: DefaultTheme) => {
   const sizes = {
     1: {
-      width: theme.spaces[2],
-      height: theme.spaces[2],
+      width: theme.space[4],
+      height: theme.space[4],
     },
     2: {
-      width: "20px",
-      height: "20px",
+      width: theme.space[5],
+      height: theme.space[5],
     },
     3: {
-      width: theme.spaces[3],
-      height: theme.spaces[3],
+      width: theme.space[6],
+      height: theme.space[6],
     },
   };
 

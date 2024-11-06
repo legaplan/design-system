@@ -1,0 +1,27 @@
+import { BaseTheme } from "../../constants/theme";
+export type BackgroundScheme = {
+    primary: string;
+    primarySolid: string;
+    secondary: string;
+    secondarySolid: string;
+    tertiary: string;
+    quaternary: string;
+    active: string;
+    disabled: string;
+    overlay: string;
+    brandPrimary: string;
+    brandSecondary: string;
+    brandSolid: string;
+    brandSection: string;
+    errorPrimary: string;
+    errorSecondary: string;
+    errorSolid: string;
+    warningPrimary: string;
+    warningSecondary: string;
+    warningSolid: string;
+    successPrimary: string;
+    successSecondary: string;
+    successSolid: string;
+};
+export declare const createLightBackgroundScheme: (theme: BaseTheme) => BackgroundScheme;
+export declare const createDarkBackgroundScheme: (theme: BaseTheme) => BackgroundScheme;
