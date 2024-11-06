@@ -1,0 +1,20 @@
+.size-1 {
+  svg {
+    width: var(--spaces-2);
+    height: var(--spaces-2);
+  }
+}
+
+.size-2 {
+  svg {
+    width: calc(var(--spaces-3) - var(--spaces-micro));
+    height: calc(var(--spaces-3) - var(--spaces-micro));
+  }
+}
+
+.size-3 {
+  svg {
+    width: var(--spaces-3);
+    height: var(--spaces-3);
+  }
+}
