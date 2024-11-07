@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Badge, { BadgeProps } from ".";
 import { Button } from "react-native";
 import { useTheme } from "../../providers/ThemeProvider";
@@ -24,10 +24,11 @@ export const Default: Story = {
   },
   decorators: [
     (Story) => {
-      const { toggleTheme } = useTheme();
+      const { toggleTheme, theme } = useTheme();
+
       return (
         <>
-          <Button title="Toggle Theme" onPress={toggleTheme} />
+          <Button title={`Toggle theme - ${theme}`} onPress={toggleTheme} />
           <Story />
         </>
       );
