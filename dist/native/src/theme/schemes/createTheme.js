@@ -11,10 +11,10 @@ const createDarkTheme = (theme) => {
     return {
         components: (0, createComponentsScheme_1.createDarkComponentsScheme)(theme),
         utility: (0, createUtilityScheme_1.createDarkUtilityScheme)(theme),
-        background: (0, createBackgroundScheme_1.createLightBackgroundScheme)(theme),
-        border: (0, createBorderScheme_1.createLightBorderScheme)(theme),
-        text: (0, createTextScheme_1.createLightTextScheme)(theme),
-        foreground: (0, createForegroundScheme_1.createLightForegroundScheme)(theme),
+        background: (0, createBackgroundScheme_1.createDarkBackgroundScheme)(theme),
+        border: (0, createBorderScheme_1.createDarkBorderScheme)(theme),
+        text: (0, createTextScheme_1.createDarkTextScheme)(theme),
+        foreground: (0, createForegroundScheme_1.createDarkForegroundScheme)(theme),
     };
 };
 exports.createDarkTheme = createDarkTheme;
@@ -22,10 +22,10 @@ const createLightTheme = (theme) => {
     return {
         components: (0, createComponentsScheme_1.createLightComponentsScheme)(theme),
         utility: (0, createUtilityScheme_1.createLightUtilityScheme)(theme),
-        background: (0, createBackgroundScheme_1.createDarkBackgroundScheme)(theme),
-        border: (0, createBorderScheme_1.createDarkBorderScheme)(theme),
-        text: (0, createTextScheme_1.createDarkTextScheme)(theme),
-        foreground: (0, createForegroundScheme_1.createDarkForegroundScheme)(theme),
+        background: (0, createBackgroundScheme_1.createLightBackgroundScheme)(theme),
+        border: (0, createBorderScheme_1.createLightBorderScheme)(theme),
+        text: (0, createTextScheme_1.createLightTextScheme)(theme),
+        foreground: (0, createForegroundScheme_1.createLightForegroundScheme)(theme),
     };
 };
 exports.createLightTheme = createLightTheme;
