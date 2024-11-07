@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/legaplan/design-system/compare/v1.3.1...v1.3.2) (2024-11-07)
+
+
+### Bug Fixes
+
+* **#6:** Fix dark and light colors ([bf87a46](https://github.com/legaplan/design-system/commit/bf87a460f533eeb23a770ffc2b941d1d2bd77485))
+
 ## [1.3.1](https://github.com/legaplan/design-system/compare/v1.3.0...v1.3.1) (2024-11-07)
 
 
