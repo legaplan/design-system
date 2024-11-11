@@ -5,7 +5,9 @@
       "@/*": ["./src/*"],
       "@/native/*": ["./src/native/src/*"],
       "@/web/*": ["./src/web/src/*"],
-      "design-system/theme": ["src/styles/global.scss"]
+      "design-system/theme": ["src/styles/global.scss"],
+      "design-system/native": ["design-system/dist/native/src"],
+      "design-system/web": ["design-system/dist/web/src"]
     },
     "target": "ESNext",
     "module": "CommonJS",
