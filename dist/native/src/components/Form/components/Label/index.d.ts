@@ -3,5 +3,4 @@ export interface LabelProps {
     isRequired?: boolean;
     children: React.ReactNode;
 }
-declare const Label: ({ children, isRequired }: LabelProps) => import("react/jsx-runtime").JSX.Element;
-export default Label;
+export declare const Label: ({ children, isRequired }: LabelProps) => import("react/jsx-runtime").JSX.Element;

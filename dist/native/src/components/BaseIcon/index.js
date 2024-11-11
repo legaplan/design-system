@@ -42,4 +42,3 @@ const BaseIcon = ({ name, color, size = 2 }) => {
     return ((0, jsx_runtime_1.jsx)(styles_1.IconContainer, { size: size, children: (0, jsx_runtime_1.jsx)(IconByName, { color: color ?? defaultColor }) }));
 };
 exports.BaseIcon = BaseIcon;
-exports.default = exports.BaseIcon;

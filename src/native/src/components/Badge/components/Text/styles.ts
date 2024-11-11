@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import Text from "../../../BaseText";
+import { BaseText } from "../../../BaseText";
 import { BadgeColors } from "../../types";
 import { getBadgeColors } from "../../Colors";
 
-export const StyledBadgeText = styled(Text)<{ badgeColor: BadgeColors }>`
+export const StyledBadgeText = styled(BaseText)<{ badgeColor: BadgeColors }>`
   color: ${({ badgeColor, theme }) => getBadgeColors(badgeColor, theme).text};
 `;

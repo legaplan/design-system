@@ -1,11 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.RHFInput = void 0;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const react_hook_form_1 = require("react-hook-form");
-const Input_1 = __importDefault(require("../../controls/Input"));
+const Input_1 = require("../../controls/Input");
 const react_1 = require("react");
 const RHFInput = ({ name, mask, ...props }) => {
     const { formState, register, watch, setValue, getFieldState } = (0, react_hook_form_1.useFormContext)();
@@ -31,6 +29,6 @@ const RHFInput = ({ name, mask, ...props }) => {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [defaultValues]);
-    return ((0, jsx_runtime_1.jsx)(Input_1.default, { value: currentValue, onChange: handleChange, hasError: hasError, ...props }));
+    return ((0, jsx_runtime_1.jsx)(Input_1.Input, { value: currentValue, onChange: handleChange, hasError: hasError, ...props }));
 };
-exports.default = RHFInput;
+exports.RHFInput = RHFInput;

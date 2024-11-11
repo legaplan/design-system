@@ -22,4 +22,4 @@ export interface IconProps {
     color?: string;
 }
 export declare const BaseIcon: ({ name, color, size }: IconProps) => import("react/jsx-runtime").JSX.Element;
-export default BaseIcon;
+export {};

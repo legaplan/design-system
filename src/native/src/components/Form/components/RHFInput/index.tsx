@@ -1,12 +1,12 @@
 import { useFormContext } from "react-hook-form";
-import Input, { InputProps } from "../../controls/Input";
+import { Input, InputProps } from "../../controls/Input";
 import React, { useEffect } from "react";
 
 export interface RHFInputProps extends Omit<InputProps, "value"> {
   name: string;
 }
 
-const RHFInput = ({ name, mask, ...props }: RHFInputProps) => {
+export const RHFInput = ({ name, mask, ...props }: RHFInputProps) => {
   const { formState, register, watch, setValue, getFieldState } =
     useFormContext();
 
@@ -47,5 +47,3 @@ const RHFInput = ({ name, mask, ...props }: RHFInputProps) => {
     />
   );
 };
-
-export default RHFInput;
