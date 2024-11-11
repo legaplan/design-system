@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.SECONDARY_COLORS = void 0;
-exports.SECONDARY_COLORS = {
+export const SECONDARY_COLORS = {
     grayBlue: {
         "25": "#FCFCFD",
         "50": "#F8F9FC",

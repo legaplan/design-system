@@ -1,9 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormField = void 0;
-const jsx_runtime_1 = require("react/jsx-runtime");
-const styles_1 = require("./styles");
-const FormField = ({ children }) => {
-    return (0, jsx_runtime_1.jsx)(styles_1.FieldContainer, { children: children });
+import { jsx as _jsx } from "react/jsx-runtime";
+import { FieldContainer } from "./styles";
+export const FormField = ({ children }) => {
+    return _jsx(FieldContainer, { children: children });
 };
-exports.FormField = FormField;

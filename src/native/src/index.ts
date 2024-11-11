@@ -1,5 +1,6 @@
 export { ThemeProvider } from "./providers/ThemeProvider";
 export type { ThemeConfigProps } from "./types/theme";
+export type { Theme } from "./constants/theme";
 
 // Badge
 export { Badge, BadgeProps } from "./components/Badge";

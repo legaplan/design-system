@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.createDarkBackgroundScheme = exports.createLightBackgroundScheme = void 0;
-const createLightBackgroundScheme = (theme) => ({
+export const createLightBackgroundScheme = (theme) => ({
     primary: theme.colors.primary.base.white,
     primarySolid: theme.colors.primary.lightGray[950],
     secondary: theme.colors.primary.lightGray[50],
@@ -25,8 +22,7 @@ const createLightBackgroundScheme = (theme) => ({
     successSecondary: theme.colors.primary.success[100],
     successSolid: theme.colors.primary.success[600],
 });
-exports.createLightBackgroundScheme = createLightBackgroundScheme;
-const createDarkBackgroundScheme = (theme) => ({
+export const createDarkBackgroundScheme = (theme) => ({
     primary: theme.colors.primary.base.black,
     primarySolid: theme.colors.primary.darkGray[900],
     secondary: theme.colors.primary.darkGray[900],
@@ -50,4 +46,3 @@ const createDarkBackgroundScheme = (theme) => ({
     successSecondary: theme.colors.primary.success[600],
     successSolid: theme.colors.primary.success[600],
 });
-exports.createDarkBackgroundScheme = createDarkBackgroundScheme;

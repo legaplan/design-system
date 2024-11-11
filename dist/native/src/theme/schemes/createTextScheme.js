@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.createDarkTextScheme = exports.createLightTextScheme = void 0;
-const createLightTextScheme = (theme) => ({
+export const createLightTextScheme = (theme) => ({
     primary: theme.colors.primary.darkGray[950],
     secondary: theme.colors.primary.lightGray[700],
     tertiary: theme.colors.primary.lightGray[600],
@@ -16,8 +13,7 @@ const createLightTextScheme = (theme) => ({
     successPrimary: theme.colors.primary.error[600],
     warningPrimary: theme.colors.primary.error[600],
 });
-exports.createLightTextScheme = createLightTextScheme;
-const createDarkTextScheme = (theme) => ({
+export const createDarkTextScheme = (theme) => ({
     primary: theme.colors.primary.darkGray[50],
     secondary: theme.colors.primary.darkGray[300],
     tertiary: theme.colors.primary.darkGray[400],
@@ -32,4 +28,3 @@ const createDarkTextScheme = (theme) => ({
     successPrimary: theme.colors.primary.error[400],
     warningPrimary: theme.colors.primary.error[400],
 });
-exports.createDarkTextScheme = createDarkTextScheme;

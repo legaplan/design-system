@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ButtonText = exports.ButtonContainer = void 0;
-const native_1 = __importDefault(require("styled-components/native"));
-exports.ButtonContainer = native_1.default.TouchableOpacity `
+import styled from "styled-components/native";
+export const ButtonContainer = styled.TouchableOpacity `
   background-color: ${({ theme }) => theme.colors.components.button.primary.background.default};
   padding: 15px 20px;
   border-radius: 10px;
@@ -17,7 +11,7 @@ exports.ButtonContainer = native_1.default.TouchableOpacity `
   shadow-radius: 4px;
   elevation: 6;
 `;
-exports.ButtonText = native_1.default.Text `
+export const ButtonText = styled.Text `
   color: white;
   font-weight: bold;
   font-size: 16px;
