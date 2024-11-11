@@ -27,7 +27,7 @@ const createLightBackgroundScheme = (theme) => ({
 });
 exports.createLightBackgroundScheme = createLightBackgroundScheme;
 const createDarkBackgroundScheme = (theme) => ({
-    primary: theme.colors.primary.darkGray[950],
+    primary: theme.colors.primary.base.black,
     primarySolid: theme.colors.primary.darkGray[900],
     secondary: theme.colors.primary.darkGray[900],
     secondarySolid: theme.colors.primary.darkGray[600],
