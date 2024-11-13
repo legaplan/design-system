@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.createDarkComponentsScheme = exports.createLightComponentsScheme = void 0;
-const createLightComponentsScheme = (theme) => ({
+export const createLightComponentsScheme = (theme) => ({
     button: {
         primary: {
             foreground: {
@@ -38,8 +35,7 @@ const createLightComponentsScheme = (theme) => ({
         },
     },
 });
-exports.createLightComponentsScheme = createLightComponentsScheme;
-const createDarkComponentsScheme = (theme) => ({
+export const createDarkComponentsScheme = (theme) => ({
     button: {
         primary: {
             foreground: {
@@ -76,4 +72,3 @@ const createDarkComponentsScheme = (theme) => ({
         },
     },
 });
-exports.createDarkComponentsScheme = createDarkComponentsScheme;

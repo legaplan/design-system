@@ -1,0 +1,87 @@
+:root {
+  font-size: 10px;
+  /* -------- Spaces -------- */
+  --spaces-nano: 0.2rem;
+  --spaces-micro: 0.4rem;
+  --spaces-1: 0.8rem;
+  --spaces-2: 1.6rem;
+  --spaces-3: 2.4rem;
+  --spaces-4: 3.2rem;
+  --spaces-5: 4rem;
+  --spaces-6: 4.8rem;
+  --spaces-7: 5.6rem;
+  --spaces-8: 6.4rem;
+  --spaces-9: 7.2rem;
+  --spaces-10: 8rem;
+
+  /* -------- Border Radius -------- */
+  --border-radius-1: 0.2rem;
+  --border-radius-2: 0.4rem;
+  --border-radius-3: 0.8rem;
+
+  /* -------- Fonts -------- */
+  --font-size-1: 1rem;
+  --font-size-2: 1.2rem;
+  --font-size-3: 1.4rem;
+  --font-size-4: 1.6rem;
+  --font-size-5: 1.8rem;
+  --font-size-6: 2rem;
+  --font-size-7: 2.4rem;
+  --font-size-8: 2.4rem;
+
+  /* -------- Colors -------- */
+  --colors-brand-25: #fcf9f1;
+  --colors-brand-50: #fef7df;
+  --colors-brand-100: #fdf2cd;
+  --colors-brand-200: #ffe58e;
+  --colors-brand-300: #f9de83;
+  --colors-brand-400: #f0ce61;
+  --colors-brand-500: #dfb541; // primary-color
+  --colors-brand-600: #cba337;
+  --colors-brand-700: #b89432;
+  --colors-brand-800: #9a7b28;
+  --colors-brand-900: #635018;
+  --colors-brand-950: #3b2f0a;
+
+  --colors-secondary: #000;
+
+  --colors-neutral: #000;
+
+  --colors-black: #000;
+  --colors-white: #fff;
+
+  --colors-gray: #000;
+  --colors-gray-25: #fcfcfd;
+  --colors-gray-50: #f9fafb;
+  --colors-gray-100: #f2f4f7;
+  --colors-gray-200: #eaecf0;
+  --colors-gray-300: #d0d5dd;
+  --colors-gray-400: #98a2b3;
+  --colors-gray-500: #667085;
+  --colors-gray-700: #344054;
+  --colors-gray-900: #101828;
+
+  --colors-blue-light-50: #e5f5ff;
+  --colors-blue-light-100: #e0f2fe;
+  --colors-blue-light-700: #1474ae;
+
+  --colors-blue-700: #175cd3;
+
+  --colors-error: #000;
+  --colors-error-100: #fee4e2;
+  --colors-error-200: #fecdca;
+  --colors-error-300: #fda29b;
+  --colors-error-500: #f04438;
+  --colors-error-600: #d92d20;
+
+  --colors-success-500: #12b76a;
+
+  --colors-font-1: var(--colors-gray-900);
+  --colors-font-2: var(--colors-gray-700);
+  --colors-font-secondary: #000;
+
+  --lighten-color: rgba(255, 255, 255, 0.35);
+  --darken-color: rgba(0, 0, 0, 0.25);
+
+  --background: #ffffff;
+}

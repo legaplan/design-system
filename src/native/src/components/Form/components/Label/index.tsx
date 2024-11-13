@@ -1,11 +1,11 @@
 import React from "react";
-import BaseText from "../../../BaseText";
+import { BaseText } from "../../../BaseText";
 
 export interface LabelProps {
   isRequired?: boolean;
   children: React.ReactNode;
 }
-const Label = ({ children, isRequired }: LabelProps) => {
+export const Label = ({ children, isRequired }: LabelProps) => {
   return (
     <BaseText color="secondary" weight="medium">
       {children}
@@ -18,5 +18,3 @@ const Label = ({ children, isRequired }: LabelProps) => {
     </BaseText>
   );
 };
-
-export default Label;

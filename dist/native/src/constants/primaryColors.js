@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.PRIMARY_COLORS = void 0;
-exports.PRIMARY_COLORS = {
+export const PRIMARY_COLORS = {
     base: {
         white: "#FFFFFF",
         black: "#000000",

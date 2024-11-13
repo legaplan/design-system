@@ -5,13 +5,15 @@
       "@/*": ["./src/*"],
       "@/native/*": ["./src/native/src/*"],
       "@/web/*": ["./src/web/src/*"],
-      "design-system/theme": ["src/styles/global.scss"]
+      "design-system/theme": ["src/styles/global.scss"],
+      "design-system/native": ["design-system/dist/native/src/*"],
+      "design-system/web": ["design-system/dist/web/src/*"]
     },
     "target": "ESNext",
-    "module": "CommonJS",
+    "module": "ESNext",
     "lib": ["dom", "esnext"],
     "jsx": "react-jsx",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "strict": true,
     "outDir": "dist",
     "esModuleInterop": true,

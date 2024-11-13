@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getBadgeColors = void 0;
 const getBorderColor = (theme, color, isOutline) => isOutline
     ? theme.colors.utility[color][600]
     : theme.colors.utility[color][200];
@@ -81,7 +78,6 @@ const COLORS = {
         background: theme.colors.utility.orange[50],
     }),
 };
-const getBadgeColors = (color, theme, isOutline) => {
+export const getBadgeColors = (color, theme, isOutline) => {
     return COLORS[color](theme, isOutline);
 };
-exports.getBadgeColors = getBadgeColors;

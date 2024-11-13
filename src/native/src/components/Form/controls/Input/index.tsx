@@ -11,7 +11,7 @@ import {
   SuffixContainer,
 } from "./styles";
 import { useTheme } from "styled-components/native";
-import BaseIcon, { IconKeys } from "../../../BaseIcon";
+import { IconKeys, BaseIcon } from "../../../BaseIcon";
 
 export interface InputProps extends TextInputProps {
   hasError?: boolean;
@@ -23,7 +23,7 @@ export interface InputProps extends TextInputProps {
   value?: string;
 }
 
-const Input = ({
+export const Input = ({
   hasError,
   suffix,
   onFocus,
@@ -85,5 +85,3 @@ const Input = ({
     </InputContainer>
   );
 };
-
-export default Input;

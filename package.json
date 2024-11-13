@@ -2,8 +2,18 @@
   "name": "design-system",
   "version": "1.3.0",
   "exports": {
-    "./native": "./dist/native/src/index.js",
-    "./web": "./dist/web/src/index.js"
+    "./native": {
+      "import": {
+        "default": "./dist/native/src/index.js",
+        "types": "./dist/native/src/index.d.ts"
+      }
+    },
+    "./web": {
+      "import": {
+        "default": "./dist/web/src/index.js",
+        "types": "./dist/native/src/index.d.ts"
+      }
+    }
   },
   "files": [
     "dist/"

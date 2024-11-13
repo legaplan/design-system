@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.createDarkUtilityScheme = exports.createLightUtilityScheme = void 0;
-const createLightUtilityScheme = (theme) => ({
+export const createLightUtilityScheme = (theme) => ({
     gray: {
         "50": theme.colors.primary.lightGray[50],
         "100": theme.colors.primary.lightGray[100],
@@ -127,8 +124,7 @@ const createLightUtilityScheme = (theme) => ({
         "700": theme.colors.secondary.orange[700],
     },
 });
-exports.createLightUtilityScheme = createLightUtilityScheme;
-const createDarkUtilityScheme = (theme) => ({
+export const createDarkUtilityScheme = (theme) => ({
     gray: {
         "50": theme.colors.primary.darkGray[900],
         "100": theme.colors.primary.darkGray[800],
@@ -254,4 +250,3 @@ const createDarkUtilityScheme = (theme) => ({
         "700": theme.colors.secondary.orange[300],
     },
 });
-exports.createDarkUtilityScheme = createDarkUtilityScheme;

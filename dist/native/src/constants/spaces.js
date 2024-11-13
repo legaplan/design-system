@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.SPACE_RAW = void 0;
-exports.SPACE_RAW = {
+export const SPACE_RAW = {
     "0.5": 2,
     "1": 4,
     "1.5": 6,

@@ -51,5 +51,3 @@ export const BaseIcon = ({ name, color, size = 2 }: IconProps) => {
     </IconContainer>
   );
 };
-
-export default BaseIcon;
