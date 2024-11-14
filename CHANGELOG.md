@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.4.0](https://github.com/legaplan/design-system/compare/v1.3.2...v1.4.0) (2024-11-14)
+
+
+### Features
+
+* **colors:** Change background primary dark color ([be3f063](https://github.com/legaplan/design-system/commit/be3f0637ad3977fc4ba8e34ad64050ef815385cb))
+* **imports:** Add import alias ([b5f9eb3](https://github.com/legaplan/design-system/commit/b5f9eb3c42272934e3fd72237b4686c9f5b1c8be))
+* **imports:** Change tsconfig module and module Resolution ([e653019](https://github.com/legaplan/design-system/commit/e653019a6d507a1aac8a1a97990f539104a79793))
+
+
+### Bug Fixes
+
+* **imports:** Change all components export method ([a1467a3](https://github.com/legaplan/design-system/commit/a1467a3876e5583ddd1d7566d5e1866f30aedbb6))
+
+## [1.3.2](https://github.com/legaplan/design-system/compare/v1.3.1...v1.3.2) (2024-11-07)
+
+
+### Bug Fixes
+
+* **#6:** Fix dark and light colors ([bf87a46](https://github.com/legaplan/design-system/commit/bf87a460f533eeb23a770ffc2b941d1d2bd77485))
+
+## [1.3.1](https://github.com/legaplan/design-system/compare/v1.3.0...v1.3.1) (2024-11-07)
+
+
+### Bug Fixes
+
+* **#6:** Fix dark and light colors ([a3adef7](https://github.com/legaplan/design-system/commit/a3adef763e120fc4f6d39e1c8bd054d009d7cca0))
+
 ## [1.3.0](https://github.com/legaplan/design-system/compare/v1.2.0...v1.3.0) (2024-11-05)
 
 
