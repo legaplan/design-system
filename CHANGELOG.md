@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/legaplan/native-design-system/compare/v1.4.0...v2.0.0) (2024-11-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **#44:** This update removes specific web features and changes the folder structure. It will impact imports and dependencies for web components.
+
+### Features
+
+* **#44:** Remove web features and change project folder structure ([a640ee9](https://github.com/legaplan/native-design-system/commit/a640ee9174cd0525abdbed2a00be64fdbbeea430))
+
 ## [1.4.0](https://github.com/legaplan/design-system/compare/v1.3.2...v1.4.0) (2024-11-14)
 
 
