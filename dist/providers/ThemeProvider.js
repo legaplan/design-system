@@ -31,7 +31,7 @@ const ThemeProvider = ({ userTheme, children }) => {
             setTheme(updatedScheme);
         }
         catch (error) {
-            console.log(error);
+            console.log("Toggle theme error:", error);
         }
     };
     useEffect(() => {

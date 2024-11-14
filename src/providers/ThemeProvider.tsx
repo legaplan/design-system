@@ -52,7 +52,7 @@ const ThemeProvider = ({ userTheme, children }: ThemeProviderProps) => {
       await AsyncStorage.setItem(THEME_KEY, updatedScheme);
       setTheme(updatedScheme);
     } catch (error) {
-      console.log(error);
+      console.log("Toggle theme error:", error);
     }
   };
 
