@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import React, { useEffect } from "react";
-import Badge, { BadgeProps } from ".";
+import { Badge, BadgeProps } from ".";
 import { Button } from "react-native";
 import { useTheme } from "../../providers/ThemeProvider";
 const meta = {

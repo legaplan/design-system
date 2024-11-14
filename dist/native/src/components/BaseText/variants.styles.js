@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCustomTextSyles = void 0;
-const getCustomTextSyles = (theme) => {
+export const getCustomTextSyles = (theme) => {
     return {
         color: {
             white: theme.colors.text.white,
@@ -34,4 +31,3 @@ const getCustomTextSyles = (theme) => {
         },
     };
 };
-exports.getCustomTextSyles = getCustomTextSyles;

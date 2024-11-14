@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 
-import Input, { InputProps } from ".";
+import { Input, InputProps } from ".";
 import { View } from "react-native";
 
 const meta = {

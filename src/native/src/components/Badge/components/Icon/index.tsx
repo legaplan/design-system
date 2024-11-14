@@ -1,6 +1,6 @@
 import { useTheme } from "styled-components/native";
 import { BadgeChildrenProps } from "../../types";
-import BaseIcon, { IconKeys } from "../../../BaseIcon";
+import { BaseIcon, IconKeys } from "../../../BaseIcon";
 import { getBadgeColors } from "../../Colors";
 import { useComponentProps } from "../../../../providers/ComponentPropsProvider";
 

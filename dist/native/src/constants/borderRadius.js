@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BORDER_RADIUS_RAW = void 0;
-exports.BORDER_RADIUS_RAW = {
+export const BORDER_RADIUS_RAW = {
     "0.5": 2,
     "1": 4,
     "1.5": 6,

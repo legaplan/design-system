@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.FONT_SIZE_RAW = void 0;
-exports.FONT_SIZE_RAW = {
+export const FONT_SIZE_RAW = {
     "1": 10,
     "2": 12,
     "3": 14,

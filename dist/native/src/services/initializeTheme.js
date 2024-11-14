@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.mergeThemes = void 0;
-const theme_1 = require("../constants/theme");
+import { BASE_THEME } from "../constants/theme";
 const merge = (object, source) => {
     const result = { ...object };
     for (const key in source) {
@@ -14,7 +11,6 @@ const merge = (object, source) => {
     }
     return result;
 };
-const mergeThemes = (userTheme = {}) => {
-    return merge(theme_1.BASE_THEME, userTheme);
+export const mergeThemes = (userTheme = {}) => {
+    return merge(BASE_THEME, userTheme);
 };
-exports.mergeThemes = mergeThemes;

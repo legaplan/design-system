@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.StyledInput = exports.BorderContainer = exports.InputContainer = exports.SuffixContainer = void 0;
-const react_native_1 = require("react-native");
-const native_1 = __importDefault(require("styled-components/native"));
+import { TextInput } from "react-native";
+import styled from "styled-components/native";
 const getInputBorderColor = (isFocused = false, theme, hasError = false) => {
     if (hasError)
         return theme.colors.border.error;
@@ -13,7 +7,7 @@ const getInputBorderColor = (isFocused = false, theme, hasError = false) => {
         return theme.colors.border.brand;
     return theme.colors.border.primary;
 };
-exports.SuffixContainer = native_1.default.View `
+export const SuffixContainer = styled.View `
   position: absolute;
 
   /* TODO: Add theme variable */
@@ -23,7 +17,7 @@ exports.SuffixContainer = native_1.default.View `
   transform: translateY(-8px);
   right: 12px;
 `;
-exports.InputContainer = native_1.default.View `
+export const InputContainer = styled.View `
   width: 100%;
   position: relative;
   align-items: center;
@@ -35,7 +29,7 @@ exports.InputContainer = native_1.default.View `
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   elevation: 2;
 `;
-exports.BorderContainer = native_1.default.View `
+export const BorderContainer = styled.View `
   position: absolute;
   top: 0;
   left: 0;
@@ -46,7 +40,7 @@ exports.BorderContainer = native_1.default.View `
   border-radius: ${({ theme }) => theme.borderRadius[3]};
   pointer-events: none;
 `;
-exports.StyledInput = (0, native_1.default)(react_native_1.TextInput) `
+export const StyledInput = styled(TextInput) `
   display: flex;
   height: 100%;
   align-items: center;

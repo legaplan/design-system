@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Icon, { IconProps } from ".";
+import { BaseIcon, IconProps } from ".";
 
 const meta = {
-  component: Icon,
+  component: BaseIcon,
   tags: ["autodocs"],
 } satisfies Meta<IconProps>;
 
