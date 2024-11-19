@@ -42,6 +42,10 @@ export const createLightComponentsScheme = (
         default: theme.colors.primary.brand[500],
         hover: theme.colors.primary.brand[700],
       },
+      border: {
+        default: "rgba(16, 24, 40, 0.18)",
+        hover: "rgba(16, 24, 40, 0.18)",
+      },
     },
     secondary: {
       foreground: {

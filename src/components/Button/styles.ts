@@ -3,8 +3,8 @@ import { ButtonSize, ButtonVariant } from ".";
 import { LinearGradient, LinearGradientProps } from "expo-linear-gradient";
 
 interface VariantSpacingStyles {
-  height: number;
-  padding: string;
+  height: string;
+  padding: number;
   gap: string;
 }
 interface GradientBackgroundProps {
@@ -42,7 +42,8 @@ const getBorderStyles = ({
 
   const buttonState = getButtonState(isPressed);
   return `
-    border-width: ${variant === "primary" ? "2px" : "1px"};
+    border-width: 1px;
+    border-style: solid;
     border-color: ${borderStyles[buttonState]};
   `;
 };
@@ -64,18 +65,18 @@ const getBackgroundStyles = ({
 const getSpacingStyles = ({ size, theme }: GetVariantSpacingStylesProps) => {
   const sizes: Record<ButtonSize, VariantSpacingStyles> = {
     sm: {
-      height: theme.raw.space[8],
-      padding: theme.space[3],
+      height: theme.space[8],
+      padding: theme.raw.space[3],
       gap: theme.space[1],
     },
     md: {
-      height: theme.raw.space[10],
-      padding: theme.space["3.5"],
+      height: theme.space[10],
+      padding: theme.raw.space["3.5"],
       gap: theme.space[1],
     },
     lg: {
-      height: theme.raw.space[11],
-      padding: theme.space[4],
+      height: theme.space[11],
+      padding: theme.raw.space[4],
       gap: theme.space[1.5],
     },
   };
@@ -84,14 +85,10 @@ const getSpacingStyles = ({ size, theme }: GetVariantSpacingStylesProps) => {
 
   return {
     container: `
-    height: ${height}px;
+    height: ${height};
   `,
-    gradient: {
-      height: `${height - 2}px`,
-    },
     content: `
-    height: ${height - 4}px;
-    padding: 0 ${padding};
+    padding: 0 ${padding - 2}px;
     gap: ${gap};
   `,
   };
@@ -107,101 +104,45 @@ const getShadowStyles = () => {
   `;
 };
 
-// export const GradientBackground = styled(
-//   LinearGradient
-// )<GradientBackgroundProps>`
-//   flex: 1;
-//   position: absolute;
-//   align-items: center;
-//   top: 0px;
-//   left: 0px;
-//   right: 0px;
-//   bottom: 0px;
-//   justify-content: center;
-//   border-radius: ${({ theme }) => theme.borderRadius[2]};
-//   width: 100%;
-//   ${({ theme, size }) => getSpacingStyles({ size, theme }).container}
-// `;
-
-// export const InnerContainer = styled.View<
-//   ButtonContainerProps & { width: number }
-// >`
-//   ${({ theme, isPressed, variant }) =>
-//     getBackgroundStyles({ variant, theme, isPressed })}
-//   border-radius: ${({ theme }) => theme.borderRadius[2]};
-//   position: absolute;
-//   top: 2px;
-//   left: 2px;
-//   right: 2px;
-//   bottom: 2px;
-//   width: ${({ width }) => `${width - 4}px`};
-// `;
-
-export const ButtonContainer = styled.TouchableOpacity<ButtonContainerProps>`
-  // Deve ter 40 de altura, altura máxima
-  display: flex;
+export const Container = styled.TouchableOpacity<ButtonContainerProps>`
   position: relative;
-  align-items: center;
-  justify-content: center;
-  width: auto;
+
   border-radius: ${({ theme }) => theme.borderRadius[2]};
+  padding: 1px;
+
   ${({ theme, size }) => getSpacingStyles({ size, theme }).container}
   ${({ theme, isPressed, variant }) =>
     getBorderStyles({ variant, theme, isPressed })}
   ${({ theme, isPressed, variant }) =>
     getBackgroundStyles({ variant, theme, isPressed })}
-    
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  shadow-offset: 0px 4px;
-  shadow-opacity: 0.3;
-  shadow-radius: 4px;
+
+  border: 1px solid rgba(16, 24, 40, 0.18);
+
+  shadow-color: rgba(16, 24, 40, 0.05);
+  shadow-offset: 0px 1px;
+  shadow-opacity: 1;
+  shadow-radius: 2px;
   elevation: 2;
+  align-self: flex-start;
 `;
 
-export const BorderContainer = styled.View`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  inset: 0px;
-  border-radius: ${({ theme }) => theme.borderRadius[2]};
-  background: rgba(16, 24, 40, 0.18);
-`;
-
-export const BorderInner = styled.View<
-  ButtonContainerProps & { width: number }
->`
-  height: 38px;
-  position: absolute;
-  width: ${({ width }) => `${width - 2}px`};
-  inset: 1px;
-  border-radius: ${({ theme }) => `${theme.raw.borderRadius[2] - 1}px`};
-  ${({ theme, isPressed, variant }) =>
-    getBackgroundStyles({ variant, theme, isPressed })}
-`;
-
-export const GradientContainer = styled(LinearGradient)<
-  ButtonContainerProps & { width: number }
->`
+export const GradientContainer = styled(LinearGradient)`
   position: absolute;
   border-radius: ${({ theme }) => theme.borderRadius[2]};
-  width: 100%;
-  inset: 0px;
-  ${({ theme, size }) => getSpacingStyles({ size, theme }).container}
+  inset: -1px;
 `;
 
-export const Content = styled.View<ButtonContainerProps & { width: number }>`
-  position: absolute;
-  width: ${({ width }) => `${width - 4}px`};
-
+export const Content = styled.View<ButtonContainerProps>`
   border-radius: ${({ theme }) => theme.borderRadius[1.5]};
-  inset: 2px;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  z-index: 1;
+
+  /* Padding and gap*/
+  ${({ theme, size }) => getSpacingStyles({ size, theme }).content}
 
   /* Background */
   ${({ theme, isPressed, variant }) =>
     getBackgroundStyles({ variant, theme, isPressed })}
-
-  /* Height */
-  ${({ theme, size }) => getSpacingStyles({ size, theme }).content}
 `;

@@ -1,10 +1,10 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import {
-  ButtonContainer,
-  BorderContainer,
   Content,
   GradientContainer,
-  BorderInner,
+
+  //
+  Container,
 } from "./styles";
 import { View } from "react-native";
 export type ButtonVariant = "primary" | "secondary"; //| "secondary-color";
@@ -23,56 +23,34 @@ export const Button = ({
   onPress,
 }: ButtonProps) => {
   const [isPressed, setIsPressed] = useState(false);
-  const [width, setWidth] = useState(0);
-
-  const handleLayout = (event: any) => {
-    const { width } = event.nativeEvent.layout;
-    setWidth(width);
-  };
 
   const handleTogglePress = () => setIsPressed((prev) => !prev);
 
   return (
-    <ButtonContainer
-      onLayout={handleLayout}
+    <Container
       isPressed={isPressed}
-      activeOpacity={1}
+      delayPressIn={0}
+      delayPressOut={0}
       onPressIn={handleTogglePress}
+      activeOpacity={1}
       onPressOut={handleTogglePress}
       variant={variant}
       size={size}
       onPress={onPress}
     >
-      <BorderContainer>
-        <BorderInner
-          width={width}
-          variant={variant}
-          size={size}
-          isPressed={isPressed}
+      <>
+        <GradientContainer
+          colors={["rgba(255, 255, 255, 0.12)", "rgba(00, 00, 00, 0.03)"]} //rgba(255,255,255, 0.0) doenst work
+          start={{
+            x: 0,
+            y: 0,
+          }}
+          end={{ x: 0, y: 1 }}
         />
-      </BorderContainer>
-
-      <GradientContainer
-        variant={variant}
-        size={size}
-        isPressed={isPressed}
-        width={width}
-        colors={["rgba(255, 255, 255, 0.12)", "rgba(00, 00, 00, 0.03)"]} //rgba(255,255,255, 0.0) doenst work
-        start={{
-          x: 0,
-          y: 0,
-        }}
-        end={{ x: 0, y: 1 }}
-      />
-
-      {/* <Content
-        variant={variant}
-        size={size}
-        isPressed={isPressed}
-        width={width}
-      > */}
-      {children}
-      {/* </Content> */}
-    </ButtonContainer>
+        <Content isPressed={isPressed} size={size} variant={variant}>
+          {children}
+        </Content>
+      </>
+    </Container>
   );
 };

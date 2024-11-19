@@ -30,11 +30,9 @@ export const Default: Story = {
 
       return (
         <View style={{ gap: 16 }}>
-          <View style={{ alignItems: "flex-start" }}>
-            <Button onPress={toggleTheme}>
-              <BaseText color="white">Toggle theme - {theme}</BaseText>
-            </Button>
-          </View>
+          <Button onPress={toggleTheme}>
+            <BaseText color="white">Toggle theme - {theme}</BaseText>
+          </Button>
 
           <Story />
         </View>
