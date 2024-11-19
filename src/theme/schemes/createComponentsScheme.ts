@@ -18,6 +18,15 @@ export interface ComponentScheme {
       background: Partial<ColorScheme>;
     };
   };
+  toggle: {
+    track: {
+      background: {
+        active: string;
+        inactive: string;
+        hover: string;
+      };
+    };
+  }
 }
 
 export const createLightComponentsScheme = (
@@ -58,6 +67,15 @@ export const createLightComponentsScheme = (
       },
     },
   },
+  toggle: {
+    track: {
+      background: {
+        active: theme.colors.primary.brand[600],
+        inactive: theme.colors.primary.lightGray[100],
+        hover: theme.colors.primary.brand[700],
+      }
+    }
+  }
 });
 
 export const createDarkComponentsScheme = (
@@ -98,4 +116,13 @@ export const createDarkComponentsScheme = (
       },
     },
   },
+  toggle: {
+    track: {
+      background: {
+        active: theme.colors.primary.brand[600],
+        inactive: theme.colors.primary.darkGray[800],
+        hover: theme.colors.primary.brand[700],
+      }
+    }
+  }
 });

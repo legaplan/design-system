@@ -33,3 +33,6 @@ export { Error } from "./components/Error";
 
 // Button
 export { Button } from "./components/Button";
+
+// Toggle
+export { Toggle } from "./components/Toggle";

@@ -34,6 +34,15 @@ export const createLightComponentsScheme = (theme) => ({
             },
         },
     },
+    toggle: {
+        track: {
+            background: {
+                active: theme.colors.primary.brand[600],
+                inactive: theme.colors.primary.lightGray[100],
+                hover: theme.colors.primary.brand[700],
+            }
+        }
+    }
 });
 export const createDarkComponentsScheme = (theme) => ({
     button: {
@@ -71,4 +80,13 @@ export const createDarkComponentsScheme = (theme) => ({
             },
         },
     },
+    toggle: {
+        track: {
+            background: {
+                active: theme.colors.primary.brand[600],
+                inactive: theme.colors.primary.darkGray[800],
+                hover: theme.colors.primary.brand[700],
+            }
+        }
+    }
 });

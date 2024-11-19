@@ -1,6 +1,7 @@
 import { Color } from "./theme";
 export type SecondaryColors = {
     grayBlue: Color;
+    grayCool: Color;
     blueLight: Color;
     blue: Color;
     indigo: Color;

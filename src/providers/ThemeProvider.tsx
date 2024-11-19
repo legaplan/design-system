@@ -14,6 +14,7 @@ import {
   createLightTheme,
 } from "../theme/schemes/createTheme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { merge } from "../utils/merge";
 
 export type TTheme = "light" | "dark";
 interface ThemeProviderProps {
@@ -62,8 +63,12 @@ const ThemeProvider = ({ userTheme, children }: ThemeProviderProps) => {
 
   const mergedTheme = mergeThemes(userTheme);
 
-  const darkColors = createDarkTheme(mergedTheme);
-  const lightColors = createLightTheme(mergedTheme);
+  const userLightTheme = userTheme?.light || {};
+  const userDarkTheme = userTheme?.dark || {};
+
+  const lightColors = merge(createLightTheme(mergedTheme), userLightTheme);
+  const darkColors = merge(createDarkTheme(mergedTheme), userDarkTheme);
+
   const themeColors = theme === "light" ? lightColors : darkColors;
 
   return (

@@ -9,6 +9,7 @@ import { createSpaceInPixel } from "../theme/schemes/createSpaceInPixel";
 import { createLineHeightInPixel } from "../theme/schemes/createLineHeightInPixel";
 import { createDarkTheme, createLightTheme, } from "../theme/schemes/createTheme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { merge } from "../utils/merge";
 const ThemeContext = createContext({});
 const THEME_KEY = "@theme";
 const ThemeProvider = ({ userTheme, children }) => {
@@ -38,8 +39,10 @@ const ThemeProvider = ({ userTheme, children }) => {
         getTheme();
     }, []);
     const mergedTheme = mergeThemes(userTheme);
-    const darkColors = createDarkTheme(mergedTheme);
-    const lightColors = createLightTheme(mergedTheme);
+    const userLightTheme = userTheme?.light || {};
+    const userDarkTheme = userTheme?.dark || {};
+    const lightColors = merge(createLightTheme(mergedTheme), userLightTheme);
+    const darkColors = merge(createDarkTheme(mergedTheme), userDarkTheme);
     const themeColors = theme === "light" ? lightColors : darkColors;
     return (_jsx(ThemeContext.Provider, { value: { toggleTheme, getTheme, theme }, children: _jsx(StyledComponentesProvider, { theme: {
                 ...mergedTheme,
