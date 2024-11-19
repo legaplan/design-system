@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import React, { useEffect } from "react";
+import React from "react";
+import { Button } from "../Button";
 import { Badge, BadgeProps } from ".";
-import { Button } from "react-native";
+import { View } from "react-native";
 import { useTheme } from "../../providers/ThemeProvider";
+import { BaseText } from "../BaseText";
 const meta = {
   component: Badge,
   tags: ["autodocs"],
@@ -27,10 +29,15 @@ export const Default: Story = {
       const { toggleTheme, theme } = useTheme();
 
       return (
-        <>
-          <Button title={`Toggle theme - ${theme}`} onPress={toggleTheme} />
+        <View style={{ gap: 16 }}>
+          <View style={{ alignItems: "flex-start" }}>
+            <Button onPress={toggleTheme}>
+              <BaseText color="white">Toggle theme - {theme}</BaseText>
+            </Button>
+          </View>
+
           <Story />
-        </>
+        </View>
       );
     },
   ],
