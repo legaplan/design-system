@@ -16,6 +16,15 @@ export interface ComponentScheme {
             background: Partial<ColorScheme>;
         };
     };
+    toggle: {
+        track: {
+            background: {
+                active: string;
+                inactive: string;
+                hover: string;
+            };
+        };
+    };
 }
 export declare const createLightComponentsScheme: (theme: BaseTheme) => ComponentScheme;
 export declare const createDarkComponentsScheme: (theme: BaseTheme) => ComponentScheme;

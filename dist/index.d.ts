@@ -9,3 +9,4 @@ export { Form } from "./components/Form";
 export { Input, InputProps } from "./components/Form/controls/Input";
 export { Error } from "./components/Error";
 export { Button } from "./components/Button";
+export { Toggle } from "./components/Toggle";

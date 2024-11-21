@@ -1,5 +1,6 @@
-import { BaseTheme } from "../constants/theme";
-export type DeepPartial<T> = {
-    [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
+import { BaseTheme, ColorScheme } from "../constants/theme";
+import { DeepPartial } from "./utils";
+export type ThemeConfigProps = DeepPartial<BaseTheme> & {
+    light?: DeepPartial<ColorScheme>;
+    dark?: DeepPartial<ColorScheme>;
 };
-export type ThemeConfigProps = DeepPartial<BaseTheme>;
