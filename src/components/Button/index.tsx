@@ -8,9 +8,12 @@ import { FontSizeKeys } from "@/constants/theme";
 import Icon from "./components/Icon";
 import Text from "./components/Text";
 import { TouchableOpacityProps } from "react-native";
+import { useTheme as useScheme } from "@/providers/ThemeProvider";
+
+type GradientTuple = [string, string];
 
 export interface ButtonChildrenProps {
-  textSize: FontSizeKeys;
+  size: ButtonSize;
   textColor: string;
 }
 export type ButtonVariant = keyof ComponentScheme["button"];
@@ -23,6 +26,19 @@ export interface ButtonProps extends TouchableOpacityProps {
   children: React.ReactNode;
 }
 
+const skeumorphicInner = {
+  light: ["transparent", "rgba(16, 24, 40, 0.05)"] as GradientTuple,
+  dark: ["transparent", "rgba(12, 17, 29, 0.05)"] as GradientTuple,
+};
+
+const hasGradient: Record<ButtonVariant, boolean> = {
+  "secondary-color": true,
+  "tertiary-color": false,
+  primary: true,
+  secondary: true,
+  tertiary: false,
+};
+
 export const Button = ({
   variant = "primary",
   size = 2,
@@ -31,14 +47,14 @@ export const Button = ({
   onPress,
 }: ButtonProps) => {
   const [isPressed, setIsPressed] = useState(false);
+  const { theme: scheme } = useScheme();
   const theme = useTheme();
 
   const handleTogglePress = () => setIsPressed((prev) => !prev);
 
   const currentState = useMemo(() => getButtonState(isPressed), [isPressed]);
-  const gradientColors = theme.colors.components.button[variant].gradient;
+  const gradientColors = skeumorphicInner[scheme];
 
-  const textSize = size === 3 ? 4 : 3; //16 pixels for size 3, 14 for others
   const textColor = disabled
     ? theme.colors.foreground.disabled
     : theme.colors.components.button[variant].foreground[currentState];
@@ -51,7 +67,7 @@ export const Button = ({
   };
 
   return (
-    <ComponentPropsProvider value={{ textColor, textSize }}>
+    <ComponentPropsProvider value={{ textColor, size }}>
       <Container
         delayPressIn={0}
         delayPressOut={0}
@@ -63,6 +79,7 @@ export const Button = ({
       >
         <>
           <GradientContainer
+            hasGradient={hasGradient[variant]}
             isDisabled={disabled}
             colors={gradientColors}
             start={{

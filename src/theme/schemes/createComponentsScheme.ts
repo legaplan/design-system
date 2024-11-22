@@ -1,6 +1,5 @@
 import { BaseTheme } from "../../constants/theme";
 
-type GradientTuple = [string, string];
 interface ColorScheme {
   default: string;
   hover: string;
@@ -10,7 +9,6 @@ interface ButtonScheme {
   foreground: ColorScheme;
   background: ColorScheme;
   border?: ColorScheme;
-  gradient: GradientTuple;
 }
 
 export interface ComponentScheme {
@@ -32,18 +30,11 @@ export interface ComponentScheme {
   };
 }
 
-const skeumorphicInner = {
-  light: ["transparent", "rgba(16, 24, 40, 0.05)"] as GradientTuple,
-  dark: ["transparent", "rgba(12, 17, 29, 0.05)"] as GradientTuple,
-};
-const transparentInner = ["transparent", "transparent"] as GradientTuple;
-
 export const createLightComponentsScheme = (
   theme: BaseTheme
 ): ComponentScheme => ({
   button: {
     primary: {
-      gradient: ["rgba(255, 255, 255, 0.12)", "rgba(00, 00, 00, 0.03)"], //rgba(255,255,255, 0.0) doenst work
       foreground: {
         default: theme.colors.primary.base.white,
         hover: theme.colors.primary.base.white,
@@ -58,7 +49,6 @@ export const createLightComponentsScheme = (
       },
     },
     secondary: {
-      gradient: skeumorphicInner.light,
       foreground: {
         default: theme.colors.primary.lightGray[700],
         hover: theme.colors.primary.lightGray[800],
@@ -73,7 +63,6 @@ export const createLightComponentsScheme = (
       },
     },
     "secondary-color": {
-      gradient: skeumorphicInner.light,
       foreground: {
         default: theme.colors.primary.brand[700],
         hover: theme.colors.primary.brand[800],
@@ -88,7 +77,6 @@ export const createLightComponentsScheme = (
       },
     },
     tertiary: {
-      gradient: transparentInner,
       foreground: {
         default: theme.colors.primary.lightGray[600],
         hover: theme.colors.primary.lightGray[700],
@@ -99,7 +87,6 @@ export const createLightComponentsScheme = (
       },
     },
     "tertiary-color": {
-      gradient: transparentInner,
       foreground: {
         default: theme.colors.primary.brand[700],
         hover: theme.colors.primary.brand[800],
@@ -126,7 +113,6 @@ export const createDarkComponentsScheme = (
 ): ComponentScheme => ({
   button: {
     primary: {
-      gradient: ["rgba(255, 255, 255, 0.12)", "rgba(00, 00, 00, 0.03)"],
       foreground: {
         default: theme.colors.primary.base.white,
         hover: theme.colors.primary.base.white,
@@ -141,7 +127,6 @@ export const createDarkComponentsScheme = (
       },
     },
     secondary: {
-      gradient: skeumorphicInner.dark,
       foreground: {
         default: theme.colors.primary.darkGray[300],
         hover: theme.colors.primary.darkGray[100],
@@ -156,7 +141,6 @@ export const createDarkComponentsScheme = (
       },
     },
     "secondary-color": {
-      gradient: skeumorphicInner.dark,
       foreground: {
         default: theme.colors.primary.darkGray[300],
         hover: theme.colors.primary.darkGray[100],
@@ -171,7 +155,6 @@ export const createDarkComponentsScheme = (
       },
     },
     tertiary: {
-      gradient: transparentInner,
       foreground: {
         default: theme.colors.primary.darkGray[400],
         hover: theme.colors.primary.darkGray[200],
@@ -182,7 +165,6 @@ export const createDarkComponentsScheme = (
       },
     },
     "tertiary-color": {
-      gradient: transparentInner,
       foreground: {
         default: theme.colors.primary.darkGray[300],
         hover: theme.colors.primary.darkGray[100],

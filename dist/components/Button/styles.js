@@ -19,7 +19,7 @@ export const GradientContainer = styled(LinearGradient) `
   position: absolute;
   border-radius: ${({ theme }) => theme.borderRadius[2]};
   inset: -1px;
-  ${({ isDisabled }) => isDisabled && "display:none;"}
+  ${({ isDisabled, hasGradient }) => (isDisabled || !hasGradient) && "display:none;"}
 `;
 export const Content = styled.View `
   border-radius: ${({ theme }) => theme.borderRadius[1.5]};

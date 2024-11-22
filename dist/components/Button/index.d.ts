@@ -1,8 +1,7 @@
 import { ComponentScheme } from "../../theme/schemes/createComponentsScheme";
-import { FontSizeKeys } from "../../constants/theme";
 import { TouchableOpacityProps } from "react-native";
 export interface ButtonChildrenProps {
-    textSize: FontSizeKeys;
+    size: ButtonSize;
     textColor: string;
 }
 export type ButtonVariant = keyof ComponentScheme["button"];

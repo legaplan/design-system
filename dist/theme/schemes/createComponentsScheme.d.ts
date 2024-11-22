@@ -1,5 +1,4 @@
 import { BaseTheme } from "../../constants/theme";
-type GradientTuple = [string, string];
 interface ColorScheme {
     default: string;
     hover: string;
@@ -8,7 +7,6 @@ interface ButtonScheme {
     foreground: ColorScheme;
     background: ColorScheme;
     border?: ColorScheme;
-    gradient: GradientTuple;
 }
 export interface ComponentScheme {
     button: {

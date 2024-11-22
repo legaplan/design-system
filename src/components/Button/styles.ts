@@ -33,11 +33,13 @@ export const Container = styled.TouchableOpacity<ButtonBaseProps>`
 
 export const GradientContainer = styled(LinearGradient)<{
   isDisabled: boolean | undefined;
+  hasGradient: boolean;
 }>`
   position: absolute;
   border-radius: ${({ theme }) => theme.borderRadius[2]};
   inset: -1px;
-  ${({ isDisabled }) => isDisabled && "display:none;"}
+  ${({ isDisabled, hasGradient }) =>
+    (isDisabled || !hasGradient) && "display:none;"}
 `;
 
 export const Content = styled.View<ButtonBaseProps>`

@@ -4,10 +4,10 @@ import { StyledButtonText } from "./styles";
 import { ButtonChildrenProps } from "../..";
 
 const Text = ({ children }: { children: React.ReactNode }) => {
-  const { textColor, textSize } = useComponentProps<ButtonChildrenProps>();
+  const { textColor, size } = useComponentProps<ButtonChildrenProps>();
 
   return (
-    <StyledButtonText textColor={textColor} weight={600} size={textSize}>
+    <StyledButtonText textColor={textColor} weight={600} buttonSize={size}>
       {children}
     </StyledButtonText>
   );
