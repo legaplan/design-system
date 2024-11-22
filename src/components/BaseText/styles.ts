@@ -1,26 +1,21 @@
 import styled from "styled-components/native";
-import { getCustomTextSyles } from "./variants.styles";
-import { CustomTextProps, CustomTextSizes } from "./types";
-
-const getTextLineHeight = (textSize: keyof CustomTextSizes) => {
-  const lineHeights = {
-    xs: "18px",
-    sm: "20px",
-    md: "24px",
-    lg: "28px",
-    xl: "30px",
-    default: "20px",
-  };
-
-  return lineHeights[textSize];
-};
+import { CustomTextProps } from "./types";
+import { TextScheme } from "@/theme/schemes/createTextScheme";
 
 export const StyledBaseText = styled.Text<CustomTextProps>`
-  color: ${({ theme, color }) =>
-    getCustomTextSyles(theme).color[color ?? "default"]};
-  font-size: ${({ theme, size }) =>
-    getCustomTextSyles(theme).size[size ?? "default"]};
-  font-weight: ${({ theme, weight }) =>
-    getCustomTextSyles(theme).weight[weight ?? "default"]};
-  line-height: ${({ size }) => getTextLineHeight(size || "default")};
+  color: ${({ theme, color = "secondary" }) => theme.colors.text[color]};
+  font-size: ${({ theme, size = "3" }) => theme.fontSize[size]};
+  font-weight: ${({ weight = 2 }) => weight};
 `;
+
+// TODO: Refactor base text line height
+// const getTextLineHeight = (textSize: keyof FontSizeInPixels) => {
+//   const lineHeights = {
+//     2: "18px",
+//     3: "20px",
+//     4: "24px",
+//     5: "28px",
+//     6: "30px",
+//   };
+//   return lineHeights[textSize];
+// };

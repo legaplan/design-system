@@ -9,7 +9,9 @@ export type ForegroundScheme = {
   senary: string;
   white: string;
   disabled: string;
+  disabled_subtle: string;
   brandPrimary: string;
+  brandPrimary_alt: string;
   brandSecondary: string;
   errorPrimary: string;
   errorSecondary: string;
@@ -30,7 +32,9 @@ export const createLightForegroundScheme = (
   senary: theme.colors.primary.lightGray[300],
   white: theme.colors.primary.base.white,
   disabled: theme.colors.primary.lightGray[400],
+  disabled_subtle: theme.colors.primary.lightGray[300],
   brandPrimary: theme.colors.primary.brand[600],
+  brandPrimary_alt: theme.colors.primary.brand[600],
   brandSecondary: theme.colors.primary.brand[500],
   errorPrimary: theme.colors.primary.error[600],
   errorSecondary: theme.colors.primary.error[500],
@@ -51,7 +55,9 @@ export const createDarkForegroundScheme = (
   senary: theme.colors.primary.darkGray[600],
   white: theme.colors.primary.base.white,
   disabled: theme.colors.primary.darkGray[500],
+  disabled_subtle: theme.colors.primary.darkGray[600],
   brandPrimary: theme.colors.primary.brand[500],
+  brandPrimary_alt: theme.colors.primary.darkGray[300],
   brandSecondary: theme.colors.primary.brand[500],
   errorPrimary: theme.colors.primary.error[500],
   errorSecondary: theme.colors.primary.error[400],

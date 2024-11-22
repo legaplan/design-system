@@ -57,12 +57,13 @@
     "storybook": "^8.3.1",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10",
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "react-native": "^0.76.1",
     "expo-linear-gradient": "^14.0.1",
     "react-hook-form": "^7.53.0",
+    "react-native": "^0.76.1",
     "react-native-reanimated": "^3.16.2",
     "react-native-svg": "^15.7.1"
   },
