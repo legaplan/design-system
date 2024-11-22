@@ -31,7 +31,7 @@ export const Default: Story = {
       return (
         <View style={{ gap: 16 }}>
           <Button onPress={toggleTheme}>
-            <BaseText color="white">Toggle theme - {theme}</BaseText>
+            <Button.Text>Toggle theme - {theme}</Button.Text>
           </Button>
 
           <Story />

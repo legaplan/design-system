@@ -1,18 +1,24 @@
 import { BaseTheme } from "../../constants/theme";
 export type BackgroundScheme = {
     primary: string;
+    primary_alt: string;
     primarySolid: string;
     secondary: string;
+    secondary_alt: string;
+    secondary_subtle: string;
     secondarySolid: string;
     tertiary: string;
     quaternary: string;
     active: string;
     disabled: string;
+    disabled_subtle: string;
     overlay: string;
     brandPrimary: string;
+    brandPrimary_alt: string;
     brandSecondary: string;
     brandSolid: string;
     brandSection: string;
+    brandSection_subtle: string;
     errorPrimary: string;
     errorSecondary: string;
     errorSolid: string;

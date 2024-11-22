@@ -1,4 +1,5 @@
 import { BaseTheme } from "../../constants/theme";
+type GradientTuple = [string, string];
 interface ColorScheme {
     default: string;
     hover: string;
@@ -7,14 +8,15 @@ interface ButtonScheme {
     foreground: ColorScheme;
     background: ColorScheme;
     border?: ColorScheme;
+    gradient: GradientTuple;
 }
 export interface ComponentScheme {
     button: {
         primary: ButtonScheme;
         secondary: ButtonScheme;
-        tertiary: Omit<ButtonScheme, "background"> & {
-            background: Partial<ColorScheme>;
-        };
+        tertiary: ButtonScheme;
+        "secondary-color": ButtonScheme;
+        "tertiary-color": ButtonScheme;
     };
     toggle: {
         track: {
