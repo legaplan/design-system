@@ -12,7 +12,7 @@ export interface ButtonBaseProps {
   size: ButtonSize;
   isPressed: boolean;
   variant: ButtonVariant;
-  disabled: boolean | undefined;
+  disabled: boolean;
 }
 
 export const Container = styled.TouchableOpacity<ButtonBaseProps>`

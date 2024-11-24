@@ -1,6 +1,8 @@
 import { css, DefaultTheme } from "styled-components/native";
 import { ButtonSize, ButtonVariant } from ".";
 
+export type ButtonState = "hover" | "default";
+
 interface GetVariantColorStylesProps {
   variant: ButtonVariant;
   theme: DefaultTheme;
@@ -8,7 +10,7 @@ interface GetVariantColorStylesProps {
   disabled: boolean | undefined;
 }
 
-export const getButtonState = (isPressed: boolean) =>
+export const getButtonState = (isPressed: boolean): ButtonState =>
   isPressed ? "hover" : "default";
 
 const getDisabledStyles = ({
