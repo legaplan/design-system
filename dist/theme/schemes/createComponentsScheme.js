@@ -63,6 +63,20 @@ export const createLightComponentsScheme = (theme) => ({
             },
         },
     },
+    buttonLink: {
+        color: {
+            foreground: {
+                default: theme.colors.primary.brand[700],
+                hover: theme.colors.primary.brand[800],
+            },
+        },
+        primary: {
+            foreground: {
+                default: theme.colors.primary.lightGray[600],
+                hover: theme.colors.primary.lightGray[700],
+            },
+        },
+    },
     toggle: {
         track: {
             background: {
@@ -135,6 +149,20 @@ export const createDarkComponentsScheme = (theme) => ({
             background: {
                 default: theme.colors.primary.base.transparent,
                 hover: theme.colors.primary.darkGray[800],
+            },
+        },
+    },
+    buttonLink: {
+        color: {
+            foreground: {
+                default: theme.colors.primary.darkGray[300],
+                hover: theme.colors.primary.darkGray[100],
+            },
+        },
+        primary: {
+            foreground: {
+                default: theme.colors.primary.darkGray[400],
+                hover: theme.colors.primary.darkGray[200],
             },
         },
     },

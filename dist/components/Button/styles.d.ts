@@ -4,7 +4,7 @@ export interface ButtonBaseProps {
     size: ButtonSize;
     isPressed: boolean;
     variant: ButtonVariant;
-    disabled: boolean | undefined;
+    disabled: boolean;
 }
 export declare const Container: import("styled-components").StyledComponent<typeof import("react-native").TouchableOpacity, import("styled-components").DefaultTheme, ButtonBaseProps, never>;
 export declare const GradientContainer: import("styled-components").StyledComponent<typeof LinearGradient, import("styled-components").DefaultTheme, {

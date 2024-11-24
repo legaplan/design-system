@@ -16,6 +16,14 @@ export interface ComponentScheme {
         "secondary-color": ButtonScheme;
         "tertiary-color": ButtonScheme;
     };
+    buttonLink: {
+        primary: {
+            foreground: ButtonScheme["foreground"];
+        };
+        color: {
+            foreground: ButtonScheme["foreground"];
+        };
+    };
     toggle: {
         track: {
             background: {
