@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { getBackgroundStyles, getBorderStyles, getShadowStyles, } from "./Colors";
 import { getSpacingStyles } from "./Spacing";
-export const Container = styled.TouchableOpacity `
+export const Container = styled.View `
   overflow: hidden;
   position: relative;
 
@@ -15,11 +15,13 @@ export const Container = styled.TouchableOpacity `
 
     ${({ variant }) => getShadowStyles({ variant })}
 `;
-export const GradientContainer = styled(LinearGradient) `
+export const GradientContainer = styled(LinearGradient).attrs({
+    start: { x: 0, y: 0 },
+    end: { x: 0, y: 1 },
+}) `
   position: absolute;
   border-radius: ${({ theme }) => theme.borderRadius[2]};
   inset: -1px;
-  ${({ isDisabled, hasGradient }) => (isDisabled || !hasGradient) && "display:none;"}
 `;
 export const Content = styled.View `
   border-radius: ${({ theme }) => theme.borderRadius[1.5]};

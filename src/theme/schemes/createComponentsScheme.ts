@@ -20,7 +20,7 @@ export interface ComponentScheme {
     "tertiary-color": ButtonScheme;
   };
   buttonLink: {
-    primary: {
+    gray: {
       foreground: ButtonScheme["foreground"];
     };
     color: {
@@ -113,7 +113,7 @@ export const createLightComponentsScheme = (
         hover: theme.colors.primary.brand[800],
       },
     },
-    primary: {
+    gray: {
       foreground: {
         default: theme.colors.primary.lightGray[600],
         hover: theme.colors.primary.lightGray[700],
@@ -205,7 +205,7 @@ export const createDarkComponentsScheme = (
         hover: theme.colors.primary.darkGray[100],
       },
     },
-    primary: {
+    gray: {
       foreground: {
         default: theme.colors.primary.darkGray[400],
         hover: theme.colors.primary.darkGray[200],

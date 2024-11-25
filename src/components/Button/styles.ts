@@ -15,7 +15,7 @@ export interface ButtonBaseProps {
   disabled: boolean;
 }
 
-export const Container = styled.TouchableOpacity<ButtonBaseProps>`
+export const Container = styled.View<ButtonBaseProps>`
   overflow: hidden;
   position: relative;
 
@@ -31,15 +31,13 @@ export const Container = styled.TouchableOpacity<ButtonBaseProps>`
     ${({ variant }) => getShadowStyles({ variant })}
 `;
 
-export const GradientContainer = styled(LinearGradient)<{
-  isDisabled: boolean | undefined;
-  hasGradient: boolean;
-}>`
+export const GradientContainer = styled(LinearGradient).attrs({
+  start: { x: 0, y: 0 },
+  end: { x: 0, y: 1 },
+})`
   position: absolute;
   border-radius: ${({ theme }) => theme.borderRadius[2]};
   inset: -1px;
-  ${({ isDisabled, hasGradient }) =>
-    (isDisabled || !hasGradient) && "display:none;"}
 `;
 
 export const Content = styled.View<ButtonBaseProps>`

@@ -6,9 +6,15 @@ export interface ButtonBaseProps {
     variant: ButtonVariant;
     disabled: boolean;
 }
-export declare const Container: import("styled-components").StyledComponent<typeof import("react-native").TouchableOpacity, import("styled-components").DefaultTheme, ButtonBaseProps, never>;
+export declare const Container: import("styled-components").StyledComponent<typeof import("react-native").View, import("styled-components").DefaultTheme, ButtonBaseProps, never>;
 export declare const GradientContainer: import("styled-components").StyledComponent<typeof LinearGradient, import("styled-components").DefaultTheme, {
-    isDisabled: boolean | undefined;
-    hasGradient: boolean;
-}, never>;
+    start: {
+        x: number;
+        y: number;
+    };
+    end: {
+        x: number;
+        y: number;
+    };
+}, "end" | "start">;
 export declare const Content: import("styled-components").StyledComponent<typeof import("react-native").View, import("styled-components").DefaultTheme, ButtonBaseProps, never>;

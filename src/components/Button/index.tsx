@@ -3,7 +3,7 @@ import { ComponentScheme } from "@/theme/schemes/createComponentsScheme";
 import { ComponentPropsProvider } from "@/providers/ComponentPropsProvider";
 import Icon from "./components/Icon";
 import Text from "./components/Text";
-import { TouchableOpacityProps } from "react-native";
+import { TouchableOpacityProps, TouchableWithoutFeedback } from "react-native";
 import { useButton } from "./hooks/useButton";
 import { Link } from "./components/Link";
 
@@ -46,34 +46,25 @@ export const Button = ({
     ? theme.colors.foreground.disabled
     : theme.colors.components.button[variant].foreground[currentState];
 
+  const shouldShowGradient = !disabled && hasGradient[variant];
+
   return (
     <ComponentPropsProvider value={{ textColor, size }}>
-      <Container
+      <TouchableWithoutFeedback
         delayPressIn={0}
         delayPressOut={0}
         onPressIn={handleTogglePress}
-        activeOpacity={1}
-        onPressOut={handleTogglePress}
         onPress={onPress}
-        {...baseProps}
-        variant={variant}
+        onPressOut={handleTogglePress}
       >
-        <>
-          <GradientContainer
-            hasGradient={hasGradient[variant]}
-            isDisabled={disabled}
-            colors={gradientColors}
-            start={{
-              x: 0,
-              y: 0,
-            }}
-            end={{ x: 0, y: 1 }}
-          />
+        <Container {...baseProps} variant={variant}>
+          {shouldShowGradient && <GradientContainer colors={gradientColors} />}
+
           <Content variant={variant} {...baseProps}>
             {children}
           </Content>
-        </>
-      </Container>
+        </Container>
+      </TouchableWithoutFeedback>
     </ComponentPropsProvider>
   );
 };

@@ -16,7 +16,7 @@ export const Link = ({
   children,
   disabled = false,
   size = 2,
-  variant = "primary",
+  variant = "gray",
 }: LinkProps) => {
   const { handleTogglePress, theme, currentState, baseProps } = useButton({
     disabled,
@@ -27,7 +27,6 @@ export const Link = ({
     ? theme.colors.foreground.disabled
     : theme.colors.components.buttonLink[variant].foreground[currentState];
 
-  console.log(theme.colors.components.buttonLink[variant]);
   return (
     <ComponentPropsProvider value={{ textColor, size }}>
       <ButtonLinkContainer

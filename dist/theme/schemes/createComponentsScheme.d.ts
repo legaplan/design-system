@@ -17,7 +17,7 @@ export interface ComponentScheme {
         "tertiary-color": ButtonScheme;
     };
     buttonLink: {
-        primary: {
+        gray: {
             foreground: ButtonScheme["foreground"];
         };
         color: {

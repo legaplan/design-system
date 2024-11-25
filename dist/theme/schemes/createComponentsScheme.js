@@ -70,7 +70,7 @@ export const createLightComponentsScheme = (theme) => ({
                 hover: theme.colors.primary.brand[800],
             },
         },
-        primary: {
+        gray: {
             foreground: {
                 default: theme.colors.primary.lightGray[600],
                 hover: theme.colors.primary.lightGray[700],
@@ -159,7 +159,7 @@ export const createDarkComponentsScheme = (theme) => ({
                 hover: theme.colors.primary.darkGray[100],
             },
         },
-        primary: {
+        gray: {
             foreground: {
                 default: theme.colors.primary.darkGray[400],
                 hover: theme.colors.primary.darkGray[200],
