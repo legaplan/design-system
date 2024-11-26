@@ -7,9 +7,11 @@ export type TextScheme = {
     white: string;
     disabled: string;
     placeholder: string;
+    placeholder_subtle: string;
     brandPrimary: string;
     brandSecondary: string;
     brandTertiary: string;
+    brandTertiary_alt: string;
     errorPrimary: string;
     warningPrimary: string;
     successPrimary: string;

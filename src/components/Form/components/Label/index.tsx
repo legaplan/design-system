@@ -7,10 +7,10 @@ export interface LabelProps {
 }
 export const Label = ({ children, isRequired }: LabelProps) => {
   return (
-    <BaseText color="secondary" weight="medium">
+    <BaseText color="secondary" weight={500}>
       {children}
       {isRequired && (
-        <BaseText color={"brand_tertiary"} weight="medium">
+        <BaseText color={"brandTertiary"} weight={500}>
           {" "}
           *
         </BaseText>

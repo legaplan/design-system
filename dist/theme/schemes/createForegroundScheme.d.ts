@@ -8,7 +8,9 @@ export type ForegroundScheme = {
     senary: string;
     white: string;
     disabled: string;
+    disabled_subtle: string;
     brandPrimary: string;
+    brandPrimary_alt: string;
     brandSecondary: string;
     errorPrimary: string;
     errorSecondary: string;

@@ -1,18 +1,38 @@
 import styled from "styled-components/native";
-export const ButtonContainer = styled.TouchableOpacity `
-  background-color: ${({ theme }) => theme.colors.components.button.primary.background.default};
-  padding: 15px 20px;
-  border-radius: 10px;
+import { LinearGradient } from "expo-linear-gradient";
+import { getBackgroundStyles, getBorderStyles, getShadowStyles, } from "./Colors";
+import { getSpacingStyles } from "./Spacing";
+export const Container = styled.View `
+  overflow: hidden;
+  position: relative;
+
+  border-radius: ${({ theme }) => theme.borderRadius[2]};
+  padding: 1px;
+
+  ${({ theme, size }) => getSpacingStyles({ size, theme }).container}
+  ${({ theme, isPressed, variant, disabled }) => getBorderStyles({ variant, theme, isPressed, disabled })}
+  ${({ theme, isPressed, variant, disabled }) => getBackgroundStyles({ variant, theme, isPressed, disabled })}
+
+    ${({ variant }) => getShadowStyles({ variant })}
+`;
+export const GradientContainer = styled(LinearGradient).attrs({
+    start: { x: 0, y: 0 },
+    end: { x: 0, y: 1 },
+}) `
+  position: absolute;
+  border-radius: ${({ theme }) => theme.borderRadius[2]};
+  inset: -1px;
+`;
+export const Content = styled.View `
+  border-radius: ${({ theme }) => theme.borderRadius[1.5]};
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  shadow-offset: 0px 4px;
-  shadow-opacity: 0.3;
-  shadow-radius: 4px;
-  elevation: 6;
-`;
-export const ButtonText = styled.Text `
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
+  height: 100%;
+  z-index: 1;
+
+  /* Padding and gap*/
+  ${({ theme, size }) => getSpacingStyles({ size, theme }).content}
+
+  /* Background */
+  ${({ theme, isPressed, variant, disabled }) => getBackgroundStyles({ variant, theme, isPressed, disabled })}
 `;

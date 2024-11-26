@@ -15,12 +15,7 @@ export {
 
 // BaseText
 export { BaseText } from "./components/BaseText";
-export {
-  CustomTextProps,
-  CustomTextSizes,
-  CustomTextStyles,
-  TextProps,
-} from "./components/BaseText/types";
+export { CustomTextProps, TextProps } from "./components/BaseText/types";
 
 // Form
 export { Form } from "./components/Form";
@@ -33,3 +28,6 @@ export { Error } from "./components/Error";
 
 // Button
 export { Button } from "./components/Button";
+
+// Toggle
+export { Toggle } from "./components/Toggle";

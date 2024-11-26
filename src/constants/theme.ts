@@ -25,7 +25,9 @@ type SpaceKeys =
   | "5.5"
   | "6"
   | "8"
+  | "9"
   | "10"
+  | "11"
   | "12"
   | "16"
   | "20";
@@ -57,7 +59,17 @@ export type LineHeightKeys =
   | "10"
   | "11";
 
-export type BorderRadiusKeys = "1" | "2" | "3" | "4";
+export type BorderRadiusKeys =
+  | "0.5"
+  | "1"
+  | "1.5"
+  | "2"
+  | "2.5"
+  | "3"
+  | "4"
+  | "5"
+  | "6"
+  | "99";
 
 type ColorKeys =
   | "25"

@@ -1,52 +1,72 @@
 import React from "react";
-import { TextProps } from "./types";
+import { CustomTextWeight, TextProps } from "./types";
 import { Meta, StoryFn } from "@storybook/react";
 import { BaseText } from ".";
+import { TextScheme } from "../../theme/schemes/createTextScheme";
+import { FontSizeKeys } from "../../constants/theme";
+
+const COLOR_OPTIONS: Array<keyof TextScheme> = [
+  "primary",
+  "secondary",
+  "tertiary",
+  "quaternary",
+  "white",
+  "disabled",
+  "placeholder",
+  "placeholder_subtle",
+  "brandPrimary",
+  "brandSecondary",
+  "brandTertiary",
+  "brandTertiary_alt",
+  "errorPrimary",
+  "warningPrimary",
+  "successPrimary",
+];
+
+const WEIGHT_OPTIONS: CustomTextWeight[] = [400, 500, 600, 700];
+const SIZE_OPTIONS: FontSizeKeys[] = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+];
 
 export default {
   title: "Components/Text",
   component: BaseText,
   tags: ["autodocs"],
+
   argTypes: {
     color: {
       control: "select",
-      options: [
-        "white",
-        "gray",
-        "primary",
-        "secondary",
-        "tertiary",
-        "quaternary",
-        "default",
-        "error",
-        "success",
-        "disabled",
-        "brand_primary",
-        "brand_secondary",
-        "brand_tertiary",
-      ],
+      options: COLOR_OPTIONS,
       description: "Define a cor do texto",
       table: {
-        type: { summary: "keyof CustomTextStyles['color']" },
         defaultValue: { summary: "default" },
       },
     },
     size: {
       control: "select",
-      options: ["xs", "sm", "md", "lg", "xl", "default"],
+      options: SIZE_OPTIONS,
       description: "Define o tamanho do texto",
       table: {
-        type: { summary: "keyof CustomTextStyles['size']" },
         defaultValue: { summary: "md" },
       },
     },
     weight: {
       control: "select",
-      options: ["regular", "medium", "semibold", "bold", "default"],
+      options: WEIGHT_OPTIONS,
       description: "Defines o font weight do texto",
       table: {
-        type: { summary: "keyof CustomTextStyles['weight']" },
-        defaultValue: { summary: "regular" },
+        defaultValue: { summary: "400" },
       },
     },
     children: {

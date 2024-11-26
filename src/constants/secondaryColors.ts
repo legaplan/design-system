@@ -2,6 +2,7 @@ import { Color } from "./theme";
 
 export type SecondaryColors = {
   grayBlue: Color;
+  grayCool: Color;
   blueLight: Color;
   blue: Color;
   indigo: Color;
@@ -25,16 +26,30 @@ export const SECONDARY_COLORS: SecondaryColors = {
     "900": "#101323",
     "950": "#0D0F1C",
   },
+  grayCool: {
+    "25": "#FCFCFD",
+    "50": "#F9F9FB",
+    "100": "#EFF1F5",
+    "200": "#DCDFEA",
+    "300": "#B9C0D4",
+    "400": "#7D89B0",
+    "500": "#5D6B98",
+    "600": "#4A5578",
+    "700": "#404968",
+    "800": "#30374F",
+    "900": "#111322",
+    "950": "#0E101B",
+  },
   blueLight: {
     "25": "#F5FBFF",
-    "50": "#e5f5ff",
-    "100": "#e0f2fe",
+    "50": "#E5F5FF",
+    "100": "#E0F2FE",
     "200": "#B9E6FE",
     "300": "#7CD4FD",
     "400": "#36BFFA",
     "500": "#0BA5EC",
     "600": "#0086C9",
-    "700": "#1474ae",
+    "700": "#1474AE",
     "800": "#065986",
     "900": "#0B4A6F",
     "950": "#062C41",
@@ -48,7 +63,7 @@ export const SECONDARY_COLORS: SecondaryColors = {
     "400": "#53B1FD",
     "500": "#2E90FA",
     "600": "#1570EF",
-    "700": "#175cd3",
+    "700": "#175CD3",
     "800": "#1849A9",
     "900": "#194185",
     "950": "#102A56",
