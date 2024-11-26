@@ -7,8 +7,8 @@ import { TouchableOpacityProps, TouchableWithoutFeedback } from "react-native";
 import { ComponentScheme } from "@/theme/schemes/createComponentsScheme";
 
 export interface LinkProps extends TouchableOpacityProps {
-  size: ButtonSize;
-  variant: keyof ComponentScheme["buttonLink"];
+  size?: ButtonSize;
+  variant?: keyof ComponentScheme["buttonLink"];
   children: React.ReactNode;
   onPress: () => void;
 }
