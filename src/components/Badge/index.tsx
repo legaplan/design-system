@@ -4,6 +4,7 @@ import Text from "./components/Text";
 import { ComponentPropsProvider } from "../../providers/ComponentPropsProvider";
 import { Container } from "./styles";
 import { BadgeSizes, BadgeColors, BadgeVariants } from "./types";
+import { FontSizeKeys } from "@/constants/theme";
 
 export interface BadgeProps {
   size?: BadgeSizes;
@@ -18,7 +19,7 @@ export const Badge = ({
   size = 2,
   variant = "fill",
 }: BadgeProps) => {
-  const textSize = size === 1 ? "xs" : "sm";
+  const textSize: FontSizeKeys = size === 1 ? "2" : "3";
   const isOutline = variant === "outline";
   return (
     <ComponentPropsProvider value={{ color, textSize, isOutline }}>
