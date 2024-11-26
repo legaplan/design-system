@@ -19,6 +19,7 @@ export const Link = ({
   size = 2,
   variant = "gray",
   onPress,
+  ...props
 }: LinkProps) => {
   const { handleTogglePress, theme, currentState, baseProps } = useButton({
     disabled,
@@ -37,6 +38,7 @@ export const Link = ({
         onPressIn={handleTogglePress}
         onPress={disabled ? undefined : onPress}
         onPressOut={handleTogglePress}
+        {...props}
       >
         <ButtonLinkContainer {...baseProps}>{children}</ButtonLinkContainer>
       </TouchableWithoutFeedback>

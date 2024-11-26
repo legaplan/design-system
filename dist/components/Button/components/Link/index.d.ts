@@ -8,4 +8,4 @@ export interface LinkProps extends TouchableOpacityProps {
     children: React.ReactNode;
     onPress: () => void;
 }
-export declare const Link: ({ children, disabled, size, variant, onPress, }: LinkProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Link: ({ children, disabled, size, variant, onPress, ...props }: LinkProps) => import("react/jsx-runtime").JSX.Element;

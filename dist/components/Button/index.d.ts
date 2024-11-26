@@ -17,5 +17,5 @@ export declare const Button: {
     Text: ({ children }: {
         children: React.ReactNode;
     }) => import("react/jsx-runtime").JSX.Element;
-    Link: ({ children, disabled, size, variant, onPress, }: import("./components/Link").LinkProps) => import("react/jsx-runtime").JSX.Element;
+    Link: ({ children, disabled, size, variant, onPress, ...props }: import("./components/Link").LinkProps) => import("react/jsx-runtime").JSX.Element;
 };
