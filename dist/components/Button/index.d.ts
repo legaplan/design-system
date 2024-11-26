@@ -5,7 +5,7 @@ export interface ButtonChildrenProps {
     textColor: string;
 }
 export type ButtonVariant = keyof ComponentScheme["button"];
-export type ButtonSize = 1 | 2 | 3;
+export type ButtonSize = 1 | 2 | 3 | 4 | 5;
 export interface ButtonProps extends TouchableOpacityProps {
     variant?: ButtonVariant;
     size?: ButtonSize;
@@ -18,5 +18,5 @@ export declare const Button: {
     Text: ({ children }: {
         children: React.ReactNode;
     }) => import("react/jsx-runtime").JSX.Element;
-    Link: ({ children, disabled, size, variant, }: import("./components/Link").LinkProps) => import("react/jsx-runtime").JSX.Element;
+    Link: ({ children, disabled, size, variant, onPress, }: import("./components/Link").LinkProps) => import("react/jsx-runtime").JSX.Element;
 };
