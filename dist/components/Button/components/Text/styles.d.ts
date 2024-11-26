@@ -1,5 +1,7 @@
 import { ButtonSize } from "../..";
-export declare const StyledButtonText: import("styled-components").StyledComponent<({ children, ...props }: import("../../../..").TextProps) => import("react/jsx-runtime").JSX.Element, import("styled-components").DefaultTheme, {
+type StyledTextProps = {
     textColor: string;
     buttonSize: ButtonSize;
-}, never>;
+};
+export declare const StyledButtonText: import("styled-components").StyledComponent<({ children, ...props }: import("../../../..").TextProps) => import("react/jsx-runtime").JSX.Element, import("styled-components").DefaultTheme, StyledTextProps, never>;
+export {};

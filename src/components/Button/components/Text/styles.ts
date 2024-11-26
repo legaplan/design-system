@@ -1,12 +1,15 @@
 import { BaseText } from "@/components/BaseText";
 import styled from "styled-components/native";
 import { ButtonSize } from "../..";
+import { getTextSizeStyles } from "./Sizes";
 
-export const StyledButtonText = styled(BaseText)<{
+type StyledTextProps = {
   textColor: string;
   buttonSize: ButtonSize;
-}>`
+};
+
+export const StyledButtonText = styled(BaseText).attrs<StyledTextProps>(({ buttonSize }) => ({
+  size: getTextSizeStyles({ size: buttonSize }),
+}))<StyledTextProps>`
   color: ${({ textColor }) => textColor};
-  font-size: ${({ buttonSize, theme }) =>
-    buttonSize === 3 ? theme.fontSize[4] : theme.fontSize[3]};
 `;

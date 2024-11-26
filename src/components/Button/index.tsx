@@ -12,7 +12,7 @@ export interface ButtonChildrenProps {
   textColor: string;
 }
 export type ButtonVariant = keyof ComponentScheme["button"];
-export type ButtonSize = 1 | 2 | 3;
+export type ButtonSize = 1 | 2 | 3 | 4 | 5;
 
 export interface ButtonProps extends TouchableOpacityProps {
   variant?: ButtonVariant;
@@ -54,7 +54,7 @@ export const Button = ({
         delayPressIn={0}
         delayPressOut={0}
         onPressIn={handleTogglePress}
-        onPress={onPress}
+        onPress={disabled ? undefined : onPress}
         onPressOut={handleTogglePress}
       >
         <Container {...baseProps} variant={variant}>

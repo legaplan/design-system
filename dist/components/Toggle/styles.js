@@ -5,9 +5,6 @@ export const Thumb = styled(Animated.View) `
   flex-shrink: 0;
   border-radius: ${({ theme }) => theme.borderRadius[99]};
   background: ${({ theme }) => theme.colors.primary.base.white};
-  /* Shadows/shadow-sm */
-  /* TODO: Resolve Shadow */
-  /* box-shadow: 0px 1px 3px 0px rgba(10, 13, 18, 0.10), 0px 1px 2px -1px rgba(10, 13, 18, 0.10); */
 
   shadow-color: rgb(10, 13, 18);
   shadow-offset: 0 1px;

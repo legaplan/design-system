@@ -1,4 +1,5 @@
 declare const icons: {
+    "arrow-right": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     "arrow-left": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     "chevron-left": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     "alert-circle": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
