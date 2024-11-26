@@ -6,5 +6,5 @@ interface ErrorProps {
 
 export const Error = ({ message }: ErrorProps) => {
   if (!message) return null;
-  return <BaseText color="error">{message}</BaseText>;
+  return <BaseText color="errorPrimary">{message}</BaseText>;
 };

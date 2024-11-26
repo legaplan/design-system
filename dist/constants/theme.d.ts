@@ -9,7 +9,7 @@ import { SecondaryColors } from "./secondaryColors";
 type SpaceKeys = "0.5" | "1" | "1.5" | "2" | "2.5" | "3" | "3.5" | "4" | "4.5" | "5" | "5.5" | "6" | "8" | "9" | "10" | "11" | "12" | "16" | "20";
 export type FontSizeKeys = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12";
 export type LineHeightKeys = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11";
-export type BorderRadiusKeys = "1" | "2" | "3" | "4" | "99";
+export type BorderRadiusKeys = "0.5" | "1" | "1.5" | "2" | "2.5" | "3" | "4" | "5" | "6" | "99";
 type ColorKeys = "25" | "50" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | "950";
 export type FontSizeRaw = Record<FontSizeKeys, number>;
 export type FontSizeInPixels = Record<FontSizeKeys, string>;

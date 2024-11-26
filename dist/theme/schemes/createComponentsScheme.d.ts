@@ -12,8 +12,16 @@ export interface ComponentScheme {
     button: {
         primary: ButtonScheme;
         secondary: ButtonScheme;
-        tertiary: Omit<ButtonScheme, "background"> & {
-            background: Partial<ColorScheme>;
+        tertiary: ButtonScheme;
+        "secondary-color": ButtonScheme;
+        "tertiary-color": ButtonScheme;
+    };
+    buttonLink: {
+        gray: {
+            foreground: ButtonScheme["foreground"];
+        };
+        color: {
+            foreground: ButtonScheme["foreground"];
         };
     };
     toggle: {
