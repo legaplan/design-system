@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.1.0](https://github.com/legaplan/native-design-system/compare/v2.0.0...v2.1.0) (2024-11-26)
+
+
+### Features
+
+* **#8:** Add build files ([555e183](https://github.com/legaplan/native-design-system/commit/555e18334944eee6ef7b0fb28f9a862676d00678))
+* **#8:** Add build files ([874fd09](https://github.com/legaplan/native-design-system/commit/874fd099fdae4df5d04b2accd850840e14ab857c))
+* **#8:** Add button link ([c122fb0](https://github.com/legaplan/native-design-system/commit/c122fb00755882fd850de2971e925e89785cc651))
+* **#8:** Add Button variants with disabled and shadow support ([902476a](https://github.com/legaplan/native-design-system/commit/902476aa838d10e3dc8c0eb7f732f69b8d9fe8b8))
+* **#8:** Add initial button structure ([f51151a](https://github.com/legaplan/native-design-system/commit/f51151a6068c27cfac9f9a0b300f74b5f69cc6e2))
+* **toggle:** Added toggle component ([05d40ee](https://github.com/legaplan/native-design-system/commit/05d40ee75a110c096275d474e893c5ef351fdd8d))
+
+
+### Bug Fixes
+
+* **#8:** Wrap container with TouchableWithoutFeedback ([bdabca6](https://github.com/legaplan/native-design-system/commit/bdabca64f896fc27ac54f7fe53579d4f8cc2169c))
+
 ## [2.0.0](https://github.com/legaplan/native-design-system/compare/v1.4.0...v2.0.0) (2024-11-14)
 
 
