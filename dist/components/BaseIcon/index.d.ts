@@ -9,6 +9,7 @@ declare const icons: {
     "notification-off": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     "paint-brush": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     "user-group": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
+    "upload-cloud": ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     home: ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     folder: ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
     doc: ({ color }: import("./types/svg").TSvg) => import("react/jsx-runtime").JSX.Element;
