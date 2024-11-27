@@ -31,6 +31,8 @@ export const ButtonLinkContainer = styled.View<{
   size: ButtonSize;
   theme: DefaultTheme;
 }>`
+  flex-direction: row;
+  align-items: center;
   /* Gap */
   ${({ size, theme }) => getGapStyles(size, theme)}
 

@@ -17,7 +17,6 @@ export type ButtonSize = 1 | 2 | 3 | 4 | 5;
 export interface ButtonProps extends TouchableOpacityProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
-  onPress: () => void;
   children: React.ReactNode;
 }
 
@@ -35,6 +34,7 @@ export const Button = ({
   children,
   disabled = false,
   onPress,
+  ...props
 }: ButtonProps) => {
   const { handleTogglePress, theme, baseProps, currentState, gradientColors } =
     useButton({
@@ -56,6 +56,7 @@ export const Button = ({
         onPressIn={handleTogglePress}
         onPress={disabled ? undefined : onPress}
         onPressOut={handleTogglePress}
+        {...props}
       >
         <Container {...baseProps} variant={variant}>
           {shouldShowGradient && <GradientContainer colors={gradientColors} />}

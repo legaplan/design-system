@@ -13,7 +13,7 @@ const hasGradient = {
     secondary: true,
     tertiary: false,
 };
-export const Button = ({ variant = "primary", size = 2, children, disabled = false, onPress, }) => {
+export const Button = ({ variant = "primary", size = 2, children, disabled = false, onPress, ...props }) => {
     const { handleTogglePress, theme, baseProps, currentState, gradientColors } = useButton({
         disabled,
         size,
@@ -22,7 +22,7 @@ export const Button = ({ variant = "primary", size = 2, children, disabled = fal
         ? theme.colors.foreground.disabled
         : theme.colors.components.button[variant].foreground[currentState];
     const shouldShowGradient = !disabled && hasGradient[variant];
-    return (_jsx(ComponentPropsProvider, { value: { textColor, size }, children: _jsx(TouchableWithoutFeedback, { delayPressIn: 0, delayPressOut: 0, onPressIn: handleTogglePress, onPress: disabled ? undefined : onPress, onPressOut: handleTogglePress, children: _jsxs(Container, { ...baseProps, variant: variant, children: [shouldShowGradient && _jsx(GradientContainer, { colors: gradientColors }), _jsx(Content, { variant: variant, ...baseProps, children: children })] }) }) }));
+    return (_jsx(ComponentPropsProvider, { value: { textColor, size }, children: _jsx(TouchableWithoutFeedback, { delayPressIn: 0, delayPressOut: 0, onPressIn: handleTogglePress, onPress: disabled ? undefined : onPress, onPressOut: handleTogglePress, ...props, children: _jsxs(Container, { ...baseProps, variant: variant, children: [shouldShowGradient && _jsx(GradientContainer, { colors: gradientColors }), _jsx(Content, { variant: variant, ...baseProps, children: children })] }) }) }));
 };
 Button.Icon = Icon;
 Button.Text = Text;

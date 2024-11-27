@@ -7,8 +7,8 @@ import { TouchableOpacityProps, TouchableWithoutFeedback } from "react-native";
 import { ComponentScheme } from "@/theme/schemes/createComponentsScheme";
 
 export interface LinkProps extends TouchableOpacityProps {
-  size: ButtonSize;
-  variant: keyof ComponentScheme["buttonLink"];
+  size?: ButtonSize;
+  variant?: keyof ComponentScheme["buttonLink"];
   children: React.ReactNode;
   onPress: () => void;
 }
@@ -19,6 +19,7 @@ export const Link = ({
   size = 2,
   variant = "gray",
   onPress,
+  ...props
 }: LinkProps) => {
   const { handleTogglePress, theme, currentState, baseProps } = useButton({
     disabled,
@@ -37,6 +38,7 @@ export const Link = ({
         onPressIn={handleTogglePress}
         onPress={disabled ? undefined : onPress}
         onPressOut={handleTogglePress}
+        {...props}
       >
         <ButtonLinkContainer {...baseProps}>{children}</ButtonLinkContainer>
       </TouchableWithoutFeedback>
