@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.0](https://github.com/legaplan/native-design-system/compare/v2.1.0...v2.2.0) (2024-12-01)
+
+
+### Features
+
+* **button-link:** Add align items property ([9fcc82e](https://github.com/legaplan/native-design-system/commit/9fcc82e7186f1c129e0ae4b4f0e019ab9e397dad))
+
+
+### Bug Fixes
+
+* **badge:** Fix badge text size ([ef979d7](https://github.com/legaplan/native-design-system/commit/ef979d7bbd95b6706abb5d3328743219bc50230b))
+* **button-link:** Fix buttonLink text size and wrap it with Touchable Without Feedback ([ce29201](https://github.com/legaplan/native-design-system/commit/ce29201c4bd8f6e555d17acece6843d8e5159057))
+* **button-link:** Fix missing button link props ([8be582c](https://github.com/legaplan/native-design-system/commit/8be582cb362f476347f1842041e3cb28ff27c056))
+* **button:** Fixed some bugs on button and add more sizes ([669fda0](https://github.com/legaplan/native-design-system/commit/669fda0f1d4869c9e8c6c38432016c5b2f950444))
+
 ## [2.1.0](https://github.com/legaplan/native-design-system/compare/v2.0.0...v2.1.0) (2024-11-26)
 
 
