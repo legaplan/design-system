@@ -1,6 +1,7 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { IconContainer } from "./styles";
 import { useTheme } from "styled-components/native";
+import ArrowRight from "./components/ArrowRight";
 import ArrowLeft from "./components/ArrowLeft";
 import ChevronLeft from "./components/ChevronLeft";
 import AlertCircle from "./components/AlertCircle";
@@ -15,6 +16,7 @@ import Home from "./components/Home";
 import Folder from "./components/Folder";
 import Plus from "./components/Plus";
 const icons = {
+    ["arrow-right"]: ArrowRight,
     ["arrow-left"]: ArrowLeft,
     ["chevron-left"]: ChevronLeft,
     ["alert-circle"]: AlertCircle,

@@ -30,6 +30,8 @@ export const Content = styled.View `
   height: 100%;
   z-index: 1;
 
+  flex-direction: row;
+
   /* Padding and gap*/
   ${({ theme, size }) => getSpacingStyles({ size, theme }).content}
 

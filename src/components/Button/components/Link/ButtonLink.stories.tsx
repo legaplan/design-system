@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { View } from "react-native";
+import { StyleProp, View, ViewStyle } from "react-native";
 import { Button } from "../..";
 
 const meta: Meta<typeof Button.Link> = {
@@ -11,7 +11,7 @@ const meta: Meta<typeof Button.Link> = {
   },
   decorators: [
     (Story) => (
-      <View style={{ maxWidth: 153 }}>
+      <View style={{ width: "fit-content" } as unknown as StyleProp<ViewStyle>}>
         <Story />
       </View>
     ),
@@ -35,7 +35,7 @@ const meta: Meta<typeof Button.Link> = {
       control: {
         type: "select",
       },
-      options: [1, 2, 3],
+      options: [1, 2, 3, 4, 5],
       description: "Tamanho do botão.",
     },
     children: {
