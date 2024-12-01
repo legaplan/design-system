@@ -4,7 +4,6 @@ import { Button } from "../Button";
 import { Badge, BadgeProps } from ".";
 import { View } from "react-native";
 import { useTheme } from "../../providers/ThemeProvider";
-import { BaseText } from "../BaseText";
 const meta = {
   component: Badge,
   tags: ["autodocs"],

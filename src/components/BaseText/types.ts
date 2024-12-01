@@ -10,6 +10,6 @@ export interface TextProps extends CustomTextProps {
 
 export interface CustomTextProps {
   color?: keyof TextScheme;
-  size?: FontSizeKeys;
+  size?: keyof FontSizeInPixels;
   weight?: CustomTextWeight;
 }

@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
 import { getBadgeColors } from "./Colors";
-import { getBadgePadding } from "./Spacing";
+import { getBadgePadding, getBadgeRadius } from "./Spacing";
 export const Container = styled.View `
-  border-radius: 9999px;
+  border-radius: ${({ type, size, theme }) => getBadgeRadius(type, size, theme)};
 
   border-width: ${({ variant }) => (variant === "outline" ? "1.5px" : "1px")};
 
