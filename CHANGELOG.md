@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/legaplan/native-design-system/compare/v2.2.0...v2.3.0) (2024-12-02)
+
+
+### Features
+
+* **#55:** Add default type to badge ([89632c4](https://github.com/legaplan/native-design-system/commit/89632c47f855dfcc5d7555b601c18efaaccea911))
+* **#63, #54:** Fix icon stroke width and add error variants do button ([b55a498](https://github.com/legaplan/native-design-system/commit/b55a4984dacee4ccd9b4b1224ba66f0b67856bbd))
+
+
+### Bug Fixes
+
+* **icon:** Rename icon ([e2a9032](https://github.com/legaplan/native-design-system/commit/e2a903218689d279ecdff9f4df71aa0046e5ff88))
+
 ## [2.2.0](https://github.com/legaplan/native-design-system/compare/v2.1.0...v2.2.0) (2024-12-01)
 
 
