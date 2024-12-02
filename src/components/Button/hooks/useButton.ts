@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { useTheme as useScheme } from "@/providers/ThemeProvider";
-import { useTheme } from "styled-components/native";
+import { useTheme } from "@/providers/ThemeProvider";
 import { getButtonState } from "../Colors";
 import { ButtonSize } from "..";
 
@@ -18,8 +17,7 @@ const skeumorphicInner = {
 
 export const useButton = ({ disabled, size }: UseButtonProps) => {
   const [isPressed, setIsPressed] = useState(false);
-  const { theme: scheme } = useScheme();
-  const theme = useTheme();
+  const { scheme, theme } = useTheme();
 
   const handleTogglePress = () => {
     setIsPressed((prev) => !prev);

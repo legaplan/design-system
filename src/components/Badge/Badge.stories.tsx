@@ -4,7 +4,6 @@ import { Button } from "../Button";
 import { Badge, BadgeProps } from ".";
 import { View } from "react-native";
 import { useTheme } from "../../providers/ThemeProvider";
-import { BaseText } from "../BaseText";
 const meta = {
   component: Badge,
   tags: ["autodocs"],
@@ -26,12 +25,12 @@ export const Default: Story = {
   },
   decorators: [
     (Story) => {
-      const { toggleTheme, theme } = useTheme();
+      const { scheme, toggleScheme } = useTheme();
 
       return (
         <View style={{ gap: 16 }}>
-          <Button onPress={toggleTheme}>
-            <Button.Text>Toggle theme - {theme}</Button.Text>
+          <Button onPress={toggleScheme}>
+            <Button.Text>Toggle scheme - {scheme}</Button.Text>
           </Button>
 
           <Story />

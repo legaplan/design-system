@@ -15,17 +15,19 @@ import {
 } from "../theme/schemes/createTheme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { merge } from "../utils/merge";
+import { Theme } from "@/constants/theme";
 
-export type TTheme = "light" | "dark";
+export type Scheme = "light" | "dark";
 interface ThemeProviderProps {
   children: React.ReactNode;
   userTheme?: ThemeConfigProps;
 }
 
 interface ThemeContextProps {
-  theme: TTheme;
-  getTheme: () => Promise<void>;
-  toggleTheme: () => Promise<void>;
+  scheme: Scheme;
+  theme: Theme;
+  getScheme: () => Promise<void>;
+  toggleScheme: () => Promise<void>;
 }
 
 const ThemeContext = createContext({} as ThemeContextProps);
@@ -34,31 +36,31 @@ const THEME_KEY = "@theme";
 
 const ThemeProvider = ({ userTheme, children }: ThemeProviderProps) => {
   const userPreferredScheme = useNativeColorScheme();
-  const [theme, setTheme] = useState<TTheme>(userPreferredScheme || "light");
+  const [scheme, setScheme] = useState<Scheme>(userPreferredScheme || "light");
 
-  const getTheme = async () => {
+  const getScheme = async () => {
     try {
       const storageScheme = (await AsyncStorage.getItem(
         THEME_KEY
-      )) as TTheme | null;
-      if (storageScheme) setTheme(storageScheme);
+      )) as Scheme | null;
+      if (storageScheme) setScheme(storageScheme);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const toggleTheme = async () => {
-    const updatedScheme = theme === "light" ? "dark" : "light";
+  const toggleScheme = async () => {
+    const updatedScheme = scheme === "light" ? "dark" : "light";
     try {
       await AsyncStorage.setItem(THEME_KEY, updatedScheme);
-      setTheme(updatedScheme);
+      setScheme(updatedScheme);
     } catch (error) {
-      console.log("Toggle theme error:", error);
+      console.log("Toggle scheme error:", error);
     }
   };
 
   useEffect(() => {
-    getTheme();
+    getScheme();
   }, []);
 
   const mergedTheme = mergeThemes(userTheme);
@@ -69,28 +71,27 @@ const ThemeProvider = ({ userTheme, children }: ThemeProviderProps) => {
   const lightColors = merge(createLightTheme(mergedTheme), userLightTheme);
   const darkColors = merge(createDarkTheme(mergedTheme), userDarkTheme);
 
-  const themeColors = theme === "light" ? lightColors : darkColors;
+  const themeColors = scheme === "light" ? lightColors : darkColors;
+  const theme: Theme = {
+    ...mergedTheme,
+    raw: {
+      space: mergedTheme.space,
+      borderRadius: mergedTheme.borderRadius,
+      fontSize: mergedTheme.fontSize,
+    },
+    lineHeight: createLineHeightInPixel(mergedTheme.lineHeight),
+    borderRadius: createBorderRadiusInPixel(mergedTheme.borderRadius),
+    fontSize: createFontSizeInPixel(mergedTheme.fontSize),
+    space: createSpaceInPixel(mergedTheme.space),
+    colors: {
+      ...mergedTheme.colors,
+      ...themeColors,
+    },
+  };
 
   return (
-    <ThemeContext.Provider value={{ toggleTheme, getTheme, theme }}>
-      <StyledComponentesProvider
-        theme={{
-          ...mergedTheme,
-          raw: {
-            space: mergedTheme.space,
-            borderRadius: mergedTheme.borderRadius,
-            fontSize: mergedTheme.fontSize,
-          },
-          lineHeight: createLineHeightInPixel(mergedTheme.lineHeight),
-          borderRadius: createBorderRadiusInPixel(mergedTheme.borderRadius),
-          fontSize: createFontSizeInPixel(mergedTheme.fontSize),
-          space: createSpaceInPixel(mergedTheme.space),
-          colors: {
-            ...mergedTheme.colors,
-            ...themeColors,
-          },
-        }}
-      >
+    <ThemeContext.Provider value={{ toggleScheme, getScheme, scheme, theme }}>
+      <StyledComponentesProvider theme={theme}>
         {children}
       </StyledComponentesProvider>
     </ThemeContext.Provider>
