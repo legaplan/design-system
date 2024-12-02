@@ -1,6 +1,6 @@
 import Svg, { Path } from "react-native-svg";
 import { TSvg } from "../types/svg";
-const CheckFill = ({ color }: TSvg) => {
+const CheckFill = ({ color, strokeWidth }: TSvg) => {
   return (
     <Svg width={"100%"} height={"100%"} viewBox="0 0 24 24" fill="none">
       <Path
@@ -11,7 +11,7 @@ const CheckFill = ({ color }: TSvg) => {
         stroke="#fff"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
+        strokeWidth={strokeWidth}
         d="m6.25 10 2.5 2.5 5-5"
       />
     </Svg>

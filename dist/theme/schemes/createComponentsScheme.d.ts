@@ -15,6 +15,9 @@ export interface ComponentScheme {
         tertiary: ButtonScheme;
         "secondary-color": ButtonScheme;
         "tertiary-color": ButtonScheme;
+        "primary-error": ButtonScheme;
+        "secondary-error": ButtonScheme;
+        "tertiary-error": ButtonScheme;
     };
     buttonLink: {
         gray: {

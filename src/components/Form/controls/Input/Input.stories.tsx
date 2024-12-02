@@ -32,6 +32,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    multiline: true,
+    numberOfLines: 4,
     placeholder: "olivia@untitledui.com",
   },
 };

@@ -10,8 +10,8 @@ import {
   StyledInput,
   SuffixContainer,
 } from "./styles";
-import { useTheme } from "styled-components/native";
 import { IconKeys, BaseIcon } from "../../../BaseIcon";
+import { useTheme } from "@/providers/ThemeProvider";
 
 export interface InputProps extends TextInputProps {
   hasError?: boolean;
@@ -33,7 +33,7 @@ export const Input = ({
   value,
   ...props
 }: InputProps) => {
-  const theme = useTheme();
+  const { theme } = useTheme();
   const [isFocused, setIsFocused] = useState(false);
 
   const handleOnChange = (text: string) => {
@@ -64,7 +64,7 @@ export const Input = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholderTextColor={theme.colors.text.placeholder}
-        selectionColor={theme.colors.primary.brand[400]}
+        selectionColor={theme.colors.border.brand}
         onChangeText={handleOnChange}
         value={value}
         {...props}

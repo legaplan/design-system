@@ -33,9 +33,15 @@ const icons = {
     doc: Doc,
     plus: Plus,
 };
+const sizes = {
+    1: 16,
+    2: 20,
+    3: 24,
+};
 export const BaseIcon = ({ name, color, size = 2 }) => {
     const theme = useTheme();
     const defaultColor = theme.colors.primary.base.black;
+    const calculatedStrokeWidth = (sizes[size] / 24) * 2;
     const IconByName = icons[name];
-    return (_jsx(IconContainer, { size: size, children: _jsx(IconByName, { color: color ?? defaultColor }) }));
+    return (_jsx(IconContainer, { size: size, children: _jsx(IconByName, { strokeWidth: calculatedStrokeWidth, color: color ?? defaultColor }) }));
 };

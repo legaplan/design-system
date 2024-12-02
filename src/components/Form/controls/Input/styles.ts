@@ -25,15 +25,15 @@ export const SuffixContainer = styled.View`
 
   /* TODO: Review transform value */
   transform: translateY(-8px);
-  right: 12px;
+  right: ${({ theme }) => theme.space[2.5]};
 `;
 export const InputContainer = styled.View<InputContainerProps>`
   width: 100%;
   position: relative;
   align-items: center;
   gap: ${({ theme }) => theme.space[2]};
-  height: ${({ theme }) => theme.space[10]};
-  padding: 0px 12px;
+  /* height: ${({ theme }) => theme.space[10]}; */
+  padding: ${({ theme }) => `${theme.space[2]} ${theme.space[2.5]}`};
   padding-right: ${({ hasSuffixIcon }) => (hasSuffixIcon ? "36px" : "12px")};
   border-radius: ${({ theme }) => theme.borderRadius[3]};
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);

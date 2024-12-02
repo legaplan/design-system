@@ -9,6 +9,9 @@ import { Link } from "./components/Link";
 const hasGradient = {
     "secondary-color": true,
     "tertiary-color": false,
+    "primary-error": true,
+    "secondary-error": true,
+    "tertiary-error": false,
     primary: true,
     secondary: true,
     tertiary: false,
