@@ -1,4 +1,4 @@
-import { FontSizeKeys } from "../../constants/theme";
+import { FontSizeInPixels } from "../../constants/theme";
 import { TextScheme } from "../../theme/schemes/createTextScheme";
 import { ReactNode } from "react";
 export type CustomTextWeight = 400 | 500 | 600 | 700;
@@ -7,6 +7,6 @@ export interface TextProps extends CustomTextProps {
 }
 export interface CustomTextProps {
     color?: keyof TextScheme;
-    size?: FontSizeKeys;
+    size?: keyof FontSizeInPixels;
     weight?: CustomTextWeight;
 }

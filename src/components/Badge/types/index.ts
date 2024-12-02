@@ -1,6 +1,7 @@
 import { CustomTextProps } from "../../BaseText/types";
 
 export type BadgeVariants = "outline" | "fill";
+export type BadgeType = "pill" | "default";
 export type BadgeSizes = 1 | 2 | 3;
 export type BadgeColors =
   | "gray"

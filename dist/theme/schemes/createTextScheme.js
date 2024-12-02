@@ -1,5 +1,5 @@
 export const createLightTextScheme = (theme) => ({
-    primary: theme.colors.primary.darkGray[950],
+    primary: theme.colors.primary.lightGray[950],
     secondary: theme.colors.primary.lightGray[700],
     tertiary: theme.colors.primary.lightGray[600],
     quaternary: theme.colors.primary.lightGray[500],

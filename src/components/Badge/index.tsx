@@ -3,13 +3,14 @@ import Icon from "./components/Icon";
 import Text from "./components/Text";
 import { ComponentPropsProvider } from "../../providers/ComponentPropsProvider";
 import { Container } from "./styles";
-import { BadgeSizes, BadgeColors, BadgeVariants } from "./types";
+import { BadgeSizes, BadgeColors, BadgeVariants, BadgeType } from "./types";
 import { FontSizeKeys } from "@/constants/theme";
 
 export interface BadgeProps {
   size?: BadgeSizes;
   color: BadgeColors;
   variant?: BadgeVariants;
+  type?: BadgeType;
   children: React.ReactNode;
 }
 
@@ -17,6 +18,7 @@ export const Badge = ({
   color,
   children,
   size = 2,
+  type = "default",
   variant = "fill",
 }: BadgeProps) => {
   const textSize: FontSizeKeys = size === 1 ? "2" : "3";
@@ -24,7 +26,7 @@ export const Badge = ({
   return (
     <ComponentPropsProvider value={{ color, textSize, isOutline }}>
       <View>
-        <Container color={color} size={size} variant={variant}>
+        <Container color={color} type={type} size={size} variant={variant}>
           {children}
         </Container>
       </View>

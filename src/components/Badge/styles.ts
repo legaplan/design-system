@@ -1,16 +1,18 @@
 import styled from "styled-components/native";
 import { getBadgeColors } from "./Colors";
-import { getBadgePadding } from "./Spacing";
-import { BadgeSizes, BadgeColors, BadgeVariants } from "./types";
+import { getBadgePadding, getBadgeRadius } from "./Spacing";
+import { BadgeSizes, BadgeColors, BadgeVariants, BadgeType } from "./types";
 
 interface BadgeContainerProps {
   size: BadgeSizes;
   color: BadgeColors;
   variant: BadgeVariants;
+  type: BadgeType;
 }
 
 export const Container = styled.View<BadgeContainerProps>`
-  border-radius: 9999px;
+  border-radius: ${({ type, size, theme }) =>
+    getBadgeRadius(type, size, theme)};
 
   border-width: ${({ variant }) => (variant === "outline" ? "1.5px" : "1px")};
 

@@ -15,6 +15,7 @@ import UserGroup from "./components/UserGroup";
 import Home from "./components/Home";
 import Folder from "./components/Folder";
 import Plus from "./components/Plus";
+import UploadCloud2 from "./components/UploadCloud2";
 const icons = {
     ["arrow-right"]: ArrowRight,
     ["arrow-left"]: ArrowLeft,
@@ -26,6 +27,7 @@ const icons = {
     ["notification-off"]: NotificationOff,
     ["paint-brush"]: PaintBrush,
     ["user-group"]: UserGroup,
+    ["upload-cloud-2"]: UploadCloud2,
     home: Home,
     folder: Folder,
     doc: Doc,
