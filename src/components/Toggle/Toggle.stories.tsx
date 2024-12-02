@@ -14,16 +14,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    size: 'sm',
+    size: "sm",
     value: true,
   },
   decorators: [
     (Story) => {
-      const { toggleTheme, theme } = useTheme();
+      const { toggleScheme, scheme } = useTheme();
 
       return (
         <>
-          <Button title={`Toggle theme - ${theme}`} onPress={toggleTheme} />
+          <Button title={`Toggle scheme - ${scheme}`} onPress={toggleScheme} />
           <Story />
         </>
       );

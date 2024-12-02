@@ -23,6 +23,9 @@ export interface ButtonProps extends TouchableOpacityProps {
 const hasGradient: Record<ButtonVariant, boolean> = {
   "secondary-color": true,
   "tertiary-color": false,
+  "primary-error": true,
+  "secondary-error": true,
+  "tertiary-error": false,
   primary: true,
   secondary: true,
   tertiary: false,

@@ -6,7 +6,7 @@ interface UseButtonProps {
 }
 export declare const useButton: ({ disabled, size }: UseButtonProps) => {
     gradientColors: GradientTuple;
-    theme: import("styled-components").DefaultTheme;
+    theme: import("../../..").Theme;
     currentState: import("../Colors").ButtonState;
     baseProps: {
         disabled: boolean;

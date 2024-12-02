@@ -63,21 +63,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: <Button.Text>Default Button</Button.Text>,
+    children: <Button.Text>Default Text</Button.Text>,
   },
 };
 
 export const SecondaryGray: Story = {
   args: {
     variant: "secondary",
-    children: <Button.Text>Default Button</Button.Text>,
+    children: <Button.Text>Default Text</Button.Text>,
   },
 };
 
 export const SecondaryColor: Story = {
   args: {
     variant: "secondary-color",
-    children: <Button.Text>Default Button</Button.Text>,
+    children: <Button.Text>Default Text</Button.Text>,
   },
 };
 
@@ -86,7 +86,7 @@ export const Tertiary: Story = {
     variant: "tertiary",
     children: (
       <>
-        <Button.Text>Tertiary Button</Button.Text>
+        <Button.Text>Default Text</Button.Text>
       </>
     ),
   },
@@ -95,6 +95,27 @@ export const Tertiary: Story = {
 export const TertiaryColor: Story = {
   args: {
     variant: "tertiary-color",
-    children: <Button.Text>Tertiary Button</Button.Text>,
+    children: <Button.Text>Default Text</Button.Text>,
+  },
+};
+
+export const PrimaryError: Story = {
+  args: {
+    variant: "primary-error",
+    children: <Button.Text>Default Text</Button.Text>,
+  },
+};
+
+export const SecondaryError: Story = {
+  args: {
+    variant: "secondary-error",
+    children: <Button.Text>Default Text</Button.Text>,
+  },
+};
+
+export const TertiaryError: Story = {
+  args: {
+    variant: "tertiary-error",
+    children: <Button.Text>Default Text</Button.Text>,
   },
 };

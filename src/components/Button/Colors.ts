@@ -25,7 +25,15 @@ const getDisabledStyles = ({
       background: theme.colors.background.disabled,
       border: theme.colors.border.disabled_subtle,
     },
+    "primary-error": {
+      background: theme.colors.background.disabled,
+      border: theme.colors.border.disabled_subtle,
+    },
     secondary: {
+      background: theme.colors.background.primary,
+      border: theme.colors.border.disabled_subtle,
+    },
+    "secondary-error": {
       background: theme.colors.background.primary,
       border: theme.colors.border.disabled_subtle,
     },
@@ -38,6 +46,10 @@ const getDisabledStyles = ({
       border: theme.colors.primary.base.transparent,
     },
     "tertiary-color": {
+      background: theme.colors.primary.base.transparent,
+      border: theme.colors.primary.base.transparent,
+    },
+    "tertiary-error": {
       background: theme.colors.primary.base.transparent,
       border: theme.colors.primary.base.transparent,
     },
@@ -81,7 +93,12 @@ export const getBackgroundStyles = ({
 };
 
 export const getShadowStyles = ({ variant }: { variant: ButtonVariant }) => {
-  if (variant === "tertiary" || variant === "tertiary-color") return;
+  const isTertiaryVariant =
+    variant === "tertiary" ||
+    variant === "tertiary-color" ||
+    variant === "tertiary-error";
+
+  if (isTertiaryVariant) return;
 
   return css`
     shadow-color: rgba(16, 24, 40, 0.05);

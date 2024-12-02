@@ -1,14 +1,16 @@
 import React from "react";
 import { ThemeConfigProps } from "../types/theme";
-export type TTheme = "light" | "dark";
+import { Theme } from "../constants/theme";
+export type Scheme = "light" | "dark";
 interface ThemeProviderProps {
     children: React.ReactNode;
     userTheme?: ThemeConfigProps;
 }
 interface ThemeContextProps {
-    theme: TTheme;
-    getTheme: () => Promise<void>;
-    toggleTheme: () => Promise<void>;
+    scheme: Scheme;
+    theme: Theme;
+    getScheme: () => Promise<void>;
+    toggleScheme: () => Promise<void>;
 }
 declare const ThemeProvider: ({ userTheme, children }: ThemeProviderProps) => import("react/jsx-runtime").JSX.Element;
 declare function useTheme(): ThemeContextProps;

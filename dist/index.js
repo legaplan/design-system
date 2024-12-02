@@ -1,4 +1,4 @@
-export { ThemeProvider } from "./providers/ThemeProvider";
+export { ThemeProvider, useTheme } from "./providers/ThemeProvider";
 // Badge
 export { Badge } from "./components/Badge";
 // BaseIcon
