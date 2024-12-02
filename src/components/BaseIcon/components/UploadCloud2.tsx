@@ -2,7 +2,7 @@ import React from "react";
 import Svg, { Path } from "react-native-svg";
 import { TSvg } from "../types/svg";
 
-const UploadCloud = ({ color }: TSvg) => {
+const UploadCloud2 = ({ color }: TSvg) => {
   return (
     <Svg height="100%" width="100%" viewBox="0 0 24 24" fill="none">
       <Path
@@ -16,4 +16,4 @@ const UploadCloud = ({ color }: TSvg) => {
   );
 };
 
-export default UploadCloud;
+export default UploadCloud2;
