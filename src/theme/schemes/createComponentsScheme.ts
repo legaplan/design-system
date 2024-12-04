@@ -29,6 +29,9 @@ export interface ComponentScheme {
     color: {
       foreground: ButtonScheme["foreground"];
     };
+    error: {
+      foreground: ButtonScheme["foreground"];
+    };
   };
   toggle: {
     track: {
@@ -160,6 +163,12 @@ export const createLightComponentsScheme = (
         hover: theme.colors.primary.lightGray[700],
       },
     },
+    error: {
+      foreground: {
+        default: theme.colors.primary.error[700],
+        hover: theme.colors.primary.error[800],
+      },
+    },
   },
   toggle: {
     track: {
@@ -288,6 +297,12 @@ export const createDarkComponentsScheme = (
       foreground: {
         default: theme.colors.primary.darkGray[400],
         hover: theme.colors.primary.darkGray[200],
+      },
+    },
+    error: {
+      foreground: {
+        default: theme.colors.primary.error[300],
+        hover: theme.colors.primary.error[200],
       },
     },
   },
