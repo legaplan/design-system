@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   NativeSyntheticEvent,
+  Platform,
   TextInputFocusEventData,
   TextInputProps,
 } from "react-native";
@@ -60,11 +61,13 @@ export const Input = ({
     >
       <BorderContainer hasError={hasError} isFocused={isFocused} />
       <StyledInput
+        isIOS={Platform.OS === "ios"}
         underlineColorAndroid={"transparent"}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        textAlignVertical="top"
         placeholderTextColor={theme.colors.text.placeholder}
-        selectionColor={theme.colors.border.brand}
+        selectionColor={theme.colors.primary.brand[400]}
         onChangeText={handleOnChange}
         value={value}
         {...props}

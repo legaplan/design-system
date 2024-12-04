@@ -1,3 +1,4 @@
+import { getTextLineHeight } from "@/components/BaseText/styles";
 import { TextInput, View } from "react-native";
 import styled, { DefaultTheme } from "styled-components/native";
 
@@ -32,7 +33,6 @@ export const InputContainer = styled.View<InputContainerProps>`
   position: relative;
   align-items: center;
   gap: ${({ theme }) => theme.space[2]};
-  /* height: ${({ theme }) => theme.space[10]}; */
   padding: ${({ theme }) => `${theme.space[2]} ${theme.space[2.5]}`};
   padding-right: ${({ hasSuffixIcon }) => (hasSuffixIcon ? "36px" : "12px")};
   border-radius: ${({ theme }) => theme.borderRadius[3]};
@@ -56,13 +56,16 @@ export const BorderContainer = styled.View<{
   pointer-events: none;
 `;
 
-export const StyledInput = styled(TextInput)`
+export const StyledInput = styled(TextInput)<{ isIOS: boolean }>`
   display: flex;
-  height: 100%;
   align-items: center;
   gap: ${({ theme }) => theme.space[2]};
   color: ${({ theme }) => theme.colors.text.primary};
   outline-style: none;
   width: 100%;
   font-size: ${({ theme }) => theme.fontSize[3]};
+  height: ${({ numberOfLines = 1, theme, isIOS }) =>
+    isIOS
+      ? `${numberOfLines}px`
+      : `${numberOfLines * getTextLineHeight("3")}px`};
 `;
