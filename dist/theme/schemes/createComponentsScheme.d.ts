@@ -26,6 +26,9 @@ export interface ComponentScheme {
         color: {
             foreground: ButtonScheme["foreground"];
         };
+        error: {
+            foreground: ButtonScheme["foreground"];
+        };
     };
     toggle: {
         track: {
