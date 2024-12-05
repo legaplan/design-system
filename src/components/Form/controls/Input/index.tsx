@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   NativeSyntheticEvent,
+  Platform,
   TextInputFocusEventData,
   TextInputProps,
 } from "react-native";
@@ -12,6 +13,7 @@ import {
 } from "./styles";
 import { IconKeys, BaseIcon } from "../../../BaseIcon";
 import { useTheme } from "@/providers/ThemeProvider";
+import { getTextLineHeight } from "@/components/BaseText/styles";
 
 export interface InputProps extends TextInputProps {
   hasError?: boolean;
@@ -52,6 +54,12 @@ export const Input = ({
   };
 
   const suffixIcon = hasError ? "alert-circle" : suffix || null;
+
+  const minHeight = Platform.select({
+    android: `${(props.numberOfLines || 1) * getTextLineHeight("3")}px`,
+    default: "auto",
+  });
+
   return (
     <InputContainer
       isFocused={isFocused}
@@ -60,11 +68,13 @@ export const Input = ({
     >
       <BorderContainer hasError={hasError} isFocused={isFocused} />
       <StyledInput
+        minHeight={minHeight}
         underlineColorAndroid={"transparent"}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        textAlignVertical="top"
         placeholderTextColor={theme.colors.text.placeholder}
-        selectionColor={theme.colors.border.brand}
+        selectionColor={theme.colors.primary.brand[400]}
         onChangeText={handleOnChange}
         value={value}
         {...props}
