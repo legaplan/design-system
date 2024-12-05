@@ -12,6 +12,6 @@ export declare const BorderContainer: import("styled-components").StyledComponen
     hasError?: boolean;
 }, never>;
 export declare const StyledInput: import("styled-components").StyledComponent<typeof TextInput, DefaultTheme, {
-    isIOS: boolean;
+    minHeight?: string;
 }, never>;
 export {};

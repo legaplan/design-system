@@ -1,4 +1,3 @@
-import { getTextLineHeight } from "../../../../components/BaseText/styles";
 import { TextInput } from "react-native";
 import styled from "styled-components/native";
 const getInputBorderColor = (isFocused = false, theme, hasError = false) => {
@@ -48,7 +47,5 @@ export const StyledInput = styled(TextInput) `
   outline-style: none;
   width: 100%;
   font-size: ${({ theme }) => theme.fontSize[3]};
-  height: ${({ numberOfLines = 1, theme, isIOS }) => isIOS
-    ? `${numberOfLines}px`
-    : `${numberOfLines * getTextLineHeight("3")}px`};
+  min-height: ${({ minHeight }) => minHeight || "auto"};
 `;

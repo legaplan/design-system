@@ -56,7 +56,7 @@ export const BorderContainer = styled.View<{
   pointer-events: none;
 `;
 
-export const StyledInput = styled(TextInput)<{ isIOS: boolean }>`
+export const StyledInput = styled(TextInput)<{ minHeight?: string }>`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.space[2]};
@@ -64,8 +64,5 @@ export const StyledInput = styled(TextInput)<{ isIOS: boolean }>`
   outline-style: none;
   width: 100%;
   font-size: ${({ theme }) => theme.fontSize[3]};
-  height: ${({ numberOfLines = 1, theme, isIOS }) =>
-    isIOS
-      ? `${numberOfLines}px`
-      : `${numberOfLines * getTextLineHeight("3")}px`};
+  min-height: ${({ minHeight }) => minHeight || "auto"};
 `;
