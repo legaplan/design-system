@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://github.com/legaplan/native-design-system/compare/v2.3.0...v2.4.0) (2024-12-05)
+
+
+### Features
+
+* **button:** Add button link error ([499d1b3](https://github.com/legaplan/native-design-system/commit/499d1b31651a73d53655b75aa61af599269dca2d))
+
+
+### Bug Fixes
+
+* **#64:** Fix input as text area styles ([453060a](https://github.com/legaplan/native-design-system/commit/453060a5b9b9fe035ee058b1c0f004c3962e4677))
+* **#64:** Refactor platform based min height ([1c30ffa](https://github.com/legaplan/native-design-system/commit/1c30ffaaf4e5722f86fd1e4e7a10b05829816529))
+
 ## [2.3.0](https://github.com/legaplan/native-design-system/compare/v2.2.0...v2.3.0) (2024-12-02)
 
 
