@@ -22,7 +22,7 @@ export const InputContainer = styled.View `
   position: relative;
   align-items: center;
   gap: ${({ theme }) => theme.space[2]};
-  padding: ${({ theme }) => `${theme.space[2]} ${theme.space[2.5]}`};
+  padding: ${({ theme }) => `0px ${theme.space[2.5]}`};
   padding-right: ${({ hasSuffixIcon }) => (hasSuffixIcon ? "36px" : "12px")};
   border-radius: ${({ theme }) => theme.borderRadius[3]};
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
@@ -47,5 +47,7 @@ export const StyledInput = styled(TextInput) `
   outline-style: none;
   width: 100%;
   font-size: ${({ theme }) => theme.fontSize[3]};
+  padding: ${({ theme }) => `${theme.space[2]} 0px`};
   min-height: ${({ minHeight }) => minHeight || "auto"};
+  height: ${({ theme, multiline }) => (multiline ? "auto" : theme.space[10])};
 `;
