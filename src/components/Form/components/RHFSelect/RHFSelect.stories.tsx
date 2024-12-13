@@ -41,7 +41,6 @@ const mockedOptions = [
 export const Default: Story = {
   args: {
     name: "fruit",
-    hasError: true,
     options: mockedOptions,
     getLabel: (option) => (option as (typeof mockedOptions)[0]).label,
     getValue: (option) => (option as (typeof mockedOptions)[0]).value,
