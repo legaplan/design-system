@@ -53,7 +53,7 @@ export const Input = ({
     onBlur?.(e);
   };
 
-  const suffixIcon = hasError ? "alert-circle" : suffix || null;
+  const suffixIcon = suffix ? suffix : hasError ? "alert-circle" : null;
 
   const minHeight = Platform.select({
     android: `${(props.numberOfLines || 1) * getTextLineHeight("3")}px`,

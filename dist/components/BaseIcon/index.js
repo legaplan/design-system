@@ -16,6 +16,7 @@ import Home from "./components/Home";
 import Folder from "./components/Folder";
 import Plus from "./components/Plus";
 import UploadCloud2 from "./components/UploadCloud2";
+import Check from "./components/Check";
 const icons = {
     ["arrow-right"]: ArrowRight,
     ["arrow-left"]: ArrowLeft,
@@ -32,6 +33,7 @@ const icons = {
     folder: Folder,
     doc: Doc,
     plus: Plus,
+    check: Check,
 };
 const sizes = {
     1: 16,

@@ -1,3 +1,4 @@
+export { useToggle } from "./hooks/useToggle";
 export { ThemeProvider, useTheme } from "./providers/ThemeProvider";
 // Badge
 export { Badge } from "./components/Badge";
