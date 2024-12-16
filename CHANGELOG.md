@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://github.com/legaplan/native-design-system/compare/v2.4.1...v2.5.0) (2024-12-16)
+
+
+### Features
+
+* **#71:** Add select component ([b24915a](https://github.com/legaplan/native-design-system/commit/b24915a26d24e72f93102b4b6b41cabde8d1dc31))
+
+
+### Bug Fixes
+
+* **#71:** Fix hasError prop ([4dad53b](https://github.com/legaplan/native-design-system/commit/4dad53b77c97a108c5fdb22c9c08f9532ae46f3b))
+
 ## [2.4.1](https://github.com/legaplan/native-design-system/compare/v2.4.0...v2.4.1) (2024-12-11)
 
 
