@@ -1,6 +1,7 @@
 import React from "react";
 import type { Preview } from "@storybook/react";
 import { ThemeProvider } from "../src/providers/ThemeProvider";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const preview: Preview = {
   parameters: {
@@ -15,9 +16,11 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <ThemeProvider>
-          <Story />
-        </ThemeProvider>
+        <SafeAreaProvider>
+          <ThemeProvider>
+            <Story />
+          </ThemeProvider>
+        </SafeAreaProvider>
       );
     },
   ],

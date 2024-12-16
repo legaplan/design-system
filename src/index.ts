@@ -1,4 +1,6 @@
+export { useToggle } from "./hooks/useToggle";
 export { ThemeProvider, useTheme } from "./providers/ThemeProvider";
+
 export type { ThemeConfigProps } from "./types/theme";
 export type { Theme } from "./constants/theme";
 

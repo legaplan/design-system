@@ -16,6 +16,7 @@ import Home from "./components/Home";
 import Folder from "./components/Folder";
 import Plus from "./components/Plus";
 import UploadCloud2 from "./components/UploadCloud2";
+import Check from "./components/Check";
 
 const icons = {
   ["arrow-right"]: ArrowRight,
@@ -33,6 +34,7 @@ const icons = {
   folder: Folder,
   doc: Doc,
   plus: Plus,
+  check: Check,
 };
 
 export type IconKeys = keyof typeof icons;
